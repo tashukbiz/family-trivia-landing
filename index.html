@@ -1,63 +1,572 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="light" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Family Trivia - Fun trivia games for the whole family">
-    <title>Family Trivia</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Family Trivia - The Trivia Game for Everyone</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "pastel-blue": "#A2D2FF",
+                        "soft-purple": "#CDB4DB",
+                        "warm-yellow": "#FFD6A5",
+                        "fresh-green": "#BDE0FE",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Family Trivia</h1>
-            <p class="tagline">Fun trivia games for the whole family</p>
-        </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h2>Welcome to Family Trivia</h2>
-                <p>Test your knowledge and have fun with your loved ones!</p>
-                <button class="cta-button">Get Started</button>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <h2>Features</h2>
-                <div class="feature-grid">
-                    <div class="feature">
-                        <h3>Easy to Play</h3>
-                        <p>Simple and intuitive interface for all ages</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Family Friendly</h3>
-                        <p>Content suitable for everyone</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Fun Learning</h3>
-                        <p>Educational and entertaining</p>
-                    </div>
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display">
+    <div
+        class="relative w-full flex flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5">
+                <div
+                    class="layout-content-container flex flex-col max-w-5xl flex-1">
+                    <!-- TopNavBar -->
+                    <header
+                        class="sticky top-4 z-50 flex items-center justify-between whitespace-nowrap bg-white/70 dark:bg-background-dark/70 backdrop-blur-md rounded-full px-8 py-3 shadow-sm">
+                        <div
+                            class="flex items-center gap-4 text-slate-900 dark:text-white">
+                            <img src="logo.jpg" alt="Family Trivia"
+                                class="size-6 rounded" />
+                            <h2 class="text-lg font-bold tracking-tight">Family
+                                Trivia</h2>
+                        </div>
+                        <div class="hidden md:flex flex-1 justify-end gap-8">
+                            <div class="flex items-center gap-9">
+                                <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                                    href="#features">Features</a>
+                                <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                                    href="#faq">FAQ</a>
+                            </div>
+                            <a href="#cta"
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity">
+                                <span class="truncate">Download</span>
+                            </a>
+                        </div>
+                    </header>
+                    <!-- Hero Section -->
+                    <section class="text-center py-16 md:py-24" id="hero">
+                        <div class="max-w-3xl mx-auto flex flex-col gap-6">
+                            <h1
+                                class="text-4xl md:text-6xl font-black leading-tight tracking-tighter text-slate-900 dark:text-white">
+                                Trivia Game Where Every Player Gets Their Own
+                                Topic &amp; Difficulty.</h1>
+                            <p
+                                class="text-base md:text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
+                                Fun for kids. Challenging for adults. Fair for
+                                everyone. Endless, AI-generated trivia questions
+                                tailored to each person’s interests — all on a
+                                single device.</p>
+                            <div
+                                class="flex-wrap gap-4 flex justify-center mt-4">
+                                <button
+                                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity">
+                                    <span class="truncate">Download for
+                                        iOS</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold leading-normal tracking-wide hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                                    <span class="truncate">Download for
+                                        Android</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="relative mt-12 md:mt-20">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-pastel-blue to-soft-purple opacity-20 blur-3xl rounded-full">
+                            </div>
+                            <img alt="A phone mockup showing the Family Trivia app interface with player cards and colorful icons floating around it."
+                                class="relative w-full max-w-md mx-auto"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzjwOxrTBDXlhB5nf4ykcNwimo4yOS3aHoXfWUpCnxQELk-CR7H5i65JbZeoNLT9Ffhvjqq4UIHwYMmSwmiumhcubTJKzoejpRmuV4mDwRDQmFoL9yT_YnSFlVzMU1ai1PIYBfT1fweup_fsxPeuVCHWVKqy8DscuNpDqFZRAZkq_vo7yudbOgiFkKqD7IF0pTjMk0LBt13l--5RkzizCposkXHy703TsQXvBAiqvMwr-ehNUipyLodHMePl5CK4FU81HTn4NGQLg8" />
+                        </div>
+                    </section>
+                    <!-- Problem Section -->
+                    <section class="py-12 md:py-20" id="problem">
+                        <div class="max-w-2xl mx-auto text-center">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                😣 Does Family Game Night End in Complaints?
+                            </h2>
+                            <p
+                                class="mt-4 text-base md:text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
+                                Most trivia games simply aren’t built for mixed
+                                ages: Kids struggle because questions are too
+                                hard; Adults lose interest because they’re too
+                                easy; Siblings argue; Grandparents get left
+                                behind; And questions repeat quickly. The
+                                result? More frustration than fun.</p>
+                        </div>
+                    </section>
+                    <!-- Solution Section -->
+                    <section class="py-12 md:py-20" id="solution">
+                        <div class="max-w-3xl mx-auto text-center">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                ✨ Problem Solved: Personalized Trivia for Every
+                                Player</h2>
+                            <div
+                                class="my-6 p-6 bg-primary/10 dark:bg-primary/20 border border-primary/20 rounded-lg text-primary dark:text-blue-300">
+                                <h3 class="font-bold text-lg">Each Player
+                                    Chooses: <span class="mx-2">✔</span> Their
+                                    Own Topic <span class="mx-2">✔</span> Their
+                                    Own Difficulty</h3>
+                            </div>
+                            <p
+                                class="text-base md:text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
+                                Your 6-year-old can pick Animals – Easy. Your
+                                10-year-old can choose Minecraft – Medium. You
+                                can select Australian Movies – Hard. Grandma
+                                chooses Gardening – Easy. Everyone finally gets
+                                questions that match their world.</p>
+                        </div>
+                    </section>
+                    <!-- How It Works Section -->
+                    <section class="py-12 md:py-20" id="how-it-works">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                🚀 Start Playing in 30 Seconds</h2>
+                            <div
+                                class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                                <div
+                                    class="flex flex-col gap-2 p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <div
+                                        class="text-primary text-2xl font-bold">
+                                        1</div>
+                                    <h3 class="font-bold">Add Players</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Up to 10 players or teams.</p>
+                                </div>
+                                <div
+                                    class="flex flex-col gap-2 p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <div
+                                        class="text-primary text-2xl font-bold">
+                                        2</div>
+                                    <h3 class="font-bold">Choose Topics &amp;
+                                        Difficulty</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Each person picks what suits them.</p>
+                                </div>
+                                <div
+                                    class="flex flex-col gap-2 p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <div
+                                        class="text-primary text-2xl font-bold">
+                                        3</div>
+                                    <h3 class="font-bold">Pass the Device Around
+                                    </h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        One phone or tablet. Clear turn
+                                        indicators.</p>
+                                </div>
+                                <div
+                                    class="flex flex-col gap-2 p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <div
+                                        class="text-primary text-2xl font-bold">
+                                        4</div>
+                                    <h3 class="font-bold">Answer Trivia</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Instant feedback. Auto scoring.</p>
+                                </div>
+                            </div>
+                            <p
+                                class="mt-8 text-sm text-slate-500 dark:text-slate-400">
+                                Play 3–15 rounds, or repeat endlessly. Every
+                                question is fresh — no repeats.</p>
+                        </div>
+                    </section>
+                    <!-- Features Section -->
+                    <section class="py-12 md:py-20" id="features">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                🌟 Everything You Want in a Family Trivia Game
+                            </h2>
+                            <div
+                                class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">Endless AI-Generated
+                                        Questions</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Unique every time.</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">Any Topic You Can
+                                        Think Of</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Dinosaurs, space, Harry Potter, AFL,
+                                        anime...</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">Fair for All Ages</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        From kids to adults to grandparents.</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">One Device for
+                                        Everyone</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Perfect for kitchen tables or road
+                                        trips.</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">Short or Long Games
+                                    </h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        3–15 rounds or unlimited play.</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">Learning Disguised As
+                                        Fun</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Kids learn without feeling like it’s
+                                        homework.</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">Beautiful, Simple UI
+                                    </h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Designed for play, not confusion.</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <h3 class="font-bold">Auto Save Anytime</h3>
+                                    <p
+                                        class="text-sm text-slate-600 dark:text-slate-400">
+                                        Resume games even after closing the app.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Use Cases Section -->
+                    <section
+                        class="py-12 md:py-20 bg-white dark:bg-slate-800 rounded-lg"
+                        id="use-cases">
+                        <div class="max-w-4xl mx-auto text-center px-6">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                🎉 Perfect for Every Family Moment</h2>
+                            <div
+                                class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 text-slate-600 dark:text-slate-300">
+                                <div class="flex flex-col items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-primary">directions_car</span><span
+                                        class="text-sm">Road trips</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-primary">weekend</span><span
+                                        class="text-sm">Weekends</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-primary">nights_stay</span><span
+                                        class="text-sm">Sleepovers</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-primary">cottage</span><span
+                                        class="text-sm">Grandma's</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-primary">restaurant</span><span
+                                        class="text-sm">Restaurants</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-primary">rainy</span><span
+                                        class="text-sm">Rainy days</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-primary">bedtime</span><span
+                                        class="text-sm">Family time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Testimonials Section -->
+                    <section class="py-12 md:py-20" id="testimonials">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                💬 What Families Are Saying</h2>
+                            <div
+                                class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <p
+                                        class="text-slate-600 dark:text-slate-300">
+                                        ⭐ “My 8-year-old finally feels confident
+                                        playing trivia with us.”</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <p
+                                        class="text-slate-600 dark:text-slate-300">
+                                        ⭐ “We used it for a 6-hour road trip. No
+                                        whining.”</p>
+                                </div>
+                                <div
+                                    class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                                    <p
+                                        class="text-slate-600 dark:text-slate-300">
+                                        ⭐ “Kids ask for this instead of video
+                                        games. Win!”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Family-Safe Section -->
+                    <section class="py-12 md:py-20" id="family-safe">
+                        <div class="max-w-2xl mx-auto text-center">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                🛡️ Built for Families. Safe for All Ages.</h2>
+                            <ul
+                                class="mt-8 grid grid-cols-2 gap-4 text-left text-slate-600 dark:text-slate-300">
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-green-500">check_circle</span>Age-appropriate
+                                    content</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-green-500">check_circle</span>Validated
+                                    questions</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-green-500">check_circle</span>No
+                                    mid-game interruptions</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-green-500">check_circle</span>No
+                                    personal data tracking</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-green-500">check_circle</span>No
+                                    accounts required</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="material-symbols-outlined text-green-500">check_circle</span>Light,
+                                    friendly UI</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- CTA Section -->
+                    <section
+                        class="py-16 md:py-24 bg-primary/10 dark:bg-primary/20 rounded-lg text-center"
+                        id="cta">
+                        <div class="max-w-2xl mx-auto px-6">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                                💛 Try Family Trivia Free Today</h2>
+                            <p
+                                class="mt-4 text-base md:text-lg text-slate-600 dark:text-slate-300">
+                                Start with a free trial. Keep playing with
+                                unlimited topics, unlimited rounds, and
+                                unlimited new questions.</p>
+                            <div
+                                class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                                <button
+                                    class="w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold tracking-wide hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                    <span class="truncate">Download for
+                                        iOS</span>
+                                </button>
+                                <button
+                                    class="w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold tracking-wide hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                    <span class="truncate">Download for
+                                        Android</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- FAQ Section -->
+                    <section class="py-12 md:py-20" id="faq">
+                        <div class="max-w-3xl mx-auto">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white text-center">
+                                Frequently Asked Questions</h2>
+                            <div class="mt-10 space-y-4">
+                                <details
+                                    class="group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer">
+                                    <summary
+                                        class="flex justify-between items-center font-medium">
+                                        What ages is this for?<span
+                                            class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 mt-3">
+                                        Family Trivia is designed for all ages!
+                                        The personalized
+                                        difficulty and topics ensure everyone
+                                        gets questions that are right for them.
+                                    </p>
+                                </details>
+                                <details
+                                    class="group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer">
+                                    <summary
+                                        class="flex justify-between items-center font-medium">
+                                        Why personalization?<span
+                                            class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 mt-3">
+                                        Personalization is the key to fairness
+                                        and fun. It prevents kids from getting
+                                        discouraged by questions that are too
+                                        hard and keeps adults engaged.</p>
+                                </details>
+                                <details
+                                    class="group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer">
+                                    <summary
+                                        class="flex justify-between items-center font-medium">
+                                        How many players?<span
+                                            class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 mt-3">
+                                        You can add up to 10 individual players
+                                        or teams, making it perfect for small
+                                        families or large gatherings.</p>
+                                </details>
+                                <details
+                                    class="group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer">
+                                    <summary
+                                        class="flex justify-between items-center font-medium">
+                                        Do questions repeat?<span
+                                            class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 mt-3">
+                                        No! Our AI generates fresh questions for
+                                        every single game, so you'll never see
+                                        the same one twice.</p>
+                                </details>
+                                <details
+                                    class="group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer">
+                                    <summary
+                                        class="flex justify-between items-center font-medium">
+                                        How does the subscription work?<span
+                                            class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 mt-3">
+                                        After your free trial, you can subscribe
+                                        to unlock unlimited topics, rounds, and
+                                        questions. Subscriptions are managed
+                                        through the App Store or Google Play.
+                                    </p>
+                                </details>
+                                <details
+                                    class="group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer">
+                                    <summary
+                                        class="flex justify-between items-center font-medium">
+                                        Can I cancel anytime?<span
+                                            class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 mt-3">
+                                        Yes, you can easily cancel your
+                                        subscription at any time through your
+                                        device's app store settings.</p>
+                                </details>
+                                <details
+                                    class="group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer">
+                                    <summary
+                                        class="flex justify-between items-center font-medium">
+                                        Do I need multiple devices?<span
+                                            class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 mt-3">
+                                        Nope! The whole game is designed to be
+                                        played on a single phone or tablet that
+                                        you pass around the group.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Footer -->
+                    <footer
+                        class="py-10 border-t border-slate-200 dark:border-slate-800">
+                        <div
+                            class="flex flex-col md:flex-row justify-between items-center gap-6">
+                            <div
+                                class="flex items-center gap-4 text-slate-900 dark:text-white">
+                                <img src="logo.jpg" alt="Family Trivia"
+                                    class="size-5 rounded" />
+                                <h2 class="text-base font-bold tracking-tight">
+                                    Family Trivia</h2>
+                            </div>
+                            <div
+                                class="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
+                                <a class="hover:text-primary" href="#">Privacy
+                                    Policy</a>
+                                <a class="hover:text-primary" href="#">Terms</a>
+                                <a class="hover:text-primary"
+                                    href="#">Contact</a>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
             </div>
-        </section>
-
-        <section class="about">
-            <div class="container">
-                <h2>About</h2>
-                <p>Family Trivia brings families together through engaging trivia questions and interactive gameplay.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Family Trivia. All rights reserved.</p>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 </body>
+
 </html>
