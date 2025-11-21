@@ -29,6 +29,9 @@ next-env.d.ts
 .vercel
 .turbo
 
+# Dev output
+/docs/dev/
+
 # Testing
 /coverage
 
