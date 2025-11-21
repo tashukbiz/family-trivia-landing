@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: "export",
+  output: 'export',
+  distDir: 'docs', // Output static build to /docs
   images: {
     unoptimized: true,
   },
