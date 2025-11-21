@@ -1,7 +1,7 @@
 'use client';
 
 export default function SignupForm() {
-  const handleFormClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleOutsideClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       e.currentTarget.classList.remove('show');
     }
@@ -14,7 +14,7 @@ export default function SignupForm() {
   };
 
   return (
-    <div className="signup-form" onClick={handleFormClick}>
+    <div className="signup-form" onClick={handleOutsideClick}>
       <div id="mc_embed_shell">
         <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css" />
         <style type="text/css">{`
