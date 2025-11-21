@@ -92,7 +92,10 @@ export default function BlogPage() {
           <div className='flex flex-col max-w-5xl flex-1'>
             {/* TopNavBar */}
             <header className='flex items-center justify-between whitespace-nowrap bg-white/70 dark:bg-background-dark/70 backdrop-blur-md rounded-full px-8 py-3 shadow-sm'>
-              <Link href='/' className='flex items-center gap-4 text-slate-900 dark:text-white hover:opacity-80 transition-opacity'>
+              <Link
+                href='/'
+                className='flex items-center gap-4 text-slate-900 dark:text-white hover:opacity-80 transition-opacity'
+              >
                 <Image
                   src='/favicon.ico'
                   alt='Family Trivia'
@@ -156,7 +159,10 @@ export default function BlogPage() {
             )}
 
             {/* CTA Section */}
-            <section id='cta' className='mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-center'>
+            <section
+              id='cta'
+              className='mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-center'
+            >
               <h2 className='text-3xl md:text-4xl font-bold text-white mb-4'>
                 Ready for Family Fun?
               </h2>
