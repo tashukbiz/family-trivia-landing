@@ -86,3 +86,33 @@ Build output:
 - Optimized CSS and JS bundles
 - All assets copied to `/out` directory
 - Ready for deployment to any static host
+
+## Custom Agents
+
+### Content Writer Agent
+Located at `.github/agents/content-writer.md`
+
+An expert content writing agent specialized in creating engaging, SEO-optimized blog posts and marketing content for the Family Trivia landing page.
+
+**How to use:**
+1. Invoke the agent in GitHub Copilot chat: `@content-writer`
+2. Provide details about the content you need:
+   - Topic or theme
+   - Target audience
+   - Desired word count
+   - SEO keywords
+   - Brand guidelines
+
+**Capabilities:**
+- Blog post writing with attention-grabbing headlines
+- SEO optimization with natural keyword integration
+- Content strategy and editorial planning
+- Family-friendly tone aligned with Family Trivia brand
+- Actionable insights and compelling storytelling
+
+**Example topics for Family Trivia:**
+- Benefits of playing trivia games as a family
+- How AI makes family game night fair for everyone
+- Educational value of trivia games for children
+- Tips for multi-generational family activities
+- Screen time that's both fun and educational
