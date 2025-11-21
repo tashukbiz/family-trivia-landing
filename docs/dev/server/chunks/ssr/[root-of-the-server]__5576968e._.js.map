@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/runner/work/family-trivia-landing/family-trivia-landing/components/SignupButton.tsx"],"sourcesContent":["'use client';\n\ninterface SignupButtonProps {\n  children: React.ReactNode;\n  className?: string;\n}\n\nexport default function SignupButton({ children, className = '' }: SignupButtonProps) {\n  const handleClick = () => {\n    document.querySelector('.signup-form')?.classList.add('show');\n  };\n\n  return (\n    <button onClick={handleClick} className={className}>\n      {children}\n    </button>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;AAOe,SAAS,aAAa,EAAE,QAAQ,EAAE,YAAY,EAAE,EAAqB;IAClF,MAAM,cAAc;QAClB,SAAS,aAAa,CAAC,iBAAiB,UAAU,IAAI;IACxD;IAEA,qBACE,8OAAC;QAAO,SAAS;QAAa,WAAW;kBACtC;;;;;;AAGP"}}]
+}
