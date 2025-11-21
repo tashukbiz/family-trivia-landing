@@ -1,0 +1,4 @@
+:HL["/_next/static/chunks/6c05077e9cc83159.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap","style"]
+:HL["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined","style"]
+0:{"buildId":"R4THhHj7sbqrt99xN80m0","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"blog","paramType":null,"paramKey":"blog","hasRuntimePrefetch":false,"slots":{"children":{"name":"trivia-questions-for-kids","paramType":null,"paramKey":"trivia-questions-for-kids","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
