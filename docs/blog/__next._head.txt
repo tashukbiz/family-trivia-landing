@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[42178,["/_next/static/chunks/8e5cbd5277a6eb4f.js","/_next/static/chunks/351283919579e33c.js"],"ViewportBoundary"]
+4:I[42178,["/_next/static/chunks/8e5cbd5277a6eb4f.js","/_next/static/chunks/351283919579e33c.js"],"MetadataBoundary"]
+5:"$Sreact.suspense"
+7:I[29748,["/_next/static/chunks/8e5cbd5277a6eb4f.js","/_next/static/chunks/351283919579e33c.js"],"IconMark"]
+0:{"buildId":"BtDke1vwjGUjxXazTCoJQ","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:[["$","title","0",{"children":"Family Trivia Blog - Tips, Questions, and Fun Family Game Ideas"}],["$","meta","1",{"name":"description","content":"Discover trivia questions, family game night tips, and educational content for kids. Learn how to make family time more fun and engaging with Family Trivia."}],["$","meta","2",{"name":"keywords","content":"family trivia,trivia questions,family games,kids activities,educational games"}],["$","link","3",{"rel":"icon","href":"/favicon.ico"}],["$","$L7","4",{}]]
