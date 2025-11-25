@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages": "next build && rm -rf docs && mkdir docs && cp -r out/* docs/ && git add . && git commit -m 'Deploy static site' && git push origin main"
+    "pages": "next build && rm -rf docs && mkdir docs && cp -r out/* docs/ && cp CNAME docs/ && git add . && git commit -m 'Deploy static site' && git push origin main"
   },
   "dependencies": {
     "next": "16.0.3",

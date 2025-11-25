@@ -3,6 +3,6 @@
 4:I[42178,["/_next/static/chunks/8e5cbd5277a6eb4f.js","/_next/static/chunks/351283919579e33c.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
 7:I[29748,["/_next/static/chunks/8e5cbd5277a6eb4f.js","/_next/static/chunks/351283919579e33c.js"],"IconMark"]
-0:{"buildId":"lYtC1ChWgLaAnTX2GyNdV","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
+0:{"buildId":"46xQigI6M_pdbcZQChqXi","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 6:[["$","title","0",{"children":"Family Trivia - The Trivia Game for Everyone"}],["$","meta","1",{"name":"description","content":"Fun for kids. Challenging for adults. Fair for everyone. Endless, AI-generated trivia questions tailored to each person's interests — all on a single device."}],["$","link","2",{"rel":"icon","href":"/favicon.ico"}],["$","$L7","3",{}]]
