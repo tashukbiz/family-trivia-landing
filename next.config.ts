@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  distDir: 'docs', // Output static build to /docs
+  distDir: 'out', // Output static build to /docs
   images: {
     unoptimized: true,
   },
