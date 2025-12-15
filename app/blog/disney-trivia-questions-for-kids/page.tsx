@@ -218,11 +218,11 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'A frying pan',
                     },
                     {
-                      q: 'What color is Belle's iconic ball gown in Beauty and the Beast?',
+                      q: 'What color is Belle\'s iconic ball gown in Beauty and the Beast?',
                       a: 'Yellow (gold)',
                     },
                     {
-                      q: 'What is the name of Ariel's fish friend in The Little Mermaid?',
+                      q: 'What is the name of Ariel\'s fish friend in The Little Mermaid?',
                       a: 'Flounder',
                     },
                     {
@@ -234,7 +234,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'An ice palace',
                     },
                     {
-                      q: 'What is the name of Moana's pet rooster?',
+                      q: 'What is the name of Moana\'s pet rooster?',
                       a: 'Heihei',
                     },
                     {
@@ -242,15 +242,15 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'Cinderella',
                     },
                     {
-                      q: 'What is Mulan's dragon companion named?',
+                      q: 'What is Mulan\'s dragon companion named?',
                       a: 'Mushu',
                     },
                     {
-                      q: 'What color is Tiana's dress when she becomes a princess?',
+                      q: 'What color is Tiana\'s dress when she becomes a princess?',
                       a: 'Green',
                     },
                     {
-                      q: 'Which Disney princess is awakened by true love's kiss after eating a poisoned apple?',
+                      q: 'Which Disney princess is awakened by true love\'s kiss after eating a poisoned apple?',
                       a: 'Snow White',
                     },
                   ].map((item, index) => (
@@ -310,7 +310,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'In Monsters, Inc., what powers the city of Monstropolis?',
-                      a: 'Children's screams (later, their laughter)',
+                      a: 'Children\'s screams (later, their laughter)',
                     },
                     {
                       q: 'What is the name of the old man in Up who ties balloons to his house?',
@@ -321,7 +321,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'Yellow',
                     },
                     {
-                      q: 'What is Lightning McQueen's racing number in Cars?',
+                      q: 'What is Lightning McQueen\'s racing number in Cars?',
                       a: '95',
                     },
                     {
@@ -380,7 +380,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'Maleficent',
                     },
                     {
-                      q: 'What is the name of Simba's evil uncle in The Lion King?',
+                      q: 'What is the name of Simba\'s evil uncle in The Lion King?',
                       a: 'Scar',
                     },
                     {
@@ -397,10 +397,10 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'What is the name of the bad guy in Toy Story 3 who smells like strawberries?',
-                      a: 'Lots-o'-Huggin' Bear (Lotso)',
+                      a: 'Lots-o\'-Huggin\' Bear (Lotso)',
                     },
                     {
-                      q: 'Who is the sea witch's favorite phrase in The Little Mermaid?',
+                      q: 'Who is the sea witch\'s favorite phrase in The Little Mermaid?',
                       a: '"Poor unfortunate souls"',
                     },
                     {
@@ -487,7 +487,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                 <div className='space-y-6 mb-10'>
                   {[
                     {
-                      q: 'What is the name of Mickey Mouse's dog?',
+                      q: 'What is the name of Mickey Mouse\'s dog?',
                       a: 'Pluto',
                     },
                     {
@@ -495,11 +495,11 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'No worries',
                     },
                     {
-                      q: 'What are the names of Cinderella's stepsisters?',
+                      q: 'What are the names of Cinderella\'s stepsisters?',
                       a: 'Anastasia and Drizella',
                     },
                     {
-                      q: 'What is the name of Aladdin's monkey?',
+                      q: 'What is the name of Aladdin\'s monkey?',
                       a: 'Abu',
                     },
                     {
@@ -507,7 +507,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'A crocodile (the tick-tock crocodile)',
                     },
                     {
-                      q: 'What does the Fairy Godmother turn into Cinderella's carriage?',
+                      q: 'What does the Fairy Godmother turn into Cinderella\'s carriage?',
                       a: 'A pumpkin',
                     },
                     {
@@ -515,7 +515,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       a: 'Seven',
                     },
                     {
-                      q: 'What is the name of Simba's father in The Lion King?',
+                      q: 'What is the name of Simba\'s father in The Lion King?',
                       a: 'Mufasa',
                     },
                     {
@@ -566,19 +566,19 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                 <div className='space-y-6 mb-10'>
                   {[
                     {
-                      q: 'What is the name of Anna and Elsa's kingdom in Frozen?',
+                      q: 'What is the name of Anna and Elsa\'s kingdom in Frozen?',
                       a: 'Arendelle',
                     },
                     {
                       q: 'What magical gift does Mirabel NOT receive in Encanto?',
-                      a: 'She doesn't receive a gift',
+                      a: 'She doesn\'t receive a gift',
                     },
                     {
-                      q: 'What does Moana's grandmother turn into after she passes away?',
+                      q: 'What does Moana\'s grandmother turn into after she passes away?',
                       a: 'A manta ray',
                     },
                     {
-                      q: 'In Zootopia, what is Judy Hopps' job?',
+                      q: 'In Zootopia, what is Judy Hopps\' job?',
                       a: 'Police officer',
                     },
                     {

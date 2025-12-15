@@ -216,23 +216,23 @@ export default function FunTriviaQuestionsForKidsPage() {
                         a: 'Three hearts! Two pump blood to the gills, and one pumps blood to the rest of the body.',
                       },
                       {
-                        q: 'What color is a flamingo when it's born?',
+                        q: 'What color is a flamingo when it\'s born?',
                         a: 'Gray or white! Flamingos turn pink from eating shrimp and algae.',
                       },
                       {
-                        q: 'Can a shrimp's heart be found in its head?',
-                        a: 'Yes! A shrimp's heart is actually located in its head.',
+                        q: 'Can a shrimp\'s heart be found in its head?',
+                        a: 'Yes! A shrimp\'s heart is actually located in its head.',
                       },
                       {
                         q: 'What animal never sleeps?',
                         a: 'Bullfrogs! They rest but never fully sleep.',
                       },
                       {
-                        q: 'What's the only mammal that can fly?',
+                        q: 'What\'s the only mammal that can fly?',
                         a: 'Bats! (Flying squirrels glide, but bats actually fly.)',
                       },
                       {
-                        q: 'How long is a chameleon's tongue compared to its body?',
+                        q: 'How long is a chameleon\'s tongue compared to its body?',
                         a: 'About twice as long as its body! They use it to catch insects.',
                       },
                       {
@@ -241,10 +241,10 @@ export default function FunTriviaQuestionsForKidsPage() {
                       },
                       {
                         q: 'What animal can hold its breath the longest underwater?',
-                        a: 'The Cuvier's beaked whale can hold its breath for over 2 hours!',
+                        a: 'The Cuvier\'s beaked whale can hold its breath for over 2 hours!',
                       },
                       {
-                        q: 'What's a group of flamingos called?',
+                        q: 'What\'s a group of flamingos called?',
                         a: 'A flamboyance! How fitting for such colorful birds.',
                       },
                       {
@@ -301,7 +301,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                         a: 'Yes! The human nose can identify about 50,000 different scents.',
                       },
                       {
-                        q: 'What's the strongest muscle in the human body?',
+                        q: 'What\'s the strongest muscle in the human body?',
                         a: 'The masseter (jaw muscle)! It can exert up to 200 pounds of force.',
                       },
                       {
@@ -310,11 +310,11 @@ export default function FunTriviaQuestionsForKidsPage() {
                       },
                       {
                         q: 'Why is the sky blue?',
-                        a: 'Because blue light is scattered more than other colors by Earth's atmosphere!',
+                        a: 'Because blue light is scattered more than other colors by Earth\'s atmosphere!',
                       },
                       {
                         q: 'What happens if you sneeze with your eyes open?',
-                        a: 'Nothing! It's nearly impossible to sneeze with eyes open, but they won't pop out.',
+                        a: 'Nothing! It\'s nearly impossible to sneeze with eyes open, but they won\'t pop out.',
                       },
                       {
                         q: 'How fast do your fingernails grow?',
@@ -329,8 +329,8 @@ export default function FunTriviaQuestionsForKidsPage() {
                         a: 'Yes! An average cumulus cloud weighs about 1.1 million pounds (500,000 kg).',
                       },
                       {
-                        q: 'What's the only food that never goes bad?',
-                        a: 'Honey! Archaeologists have found 3,000-year-old honey in Egyptian tombs that's still edible.',
+                        q: 'What\'s the only food that never goes bad?',
+                        a: 'Honey! Archaeologists have found 3,000-year-old honey in Egyptian tombs that\'s still edible.',
                       },
                     ].map((item, index) => (
                       <div
@@ -373,20 +373,20 @@ export default function FunTriviaQuestionsForKidsPage() {
                   <div className='space-y-6'>
                     {[
                       {
-                        q: 'What's the smallest country in the world?',
-                        a: 'Vatican City! It's only 0.17 square miles (0.44 km²).',
+                        q: 'What\'s the smallest country in the world?',
+                        a: 'Vatican City! It\'s only 0.17 square miles (0.44 km²).',
                       },
                       {
                         q: 'Which continent has the most countries?',
                         a: 'Africa, with 54 countries!',
                       },
                       {
-                        q: 'What's the longest river in the world?',
+                        q: 'What\'s the longest river in the world?',
                         a: 'The Nile River in Africa, at about 4,135 miles (6,650 km) long.',
                       },
                       {
-                        q: 'Is there a place on Earth where it hasn't rained for over 400 years?',
-                        a: 'Yes! The Atacama Desert in Chile – some areas haven't seen rain in over 400 years.',
+                        q: 'Is there a place on Earth where it hasn\'t rained for over 400 years?',
+                        a: 'Yes! The Atacama Desert in Chile – some areas haven\'t seen rain in over 400 years.',
                       },
                       {
                         q: 'Which country has the most islands?',
@@ -410,7 +410,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                       },
                       {
                         q: 'What country is wider than the moon?',
-                        a: 'Australia! It's about 2,485 miles wide, while the moon is 2,159 miles wide.',
+                        a: 'Australia! It\'s about 2,485 miles wide, while the moon is 2,159 miles wide.',
                       },
                     ].map((item, index) => (
                       <div
@@ -512,7 +512,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                         a: 'Studies say between 144-411 licks, depending on licking technique!',
                       },
                       {
-                        q: 'What's the most expensive spice in the world?',
+                        q: 'What\'s the most expensive spice in the world?',
                         a: 'Saffron! It costs more than gold by weight.',
                       },
                       {
@@ -572,8 +572,8 @@ export default function FunTriviaQuestionsForKidsPage() {
                   <div className='space-y-6'>
                     {[
                       {
-                        q: 'What letter doesn't appear in any U.S. state name?',
-                        a: 'Q! It's the only letter not used in any state name.',
+                        q: 'What letter doesn\'t appear in any U.S. state name?',
+                        a: 'Q! It\'s the only letter not used in any state name.',
                       },
                       {
                         q: 'How long would it take to fall to the center of the Earth?',
@@ -585,19 +585,19 @@ export default function FunTriviaQuestionsForKidsPage() {
                       },
                       {
                         q: 'Can a clap of thunder reach 120 decibels?',
-                        a: 'Yes! That's as loud as a rock concert or chainsaw.',
+                        a: 'Yes! That\'s as loud as a rock concert or chainsaw.',
                       },
                       {
                         q: 'How many possible ways can you arrange a deck of cards?',
                         a: 'About 8×10⁶⁷ ways – more than atoms on Earth!',
                       },
                       {
-                        q: 'What's the most common name in the world?',
-                        a: 'Muhammad! It's the most popular name globally.',
+                        q: 'What\'s the most common name in the world?',
+                        a: 'Muhammad! It\'s the most popular name globally.',
                       },
                       {
                         q: 'Can you fold a piece of paper more than 7 times?',
-                        a: 'It's extremely difficult! The record is 12 folds (using a huge piece of paper).',
+                        a: 'It\'s extremely difficult! The record is 12 folds (using a huge piece of paper).',
                       },
                       {
                         q: 'What animal is the symbol on the Ferrari logo?',
