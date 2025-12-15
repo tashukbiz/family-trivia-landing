@@ -581,7 +581,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'What prayer did Jesus teach His disciples?',
-                      a: 'The Lord\\'s Prayer (Our Father)',
+                      a: 'The Lord\'s Prayer (Our Father)',
                     },
                     {
                       q: 'What are the fruits of the Spirit mentioned in Galatians?',
@@ -597,7 +597,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'What does the Bible say we should do when we pray?',
-                      a: 'Pray with faith, in Jesus\\' name, and according to God\\'s will',
+                      a: 'Pray with faith, in Jesus\' name, and according to God's will',
                     },
                     {
                       q: 'What famous verse tells us that God loved the world so much?',

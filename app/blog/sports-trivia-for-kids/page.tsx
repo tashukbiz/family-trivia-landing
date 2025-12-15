@@ -225,7 +225,7 @@ export default function SportsTriviaForKidsPage() {
                       a: 'Goalkeeper (or goalie)',
                     },
                     {
-                      q: 'Which famous soccer player is from Argentina and has won multiple Ballon d\\'Or awards?',
+                      q: 'Which famous soccer player is from Argentina and has won multiple Ballon d\'Or awards?',
                       a: 'Lionel Messi',
                     },
                     {
@@ -582,7 +582,7 @@ export default function SportsTriviaForKidsPage() {
                       a: '6 players',
                     },
                     {
-                      q: 'Which boxer was known as "The Greatest" and "The People\\'s Champion"?',
+                      q: 'Which boxer was known as "The Greatest" and "The People\'s Champion"?',
                       a: 'Muhammad Ali',
                     },
                     {

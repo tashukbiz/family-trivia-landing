@@ -270,11 +270,11 @@ export default function KidsTriviaQuestionsPage() {
                       a: 'A kangaroo (or marsupial)',
                     },
                     {
-                      q: 'What color is a polar bear\\'s skin?',
+                      q: 'What color is a polar bear\'s skin?',
                       a: 'Black (the fur is white)',
                     },
                     {
-                      q: 'Which animal is known as "man\\'s best friend"?',
+                      q: 'Which animal is known as "man\'s best friend"?',
                       a: 'A dog',
                     },
                   ].map((item, index) => (
