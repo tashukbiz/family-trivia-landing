@@ -597,7 +597,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'What does the Bible say we should do when we pray?',
-                      a: 'Pray with faith, in Jesus\' name, and according to God's will',
+                      a: 'Pray with faith, in Jesus\' name, and according to God\'s will',
                     },
                     {
                       q: 'What famous verse tells us that God loved the world so much?',
