@@ -22,6 +22,221 @@ export const metadata: Metadata = {
 };
 
 export default function BibleTriviaQuestionsForKidsPage() {
+  const oldTestamentStories = [
+    {
+      q: 'How many days did God take to create the world?',
+      a: 'Six days (and He rested on the seventh day)',
+    },
+    {
+      q: 'Who were the first two people God created?',
+      a: 'Adam and Eve',
+    },
+    {
+      q: 'What did God tell Noah to build?',
+      a: 'An ark',
+    },
+    {
+      q: 'How many of each kind of animal did Noah take on the ark (at minimum)?',
+      a: 'At least two of each kind (a male and a female)',
+    },
+    {
+      q: 'What sign did God give to show He would never flood the earth again?',
+      a: 'A rainbow',
+    },
+    {
+      q: 'Who did God ask to sacrifice his son Isaac?',
+      a: 'Abraham',
+    },
+    {
+      q: 'What did God provide for Abraham to sacrifice instead of Isaac?',
+      a: 'A ram (caught in a thicket)',
+    },
+    {
+      q: 'Which young boy defeated the giant Goliath?',
+      a: 'David',
+    },
+    {
+      q: 'What did Moses use to part the Red Sea?',
+      a: 'His staff (rod)',
+    },
+    {
+      q: 'How many plagues did God send on Egypt?',
+      a: 'Ten plagues',
+    },
+  ] as const;
+
+  const newTestamentStories = [
+    {
+      q: 'In which town was Jesus born?',
+      a: 'Bethlehem',
+    },
+    {
+      q: "Who were Jesus' earthly parents?",
+      a: 'Mary and Joseph',
+    },
+    {
+      q: 'What gifts did the wise men bring to baby Jesus?',
+      a: 'Gold, frankincense, and myrrh',
+    },
+    {
+      q: 'Who baptized Jesus in the Jordan River?',
+      a: 'John the Baptist',
+    },
+    {
+      q: 'How many disciples did Jesus choose?',
+      a: 'Twelve disciples',
+    },
+    {
+      q: 'What miracle did Jesus perform with five loaves of bread and two fish?',
+      a: 'He fed 5,000 people',
+    },
+    {
+      q: 'What did Jesus walk on to reach His disciples during a storm?',
+      a: 'Water (He walked on water)',
+    },
+    {
+      q: 'Who did Jesus raise from the dead after four days?',
+      a: 'Lazarus',
+    },
+    {
+      q: 'On which day of the week did Jesus rise from the dead?',
+      a: 'Sunday (the first day of the week)',
+    },
+    {
+      q: 'What happened to Jesus 40 days after His resurrection?',
+      a: 'He ascended into heaven',
+    },
+  ] as const;
+
+  const bibleCharacters = [
+    {
+      q: 'Who built the ark and survived the great flood?',
+      a: 'Noah',
+    },
+    {
+      q: 'Who was swallowed by a big fish for three days?',
+      a: 'Jonah',
+    },
+    {
+      q: 'Who was the strongest man in the Bible?',
+      a: 'Samson',
+    },
+    {
+      q: 'Which woman became queen and saved the Jewish people?',
+      a: 'Esther',
+    },
+    {
+      q: 'Who was thrown into a den of lions but was protected by God?',
+      a: 'Daniel',
+    },
+    {
+      q: 'Which disciple betrayed Jesus for 30 pieces of silver?',
+      a: 'Judas Iscariot',
+    },
+    {
+      q: 'Which disciple denied knowing Jesus three times?',
+      a: 'Peter',
+    },
+    {
+      q: 'Who was the tax collector that Jesus called to be a disciple?',
+      a: 'Matthew (also called Levi)',
+    },
+    {
+      q: 'Who was known as "the beloved disciple"?',
+      a: 'John',
+    },
+    {
+      q: 'Which apostle was blinded on the road to Damascus?',
+      a: 'Saul (who became Paul)',
+    },
+  ] as const;
+
+  const bibleBasics = [
+    {
+      q: 'How many books are in the Bible?',
+      a: 'In a Protestant Bible, 66 books (39 Old Testament, 27 New Testament)',
+    },
+    {
+      q: 'What is the first book of the Bible?',
+      a: 'Genesis',
+    },
+    {
+      q: 'What is the last book of the Bible?',
+      a: 'Revelation',
+    },
+    {
+      q: "Which books tells the story of Jesus' birth?",
+      a: "The story of Jesus' birth is told in two books of the Bible, the Gospels of Matthew and Luke",
+    },
+    {
+      q: 'What are the first four books of the New Testament called?',
+      a: 'The Gospels',
+    },
+    {
+      q: 'In what language was most of the Old Testament originally written?',
+      a: 'Hebrew (with some parts in Aramaic)',
+    },
+    {
+      q: 'What city is called "The Holy City" in the Bible?',
+      a: 'Jerusalem',
+    },
+    {
+      q: 'What river was Jesus baptized in?',
+      a: 'The Jordan River',
+    },
+    {
+      q: 'What garden did Adam and Eve live in?',
+      a: 'The Garden of Eden',
+    },
+    {
+      q: 'What mountain did Moses receive the Ten Commandments on?',
+      a: 'Mount Sinai',
+    },
+  ] as const;
+
+  const bibleLessonsAndValues = [
+    {
+      q: 'What is the greatest commandment Jesus taught?',
+      a: 'Love the Lord your God with all your heart, soul, and mind',
+    },
+    {
+      q: 'What is the second greatest commandment?',
+      a: 'Love your neighbor as yourself',
+    },
+    {
+      q: 'How many commandments did God give Moses?',
+      a: 'Ten Commandments',
+    },
+    {
+      q: 'What prayer did Jesus teach His disciples?',
+      a: "The Lord's Prayer (Our Father)",
+    },
+    {
+      q: 'What are the fruits of the Spirit mentioned in Galatians?',
+      a: 'Love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control',
+    },
+    {
+      q: 'In the parable of the Good Samaritan, what did Jesus teach?',
+      a: 'To love and help everyone, even strangers or enemies',
+    },
+    {
+      q: 'What did the Prodigal Son do that teaches us about forgiveness?',
+      a: 'He returned home after wasting his inheritance, and his father forgave him',
+    },
+    {
+      q: 'What does the Bible say we should do when we pray?',
+      a: 'Pray with faith and keep talking to God',
+    },
+    {
+      q: 'What famous verse tells us that God loved the world so much?',
+      a: 'John 3:16',
+    },
+    {
+      q: 'What does the Bible say children should do to honor their parents?',
+      a: 'Obey and respect them',
+    },
+  ] as const;
+
   return (
     <>
       <div className='min-h-screen bg-white dark:bg-slate-900'>
@@ -211,48 +426,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'How many days did God take to create the world?',
-                      a: 'Six days (and He rested on the seventh day)',
-                    },
-                    {
-                      q: 'Who were the first two people God created?',
-                      a: 'Adam and Eve',
-                    },
-                    {
-                      q: 'What did God tell Noah to build?',
-                      a: 'An ark',
-                    },
-                    {
-                      q: 'How many of each kind of animal did Noah take on the ark (at minimum)?',
-                      a: 'At least two of each kind (a male and a female)',
-                    },
-                    {
-                      q: 'What sign did God give to show He would never flood the earth again?',
-                      a: 'A rainbow',
-                    },
-                    {
-                      q: 'Who did God ask to sacrifice his son Isaac?',
-                      a: 'Abraham',
-                    },
-                    {
-                      q: 'What did God provide for Abraham to sacrifice instead of Isaac?',
-                      a: 'A ram (caught in a thicket)',
-                    },
-                    {
-                      q: 'Which young boy defeated the giant Goliath?',
-                      a: 'David',
-                    },
-                    {
-                      q: 'What did Moses use to part the Red Sea?',
-                      a: 'His staff (rod)',
-                    },
-                    {
-                      q: 'How many plagues did God send on Egypt?',
-                      a: 'Ten plagues',
-                    },
-                  ].map((item, index) => (
+                  {oldTestamentStories.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -290,48 +464,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'In which town was Jesus born?',
-                      a: 'Bethlehem',
-                    },
-                    {
-                      q: "Who were Jesus' earthly parents?",
-                      a: 'Mary and Joseph',
-                    },
-                    {
-                      q: 'What gifts did the wise men bring to baby Jesus?',
-                      a: 'Gold, frankincense, and myrrh',
-                    },
-                    {
-                      q: 'Who baptized Jesus in the Jordan River?',
-                      a: 'John the Baptist',
-                    },
-                    {
-                      q: 'How many disciples did Jesus choose?',
-                      a: 'Twelve disciples',
-                    },
-                    {
-                      q: 'What miracle did Jesus perform with five loaves of bread and two fish?',
-                      a: 'He fed 5,000 people',
-                    },
-                    {
-                      q: 'What did Jesus walk on to reach His disciples during a storm?',
-                      a: 'Water (He walked on water)',
-                    },
-                    {
-                      q: 'Who did Jesus raise from the dead after four days?',
-                      a: 'Lazarus',
-                    },
-                    {
-                      q: 'On which day of the week did Jesus rise from the dead?',
-                      a: 'Sunday (the first day of the week)',
-                    },
-                    {
-                      q: 'What happened to Jesus 40 days after His resurrection?',
-                      a: 'He ascended into heaven',
-                    },
-                  ].map((item, index) => (
+                  {newTestamentStories.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -339,7 +472,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 11}
+                            {index + oldTestamentStories.length + 1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -369,48 +502,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'Who built the ark and survived the great flood?',
-                      a: 'Noah',
-                    },
-                    {
-                      q: 'Who was swallowed by a big fish for three days?',
-                      a: 'Jonah',
-                    },
-                    {
-                      q: 'Who was the strongest man in the Bible?',
-                      a: 'Samson',
-                    },
-                    {
-                      q: 'Which woman became queen and saved the Jewish people?',
-                      a: 'Esther',
-                    },
-                    {
-                      q: 'Who was thrown into a den of lions but was protected by God?',
-                      a: 'Daniel',
-                    },
-                    {
-                      q: 'Which disciple betrayed Jesus for 30 pieces of silver?',
-                      a: 'Judas Iscariot',
-                    },
-                    {
-                      q: 'Which disciple denied knowing Jesus three times?',
-                      a: 'Peter',
-                    },
-                    {
-                      q: 'Who was the tax collector that Jesus called to be a disciple?',
-                      a: 'Matthew (also called Levi)',
-                    },
-                    {
-                      q: 'Who was known as "the beloved disciple"?',
-                      a: 'John',
-                    },
-                    {
-                      q: 'Which apostle was blinded on the road to Damascus?',
-                      a: 'Saul (who became Paul)',
-                    },
-                  ].map((item, index) => (
+                  {bibleCharacters.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -418,7 +510,10 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 21}
+                            {index +
+                              oldTestamentStories.length +
+                              newTestamentStories.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -487,48 +582,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'How many books are in the Bible?',
-                      a: 'In a Protestant Bible, 66 books (39 Old Testament, 27 New Testament)',
-                    },
-                    {
-                      q: 'What is the first book of the Bible?',
-                      a: 'Genesis',
-                    },
-                    {
-                      q: 'What is the last book of the Bible?',
-                      a: 'Revelation',
-                    },
-                    {
-                      q: "Which book tells the story of Jesus' birth?",
-                      a: "The story of Jesus' birth is told in two books of the Bible, the Gospels of Matthew and Luke",
-                    },
-                    {
-                      q: 'What are the first four books of the New Testament called?',
-                      a: 'The Gospels',
-                    },
-                    {
-                      q: 'In what language was most of the Old Testament originally written?',
-                      a: 'Hebrew (with some parts in Aramaic)',
-                    },
-                    {
-                      q: 'What city is called "The Holy City" in the Bible?',
-                      a: 'Jerusalem',
-                    },
-                    {
-                      q: 'What river was Jesus baptized in?',
-                      a: 'The Jordan River',
-                    },
-                    {
-                      q: 'What garden did Adam and Eve live in?',
-                      a: 'The Garden of Eden',
-                    },
-                    {
-                      q: 'What mountain did Moses receive the Ten Commandments on?',
-                      a: 'Mount Sinai',
-                    },
-                  ].map((item, index) => (
+                  {bibleBasics.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -536,7 +590,11 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 31}
+                            {index +
+                              oldTestamentStories.length +
+                              newTestamentStories.length +
+                              bibleCharacters.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -566,48 +624,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'What is the greatest commandment Jesus taught?',
-                      a: 'Love the Lord your God with all your heart, soul, and mind',
-                    },
-                    {
-                      q: 'What is the second greatest commandment?',
-                      a: 'Love your neighbor as yourself',
-                    },
-                    {
-                      q: 'How many commandments did God give Moses?',
-                      a: 'Ten Commandments',
-                    },
-                    {
-                      q: 'What prayer did Jesus teach His disciples?',
-                      a: "The Lord's Prayer (Our Father)",
-                    },
-                    {
-                      q: 'What are the fruits of the Spirit mentioned in Galatians?',
-                      a: 'Love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control',
-                    },
-                    {
-                      q: 'In the parable of the Good Samaritan, what did Jesus teach?',
-                      a: 'To love and help everyone, even strangers or enemies',
-                    },
-                    {
-                      q: 'What did the Prodigal Son do that teaches us about forgiveness?',
-                      a: 'He returned home after wasting his inheritance, and his father forgave him',
-                    },
-                    {
-                      q: 'What does the Bible say we should do when we pray?',
-                      a: 'Pray with faith and keep talking to God',
-                    },
-                    {
-                      q: 'What famous verse tells us that God loved the world so much?',
-                      a: 'John 3:16',
-                    },
-                    {
-                      q: 'What does the Bible say children should do to honor their parents?',
-                      a: 'Obey and respect them',
-                    },
-                  ].map((item, index) => (
+                  {bibleLessonsAndValues.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -615,7 +632,12 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 41}
+                            {index +
+                              oldTestamentStories.length +
+                              newTestamentStories.length +
+                              bibleCharacters.length +
+                              bibleBasics.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>

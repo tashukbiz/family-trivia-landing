@@ -6,7 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Sports Trivia for Kids: 50 Fun Questions (With Answers) | Family Trivia',
+  title:
+    'Sports Trivia for Kids: 50 Fun Questions (With Answers) | Family Trivia',
   description:
     'Looking for sports trivia for kids? Here are 50 fun sports trivia questions covering soccer, basketball, Olympics, and more. Perfect for young sports fans!',
   keywords: [
@@ -20,6 +21,221 @@ export const metadata: Metadata = {
 };
 
 export default function SportsTriviaForKidsPage() {
+  const soccerQuestions = [
+    {
+      q: 'What is the most popular sport in the world?',
+      a: 'Soccer (also called football)',
+    },
+    {
+      q: 'How many players are on a soccer team on the field at one time?',
+      a: '11 players',
+    },
+    {
+      q: 'What is it called when a player scores three goals in one game?',
+      a: 'A hat trick',
+    },
+    {
+      q: 'Which country has won the most FIFA World Cup titles?',
+      a: 'Brazil (with 5 World Cup wins)',
+    },
+    {
+      q: 'What is the name of the position that guards the goal?',
+      a: 'Goalkeeper (or goalie)',
+    },
+    {
+      q: "Which famous soccer player is from Argentina and has won multiple Ballon d'Or awards?",
+      a: 'Lionel Messi',
+    },
+    {
+      q: 'How long is a professional soccer match?',
+      a: '90 minutes (two 45-minute halves)',
+    },
+    {
+      q: 'What color card does a referee show for a serious foul?',
+      a: 'Red card',
+    },
+    {
+      q: 'Which country hosted the first FIFA World Cup in 1930?',
+      a: 'Uruguay',
+    },
+    {
+      q: 'What is the shape of a soccer ball?',
+      a: 'Spherical (a round ball with pentagon and hexagon patterns)',
+    },
+  ] as const;
+
+  const basketballQuestions = [
+    {
+      q: 'How many points is a basketball shot from beyond the arc worth?',
+      a: 'Three points',
+    },
+    {
+      q: 'Which NBA team is LeBron James famous for playing with early in his career?',
+      a: 'Cleveland Cavaliers',
+    },
+    {
+      q: 'How many players from each team are on the basketball court at once?',
+      a: '5 players',
+    },
+    {
+      q: 'What is the name of the circular hoop that players shoot the ball through?',
+      a: 'The basket (or rim)',
+    },
+    {
+      q: 'Which legendary basketball player wore the number 23 for the Chicago Bulls?',
+      a: 'Michael Jordan',
+    },
+    {
+      q: 'How many quarters are in a professional NBA game?',
+      a: 'Four quarters',
+    },
+    {
+      q: 'What violation occurs when a player takes too many steps without dribbling?',
+      a: 'Traveling',
+    },
+    {
+      q: 'How high is a regulation basketball hoop from the ground?',
+      a: '10 feet (or 3.05 meters)',
+    },
+    {
+      q: 'Which country invented basketball?',
+      a: 'United States (invented by James Naismith)',
+    },
+    {
+      q: 'What does NBA stand for?',
+      a: 'National Basketball Association',
+    },
+  ] as const;
+
+  const olympicsQuestions = [
+    {
+      q: 'How often are the Summer Olympic Games held?',
+      a: 'Every 4 years',
+    },
+    {
+      q: 'What are the five colors of the Olympic rings?',
+      a: 'Blue, yellow, black, green, and red',
+    },
+    {
+      q: 'Which athlete has won the most Olympic gold medals in history?',
+      a: 'Michael Phelps (swimmer from USA with 23 gold medals)',
+    },
+    {
+      q: 'In which sport would you perform a vault, floor routine, or balance beam?',
+      a: 'Gymnastics',
+    },
+    {
+      q: 'What is the fastest track event in the Olympics?',
+      a: 'The 100-meter sprint',
+    },
+    {
+      q: 'Which country traditionally enters first in the Olympic opening ceremony?',
+      a: 'Greece',
+    },
+    {
+      q: 'What type of race combines running, swimming, and cycling?',
+      a: 'Triathlon',
+    },
+    {
+      q: 'Which Jamaican sprinter is known as the fastest man in the world?',
+      a: 'Usain Bolt',
+    },
+    {
+      q: 'In the Winter Olympics, which sport involves sliding stones on ice toward a target?',
+      a: 'Curling',
+    },
+    {
+      q: 'What do athletes receive for first, second, and third place at the Olympics?',
+      a: 'Gold, silver, and bronze medals',
+    },
+  ] as const;
+
+  const otherSportsQuestions = [
+    {
+      q: 'How many bases are there on a baseball diamond?',
+      a: 'Four bases (first, second, third, and home plate)',
+    },
+    {
+      q: 'In American football, how many points is a touchdown worth?',
+      a: '6 points',
+    },
+    {
+      q: 'What sport does Serena Williams play?',
+      a: 'Tennis',
+    },
+    {
+      q: 'In baseball, what is it called when a batter hits the ball out of the park?',
+      a: 'A home run',
+    },
+    {
+      q: 'How many holes are played in a standard round of golf?',
+      a: '18 holes',
+    },
+    {
+      q: 'What is the championship game of the NFL called?',
+      a: 'The Super Bowl',
+    },
+    {
+      q: 'In tennis, what is the score when both players have 40 points?',
+      a: 'Deuce',
+    },
+    {
+      q: 'Which swimmer has won the most Olympic medals of all time?',
+      a: 'Michael Phelps',
+    },
+    {
+      q: 'In ice hockey, what is the disc that players hit called?',
+      a: 'A puck',
+    },
+    {
+      q: 'What sport is played at Wimbledon?',
+      a: 'Tennis',
+    },
+  ] as const;
+
+  const funSportsFactsQuestions = [
+    {
+      q: 'Which sport is known as "the beautiful game"?',
+      a: 'Soccer (or football)',
+    },
+    {
+      q: 'How many innings are in a standard baseball game?',
+      a: '9 innings',
+    },
+    {
+      q: 'What is the only sport to have been played on the moon?',
+      a: 'Golf (astronaut Alan Shepard hit golf balls on the moon)',
+    },
+    {
+      q: 'In which sport would you do a slam dunk?',
+      a: 'Basketball',
+    },
+    {
+      q: 'What color belt is the highest rank in karate?',
+      a: 'Black belt',
+    },
+    {
+      q: 'How many players are on a volleyball team on the court?',
+      a: '6 players',
+    },
+    {
+      q: 'Which boxer was known as "The Greatest" and "The People\'s Champion"?',
+      a: 'Muhammad Ali',
+    },
+    {
+      q: 'In bowling, what is it called when you knock down all 10 pins with one ball?',
+      a: 'A strike',
+    },
+    {
+      q: 'What sport uses terms like "birdie," "eagle," and "par"?',
+      a: 'Golf',
+    },
+    {
+      q: 'Which sport is Tiger Woods famous for playing?',
+      a: 'Golf',
+    },
+  ] as const;
+
   return (
     <>
       <div className='min-h-screen bg-white dark:bg-slate-900'>
@@ -96,9 +312,9 @@ export default function SportsTriviaForKidsPage() {
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
                   Whether you're planning a sports-themed party, looking for car
-                  ride entertainment, or just want to make family game night more
-                  exciting, these sports trivia questions for kids are perfect
-                  for young athletes and sports fans of all levels!
+                  ride entertainment, or just want to make family game night
+                  more exciting, these sports trivia questions for kids are
+                  perfect for young athletes and sports fans of all levels!
                 </p>
               </section>
 
@@ -109,8 +325,9 @@ export default function SportsTriviaForKidsPage() {
                 </h2>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  Sports trivia offers unique benefits that go beyond just having
-                  fun. Here's why sports trivia questions are perfect for kids:
+                  Sports trivia offers unique benefits that go beyond just
+                  having fun. Here's why sports trivia questions are perfect for
+                  kids:
                 </p>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-8'>
@@ -120,10 +337,10 @@ export default function SportsTriviaForKidsPage() {
                       Activity
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Learning about sports heroes and amazing athletic feats can
-                      inspire kids to get active themselves. Sports trivia can
-                      spark interest in trying new sports and staying physically
-                      fit.
+                      Learning about sports heroes and amazing athletic feats
+                      can inspire kids to get active themselves. Sports trivia
+                      can spark interest in trying new sports and staying
+                      physically fit.
                     </p>
                   </div>
 
@@ -176,11 +393,11 @@ export default function SportsTriviaForKidsPage() {
                     levels!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    With AI-generated questions tailored to each player's age and
-                    interests, your sports-loving kids can enjoy endless trivia
-                    about their favorite teams, athletes, and sports. Plus, the
-                    whole family can play together with personalized difficulty
-                    levels for everyone!
+                    With AI-generated questions tailored to each player's age
+                    and interests, your sports-loving kids can enjoy endless
+                    trivia about their favorite teams, athletes, and sports.
+                    Plus, the whole family can play together with personalized
+                    difficulty levels for everyone!
                   </p>
                 </div>
               </section>
@@ -192,9 +409,10 @@ export default function SportsTriviaForKidsPage() {
                 </h2>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
-                  Ready to put your sports knowledge to the test? We've organized
-                  these 50 questions into five exciting categories covering
-                  different sports. Click "Show Answer" to reveal each answer!
+                  Ready to put your sports knowledge to the test? We've
+                  organized these 50 questions into five exciting categories
+                  covering different sports. Click "Show Answer" to reveal each
+                  answer!
                 </p>
 
                 {/* Section 1: Soccer/Football */}
@@ -203,48 +421,7 @@ export default function SportsTriviaForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-8'>
-                  {[
-                    {
-                      q: 'What is the most popular sport in the world?',
-                      a: 'Soccer (also called football)',
-                    },
-                    {
-                      q: 'How many players are on a soccer team on the field at one time?',
-                      a: '11 players',
-                    },
-                    {
-                      q: 'What is it called when a player scores three goals in one game?',
-                      a: 'A hat trick',
-                    },
-                    {
-                      q: 'Which country has won the most FIFA World Cup titles?',
-                      a: 'Brazil (with 5 World Cup wins)',
-                    },
-                    {
-                      q: 'What is the name of the position that guards the goal?',
-                      a: 'Goalkeeper (or goalie)',
-                    },
-                    {
-                      q: 'Which famous soccer player is from Argentina and has won multiple Ballon d\'Or awards?',
-                      a: 'Lionel Messi',
-                    },
-                    {
-                      q: 'How long is a professional soccer match?',
-                      a: '90 minutes (two 45-minute halves)',
-                    },
-                    {
-                      q: 'What color card does a referee show for a serious foul?',
-                      a: 'Red card',
-                    },
-                    {
-                      q: 'Which country hosted the first FIFA World Cup in 1930?',
-                      a: 'Uruguay',
-                    },
-                    {
-                      q: 'What is the shape of a soccer ball?',
-                      a: 'Spherical (a round ball with pentagon and hexagon patterns)',
-                    },
-                  ].map((item, index) => (
+                  {soccerQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -282,48 +459,7 @@ export default function SportsTriviaForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-8'>
-                  {[
-                    {
-                      q: 'How many points is a basketball shot from beyond the arc worth?',
-                      a: 'Three points',
-                    },
-                    {
-                      q: 'Which NBA team is LeBron James famous for playing with early in his career?',
-                      a: 'Cleveland Cavaliers',
-                    },
-                    {
-                      q: 'How many players from each team are on the basketball court at once?',
-                      a: '5 players',
-                    },
-                    {
-                      q: 'What is the name of the circular hoop that players shoot the ball through?',
-                      a: 'The basket (or rim)',
-                    },
-                    {
-                      q: 'Which legendary basketball player wore the number 23 for the Chicago Bulls?',
-                      a: 'Michael Jordan',
-                    },
-                    {
-                      q: 'How many quarters are in a professional NBA game?',
-                      a: 'Four quarters',
-                    },
-                    {
-                      q: 'What violation occurs when a player takes too many steps without dribbling?',
-                      a: 'Traveling',
-                    },
-                    {
-                      q: 'How high is a regulation basketball hoop from the ground?',
-                      a: '10 feet (or 3.05 meters)',
-                    },
-                    {
-                      q: 'Which country invented basketball?',
-                      a: 'United States (invented by James Naismith)',
-                    },
-                    {
-                      q: 'What does NBA stand for?',
-                      a: 'National Basketball Association',
-                    },
-                  ].map((item, index) => (
+                  {basketballQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -331,7 +467,7 @@ export default function SportsTriviaForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 11}
+                            {index + soccerQuestions.length + 1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -361,48 +497,7 @@ export default function SportsTriviaForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-8'>
-                  {[
-                    {
-                      q: 'How often are the Summer Olympic Games held?',
-                      a: 'Every 4 years',
-                    },
-                    {
-                      q: 'What are the five colors of the Olympic rings?',
-                      a: 'Blue, yellow, black, green, and red',
-                    },
-                    {
-                      q: 'Which athlete has won the most Olympic gold medals in history?',
-                      a: 'Michael Phelps (swimmer from USA with 23 gold medals)',
-                    },
-                    {
-                      q: 'In which sport would you perform a vault, floor routine, or balance beam?',
-                      a: 'Gymnastics',
-                    },
-                    {
-                      q: 'What is the fastest track event in the Olympics?',
-                      a: 'The 100-meter sprint',
-                    },
-                    {
-                      q: 'Which country traditionally enters first in the Olympic opening ceremony?',
-                      a: 'Greece',
-                    },
-                    {
-                      q: 'What type of race combines running, swimming, and cycling?',
-                      a: 'Triathlon',
-                    },
-                    {
-                      q: 'Which Jamaican sprinter is known as the fastest man in the world?',
-                      a: 'Usain Bolt',
-                    },
-                    {
-                      q: 'In the Winter Olympics, which sport involves sliding stones on ice toward a target?',
-                      a: 'Curling',
-                    },
-                    {
-                      q: 'What do athletes receive for first, second, and third place at the Olympics?',
-                      a: 'Gold, silver, and bronze medals',
-                    },
-                  ].map((item, index) => (
+                  {olympicsQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -410,7 +505,10 @@ export default function SportsTriviaForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 21}
+                            {index +
+                              soccerQuestions.length +
+                              basketballQuestions.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -444,15 +542,15 @@ export default function SportsTriviaForKidsPage() {
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                     These 50 questions are just the beginning! With the{' '}
-                    <strong>Family Trivia app</strong>, you get unlimited
-                    sports trivia covering hundreds of athletes, sports, and
-                    amazing moments from sports history.
+                    <strong>Family Trivia app</strong>, you get unlimited sports
+                    trivia covering hundreds of athletes, sports, and amazing
+                    moments from sports history.
                   </p>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
-                    Whether your kids love soccer, basketball, gymnastics, or any
-                    other sport, they'll find endless questions perfectly matched
-                    to their age and interest level. Plus, compete with the whole
-                    family in multiplayer mode!
+                    Whether your kids love soccer, basketball, gymnastics, or
+                    any other sport, they'll find endless questions perfectly
+                    matched to their age and interest level. Plus, compete with
+                    the whole family in multiplayer mode!
                   </p>
 
                   <div className='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'>
@@ -477,48 +575,7 @@ export default function SportsTriviaForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-8'>
-                  {[
-                    {
-                      q: 'How many bases are there on a baseball diamond?',
-                      a: 'Four bases (first, second, third, and home plate)',
-                    },
-                    {
-                      q: 'In American football, how many points is a touchdown worth?',
-                      a: '6 points',
-                    },
-                    {
-                      q: 'What sport does Serena Williams play?',
-                      a: 'Tennis',
-                    },
-                    {
-                      q: 'In baseball, what is it called when a batter hits the ball out of the park?',
-                      a: 'A home run',
-                    },
-                    {
-                      q: 'How many holes are played in a standard round of golf?',
-                      a: '18 holes',
-                    },
-                    {
-                      q: 'What is the championship game of the NFL called?',
-                      a: 'The Super Bowl',
-                    },
-                    {
-                      q: 'In tennis, what is the score when both players have 40 points?',
-                      a: 'Deuce',
-                    },
-                    {
-                      q: 'Which swimmer has won the most Olympic medals of all time?',
-                      a: 'Michael Phelps',
-                    },
-                    {
-                      q: 'In ice hockey, what is the disc that players hit called?',
-                      a: 'A puck',
-                    },
-                    {
-                      q: 'What sport is played at Wimbledon?',
-                      a: 'Tennis',
-                    },
-                  ].map((item, index) => (
+                  {otherSportsQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -526,7 +583,11 @@ export default function SportsTriviaForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 31}
+                            {index +
+                              soccerQuestions.length +
+                              basketballQuestions.length +
+                              olympicsQuestions.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -556,48 +617,7 @@ export default function SportsTriviaForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-8'>
-                  {[
-                    {
-                      q: 'Which sport is known as "the beautiful game"?',
-                      a: 'Soccer (or football)',
-                    },
-                    {
-                      q: 'How many innings are in a standard baseball game?',
-                      a: '9 innings',
-                    },
-                    {
-                      q: 'What is the only sport to have been played on the moon?',
-                      a: 'Golf (astronaut Alan Shepard hit golf balls on the moon)',
-                    },
-                    {
-                      q: 'In which sport would you do a slam dunk?',
-                      a: 'Basketball',
-                    },
-                    {
-                      q: 'What color belt is the highest rank in karate?',
-                      a: 'Black belt',
-                    },
-                    {
-                      q: 'How many players are on a volleyball team on the court?',
-                      a: '6 players',
-                    },
-                    {
-                      q: 'Which boxer was known as "The Greatest" and "The People\'s Champion"?',
-                      a: 'Muhammad Ali',
-                    },
-                    {
-                      q: 'In bowling, what is it called when you knock down all 10 pins with one ball?',
-                      a: 'A strike',
-                    },
-                    {
-                      q: 'What sport uses terms like "birdie," "eagle," and "par"?',
-                      a: 'Golf',
-                    },
-                    {
-                      q: 'Which sport is Tiger Woods famous for playing?',
-                      a: 'Golf',
-                    },
-                  ].map((item, index) => (
+                  {funSportsFactsQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -605,7 +625,12 @@ export default function SportsTriviaForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 41}
+                            {index +
+                              soccerQuestions.length +
+                              basketballQuestions.length +
+                              olympicsQuestions.length +
+                              otherSportsQuestions.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -642,12 +667,12 @@ export default function SportsTriviaForKidsPage() {
                       What are easy sports trivia questions for kids?
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Easy sports trivia questions for kids focus on basic rules,
-                      famous athletes, and well-known sports. Examples include
-                      asking how many players are on a soccer team, what color
-                      card means a serious foul, or naming famous athletes like
-                      Lionel Messi or LeBron James. Start with questions about
-                      sports your child is familiar with, then gradually
+                      Easy sports trivia questions for kids focus on basic
+                      rules, famous athletes, and well-known sports. Examples
+                      include asking how many players are on a soccer team, what
+                      color card means a serious foul, or naming famous athletes
+                      like Lionel Messi or LeBron James. Start with questions
+                      about sports your child is familiar with, then gradually
                       introduce new sports to broaden their knowledge.
                     </p>
                   </div>
@@ -662,9 +687,9 @@ export default function SportsTriviaForKidsPage() {
                       basketball, baseball, tennis, swimming, and track and
                       field. The Olympics are also great for introducing kids to
                       lesser-known sports like gymnastics, skiing, and curling.
-                      Exposure to different sports helps children find activities
-                      they might enjoy and appreciate athletic achievement across
-                      various disciplines.
+                      Exposure to different sports helps children find
+                      activities they might enjoy and appreciate athletic
+                      achievement across various disciplines.
                     </p>
                   </div>
 
@@ -675,10 +700,11 @@ export default function SportsTriviaForKidsPage() {
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
                       Focus on interesting facts and stories rather than complex
-                      rules or statistics. Share fun trivia like "golf was played
-                      on the moon" or talk about inspiring athletes who overcame
-                      challenges. Use visual aids, videos of amazing sports
-                      moments, and keep questions light and entertaining. The{' '}
+                      rules or statistics. Share fun trivia like "golf was
+                      played on the moon" or talk about inspiring athletes who
+                      overcame challenges. Use visual aids, videos of amazing
+                      sports moments, and keep questions light and entertaining.
+                      The{' '}
                       <Link
                         href='/blog/trivia-questions-for-kids'
                         className='text-primary hover:underline'
@@ -695,14 +721,15 @@ export default function SportsTriviaForKidsPage() {
                       What are good sports trivia topics for elementary kids?
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Great topics include basic rules of popular sports (soccer,
-                      basketball, baseball), famous athletes kids recognize
-                      (Michael Jordan, Serena Williams, Usain Bolt), Olympic
-                      sports and medals, fun sports records and achievements, and
-                      interesting facts about different sports. Avoid overly
-                      technical statistics or niche professional sports details.
-                      Focus on questions that teach something new while being
-                      accessible to kids at different knowledge levels.
+                      Great topics include basic rules of popular sports
+                      (soccer, basketball, baseball), famous athletes kids
+                      recognize (Michael Jordan, Serena Williams, Usain Bolt),
+                      Olympic sports and medals, fun sports records and
+                      achievements, and interesting facts about different
+                      sports. Avoid overly technical statistics or niche
+                      professional sports details. Focus on questions that teach
+                      something new while being accessible to kids at different
+                      knowledge levels.
                     </p>
                   </div>
 
@@ -739,11 +766,11 @@ export default function SportsTriviaForKidsPage() {
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                   Sports trivia for kids is more than just answering questions –
                   it's about celebrating athletic achievement, learning about
-                  different cultures through international sports, and maybe even
-                  discovering a new favorite sport to play or watch. Whether your
-                  child is already a sports enthusiast or just beginning to
-                  explore the world of athletics, these 50 questions provide a
-                  fun starting point.
+                  different cultures through international sports, and maybe
+                  even discovering a new favorite sport to play or watch.
+                  Whether your child is already a sports enthusiast or just
+                  beginning to explore the world of athletics, these 50
+                  questions provide a fun starting point.
                 </p>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
@@ -766,8 +793,8 @@ export default function SportsTriviaForKidsPage() {
                   for more topics, or download the Family Trivia app for
                   unlimited sports trivia covering every major sport, athlete,
                   and amazing moment in sports history. From soccer to swimming,
-                  basketball to baseball, we've got questions that will challenge
-                  and delight sports fans of all ages!
+                  basketball to baseball, we've got questions that will
+                  challenge and delight sports fans of all ages!
                 </p>
 
                 <BlogCtaSection />

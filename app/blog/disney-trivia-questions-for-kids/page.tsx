@@ -103,6 +103,221 @@ export default function DisneyTriviaQuestionsForKidsPage() {
     ],
   };
 
+  const disneyPrincessQuestions = [
+    {
+      q: 'What does Rapunzel use as a weapon in Tangled?',
+      a: 'A frying pan',
+    },
+    {
+      q: "What color is Belle's iconic ball gown in Beauty and the Beast?",
+      a: 'Yellow (gold)',
+    },
+    {
+      q: "What is the name of Ariel's fish friend in The Little Mermaid?",
+      a: 'Flounder',
+    },
+    {
+      q: 'Which Disney princess has a pet tiger named Rajah?',
+      a: 'Jasmine',
+    },
+    {
+      q: 'What does Elsa create when she sings "Let It Go"?',
+      a: 'An ice palace',
+    },
+    {
+      q: "What is the name of Moana's pet rooster?",
+      a: 'Heihei',
+    },
+    {
+      q: 'Which princess loses her glass slipper at midnight?',
+      a: 'Cinderella',
+    },
+    {
+      q: "What is Mulan's dragon companion named?",
+      a: 'Mushu',
+    },
+    {
+      q: "What color is Tiana's dress when she becomes a princess?",
+      a: 'Green',
+    },
+    {
+      q: "Which Disney princess is awakened by true love's kiss after eating a poisoned apple?",
+      a: 'Snow White',
+    },
+  ] as const;
+
+  const pixarQuestions = [
+    {
+      q: 'What is the name of the cowboy in Toy Story?',
+      a: 'Woody',
+    },
+    {
+      q: 'What type of fish is Nemo in Finding Nemo?',
+      a: 'A clownfish',
+    },
+    {
+      q: 'What is the name of the superhero family in The Incredibles?',
+      a: 'The Parr family',
+    },
+    {
+      q: 'What is the name of the rat who loves to cook in Ratatouille?',
+      a: 'Remy',
+    },
+    {
+      q: 'In Monsters, Inc., what powers the city of Monstropolis?',
+      a: "Children's screams (later, their laughter)",
+    },
+    {
+      q: 'What is the name of the old man in Up who ties balloons to his house?',
+      a: 'Carl Fredricksen',
+    },
+    {
+      q: 'In Inside Out, what color is the character Joy?',
+      a: 'Yellow',
+    },
+    {
+      q: "What is Lightning McQueen's racing number in Cars?",
+      a: '95',
+    },
+    {
+      q: 'What instrument does Miguel love to play in Coco?',
+      a: 'Guitar',
+    },
+    {
+      q: 'What does WALL-E collect and organize on Earth?',
+      a: 'Trash (garbage)',
+    },
+  ] as const;
+
+  const disneyVillainsQuestions = [
+    {
+      q: 'What is the name of the villain in The Little Mermaid?',
+      a: 'Ursula',
+    },
+    {
+      q: 'Who is the villain in Sleeping Beauty?',
+      a: 'Maleficent',
+    },
+    {
+      q: "What is the name of Simba's evil uncle in The Lion King?",
+      a: 'Scar',
+    },
+    {
+      q: 'Who tries to steal the puppies in 101 Dalmatians?',
+      a: 'Cruella de Vil',
+    },
+    {
+      q: 'What is the name of the evil queen in Snow White?',
+      a: 'The Evil Queen (or Queen Grimhilde)',
+    },
+    {
+      q: 'Who is the villain in Aladdin?',
+      a: 'Jafar',
+    },
+    {
+      q: 'What is the name of the bad guy in Toy Story 3 who smells like strawberries?',
+      a: "Lots-o'-Huggin' Bear (Lotso)",
+    },
+    {
+      q: "Who is the sea witch's favorite phrase in The Little Mermaid?",
+      a: '"Poor unfortunate souls"',
+    },
+    {
+      q: 'What does Gaston want from Belle in Beauty and the Beast?',
+      a: 'To marry him',
+    },
+    {
+      q: 'Who kidnaps Rapunzel as a baby in Tangled?',
+      a: 'Mother Gothel',
+    },
+  ] as const;
+
+  const classicDisneyQuestions = [
+    {
+      q: "What is the name of Mickey Mouse's dog?",
+      a: 'Pluto',
+    },
+    {
+      q: 'What does Hakuna Matata mean in The Lion King?',
+      a: 'No worries',
+    },
+    {
+      q: "What are the names of Cinderella's stepsisters?",
+      a: 'Anastasia and Drizella',
+    },
+    {
+      q: "What is the name of Aladdin's monkey?",
+      a: 'Abu',
+    },
+    {
+      q: 'In Peter Pan, what is Captain Hook afraid of?',
+      a: 'A crocodile (the tick-tock crocodile)',
+    },
+    {
+      q: "What does the Fairy Godmother turn into Cinderella's carriage?",
+      a: 'A pumpkin',
+    },
+    {
+      q: 'How many dwarfs does Snow White live with?',
+      a: 'Seven',
+    },
+    {
+      q: "What is the name of Simba's father in The Lion King?",
+      a: 'Mufasa',
+    },
+    {
+      q: 'In The Jungle Book, what kind of animal is Baloo?',
+      a: 'A bear',
+    },
+    {
+      q: 'What are the three wishes Genie grants Aladdin?',
+      a: 'To be a prince, to be saved from drowning, and to free Genie',
+    },
+  ] as const;
+
+  const modernDisneyQuestions = [
+    {
+      q: "What is the name of Anna and Elsa's kingdom in Frozen?",
+      a: 'Arendelle',
+    },
+    {
+      q: 'What magical gift does Mirabel NOT receive in Encanto?',
+      a: "She doesn't receive a gift",
+    },
+    {
+      q: "What does Moana's grandmother turn into after she passes away?",
+      a: 'A manta ray',
+    },
+    {
+      q: "In Zootopia, what is Judy Hopps' job?",
+      a: 'Police officer',
+    },
+    {
+      q: 'What is the name of the summer snowman in Frozen?',
+      a: 'Olaf',
+    },
+    {
+      q: 'What does Bruno see in Encanto?',
+      a: 'The future (visions)',
+    },
+    {
+      q: 'What is the name of the giant robot in Big Hero 6?',
+      a: 'Baymax',
+    },
+    {
+      q: 'In Frozen 2, what are the spirits Elsa encounters?',
+      a: 'Earth, Water, Fire, and Air (Wind)',
+    },
+    {
+      q: 'What is the name of the bunny in Zootopia who becomes a police officer?',
+      a: 'Judy Hopps',
+    },
+    {
+      q: 'What is the name of the chameleon in Tangled?',
+      a: 'Pascal',
+    },
+  ] as const;
+
   return (
     <>
       <script
@@ -296,48 +511,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'What does Rapunzel use as a weapon in Tangled?',
-                      a: 'A frying pan',
-                    },
-                    {
-                      q: "What color is Belle's iconic ball gown in Beauty and the Beast?",
-                      a: 'Yellow (gold)',
-                    },
-                    {
-                      q: "What is the name of Ariel's fish friend in The Little Mermaid?",
-                      a: 'Flounder',
-                    },
-                    {
-                      q: 'Which Disney princess has a pet tiger named Rajah?',
-                      a: 'Jasmine',
-                    },
-                    {
-                      q: 'What does Elsa create when she sings "Let It Go"?',
-                      a: 'An ice palace',
-                    },
-                    {
-                      q: "What is the name of Moana's pet rooster?",
-                      a: 'Heihei',
-                    },
-                    {
-                      q: 'Which princess loses her glass slipper at midnight?',
-                      a: 'Cinderella',
-                    },
-                    {
-                      q: "What is Mulan's dragon companion named?",
-                      a: 'Mushu',
-                    },
-                    {
-                      q: "What color is Tiana's dress when she becomes a princess?",
-                      a: 'Green',
-                    },
-                    {
-                      q: "Which Disney princess is awakened by true love's kiss after eating a poisoned apple?",
-                      a: 'Snow White',
-                    },
-                  ].map((item, index) => (
+                  {disneyPrincessQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -375,48 +549,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'What is the name of the cowboy in Toy Story?',
-                      a: 'Woody',
-                    },
-                    {
-                      q: 'What type of fish is Nemo in Finding Nemo?',
-                      a: 'A clownfish',
-                    },
-                    {
-                      q: 'What is the name of the superhero family in The Incredibles?',
-                      a: 'The Parr family',
-                    },
-                    {
-                      q: 'What is the name of the rat who loves to cook in Ratatouille?',
-                      a: 'Remy',
-                    },
-                    {
-                      q: 'In Monsters, Inc., what powers the city of Monstropolis?',
-                      a: "Children's screams (later, their laughter)",
-                    },
-                    {
-                      q: 'What is the name of the old man in Up who ties balloons to his house?',
-                      a: 'Carl Fredricksen',
-                    },
-                    {
-                      q: 'In Inside Out, what color is the character Joy?',
-                      a: 'Yellow',
-                    },
-                    {
-                      q: "What is Lightning McQueen's racing number in Cars?",
-                      a: '95',
-                    },
-                    {
-                      q: 'What instrument does Miguel love to play in Coco?',
-                      a: 'Guitar',
-                    },
-                    {
-                      q: 'What does WALL-E collect and organize on Earth?',
-                      a: 'Trash (garbage)',
-                    },
-                  ].map((item, index) => (
+                  {pixarQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -424,7 +557,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 11}
+                            {index + disneyPrincessQuestions.length + 1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -454,48 +587,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: 'What is the name of the villain in The Little Mermaid?',
-                      a: 'Ursula',
-                    },
-                    {
-                      q: 'Who is the villain in Sleeping Beauty?',
-                      a: 'Maleficent',
-                    },
-                    {
-                      q: "What is the name of Simba's evil uncle in The Lion King?",
-                      a: 'Scar',
-                    },
-                    {
-                      q: 'Who tries to steal the puppies in 101 Dalmatians?',
-                      a: 'Cruella de Vil',
-                    },
-                    {
-                      q: 'What is the name of the evil queen in Snow White?',
-                      a: 'The Evil Queen (or Queen Grimhilde)',
-                    },
-                    {
-                      q: 'Who is the villain in Aladdin?',
-                      a: 'Jafar',
-                    },
-                    {
-                      q: 'What is the name of the bad guy in Toy Story 3 who smells like strawberries?',
-                      a: "Lots-o'-Huggin' Bear (Lotso)",
-                    },
-                    {
-                      q: "Who is the sea witch's favorite phrase in The Little Mermaid?",
-                      a: '"Poor unfortunate souls"',
-                    },
-                    {
-                      q: 'What does Gaston want from Belle in Beauty and the Beast?',
-                      a: 'To marry him',
-                    },
-                    {
-                      q: 'Who kidnaps Rapunzel as a baby in Tangled?',
-                      a: 'Mother Gothel',
-                    },
-                  ].map((item, index) => (
+                  {disneyVillainsQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -503,7 +595,10 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 21}
+                            {index +
+                              disneyPrincessQuestions.length +
+                              pixarQuestions.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -569,48 +664,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: "What is the name of Mickey Mouse's dog?",
-                      a: 'Pluto',
-                    },
-                    {
-                      q: 'What does Hakuna Matata mean in The Lion King?',
-                      a: 'No worries',
-                    },
-                    {
-                      q: "What are the names of Cinderella's stepsisters?",
-                      a: 'Anastasia and Drizella',
-                    },
-                    {
-                      q: "What is the name of Aladdin's monkey?",
-                      a: 'Abu',
-                    },
-                    {
-                      q: 'In Peter Pan, what is Captain Hook afraid of?',
-                      a: 'A crocodile (the tick-tock crocodile)',
-                    },
-                    {
-                      q: "What does the Fairy Godmother turn into Cinderella's carriage?",
-                      a: 'A pumpkin',
-                    },
-                    {
-                      q: 'How many dwarfs does Snow White live with?',
-                      a: 'Seven',
-                    },
-                    {
-                      q: "What is the name of Simba's father in The Lion King?",
-                      a: 'Mufasa',
-                    },
-                    {
-                      q: 'In The Jungle Book, what kind of animal is Baloo?',
-                      a: 'A bear',
-                    },
-                    {
-                      q: 'What are the three wishes Genie grants Aladdin?',
-                      a: 'To be a prince, to be saved from drowning, and to free Genie',
-                    },
-                  ].map((item, index) => (
+                  {classicDisneyQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -618,7 +672,11 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 31}
+                            {index +
+                              disneyPrincessQuestions.length +
+                              pixarQuestions.length +
+                              disneyVillainsQuestions.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
@@ -648,48 +706,7 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                 </h3>
 
                 <div className='space-y-6 mb-10'>
-                  {[
-                    {
-                      q: "What is the name of Anna and Elsa's kingdom in Frozen?",
-                      a: 'Arendelle',
-                    },
-                    {
-                      q: 'What magical gift does Mirabel NOT receive in Encanto?',
-                      a: "She doesn't receive a gift",
-                    },
-                    {
-                      q: "What does Moana's grandmother turn into after she passes away?",
-                      a: 'A manta ray',
-                    },
-                    {
-                      q: "In Zootopia, what is Judy Hopps' job?",
-                      a: 'Police officer',
-                    },
-                    {
-                      q: 'What is the name of the summer snowman in Frozen?',
-                      a: 'Olaf',
-                    },
-                    {
-                      q: 'What does Bruno see in Encanto?',
-                      a: 'The future (visions)',
-                    },
-                    {
-                      q: 'What is the name of the giant robot in Big Hero 6?',
-                      a: 'Baymax',
-                    },
-                    {
-                      q: 'In Frozen 2, what are the spirits Elsa encounters?',
-                      a: 'Earth, Water, Fire, and Air (Wind)',
-                    },
-                    {
-                      q: 'What is the name of the bunny in Zootopia who becomes a police officer?',
-                      a: 'Judy Hopps',
-                    },
-                    {
-                      q: 'What is the name of the chameleon in Tangled?',
-                      a: 'Pascal',
-                    },
-                  ].map((item, index) => (
+                  {modernDisneyQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -697,7 +714,12 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                       <div className='flex gap-4'>
                         <div className='flex-shrink-0'>
                           <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                            {index + 41}
+                            {index +
+                              disneyPrincessQuestions.length +
+                              pixarQuestions.length +
+                              disneyVillainsQuestions.length +
+                              classicDisneyQuestions.length +
+                              1}
                           </span>
                         </div>
                         <div className='flex-1'>
