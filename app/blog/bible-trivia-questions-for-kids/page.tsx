@@ -72,8 +72,8 @@ export default function BibleTriviaQuestionsForKidsPage() {
                   for Home or Sunday School
                 </h1>
                 <p className='text-gray-600 dark:text-gray-400 text-lg'>
-                  Discover 50 engaging Bible trivia questions perfect for
-                  Sunday school, homeschool, and family devotions
+                  Discover 50 engaging Bible trivia questions perfect for Sunday
+                  school, homeschool, and family devotions
                 </p>
               </header>
 
@@ -92,8 +92,8 @@ export default function BibleTriviaQuestionsForKidsPage() {
                   scripture, or a family wanting to make devotion time more
                   interactive, these Bible trivia questions are perfect for kids
                   of all ages. From well-known stories about Noah and Moses to
-                  Jesus' miracles and parables, we've covered the most
-                  important Bible stories children should know.
+                  Jesus' miracles and parables, we've covered the most important
+                  Bible stories children should know.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
                   In this article, we've compiled 50 Bible trivia questions with
@@ -225,8 +225,8 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       a: 'An ark',
                     },
                     {
-                      q: 'How many of each animal did Noah bring on the ark?',
-                      a: 'Two of each kind (a male and female)',
+                      q: 'How many of each kind of animal did Noah take on the ark (at minimum)?',
+                      a: 'At least two of each kind (a male and a female)',
                     },
                     {
                       q: 'What sign did God give to show He would never flood the earth again?',
@@ -296,11 +296,11 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       a: 'Bethlehem',
                     },
                     {
-                      q: 'Who were Jesus\' earthly parents?',
+                      q: "Who were Jesus' earthly parents?",
                       a: 'Mary and Joseph',
                     },
                     {
-                      q: 'What did the three wise men bring to baby Jesus?',
+                      q: 'What gifts did the wise men bring to baby Jesus?',
                       a: 'Gold, frankincense, and myrrh',
                     },
                     {
@@ -451,7 +451,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     📖 Love Bible Trivia? Get Unlimited Questions!
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                    These 30 questions are just the beginning! With our{' '}
+                    These 50 questions are just the beginning! With our{' '}
                     <strong>Family Trivia app</strong>, you'll have access to
                     unlimited Bible trivia questions covering stories from
                     Genesis to Revelation – plus hundreds of other educational
@@ -490,7 +490,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                   {[
                     {
                       q: 'How many books are in the Bible?',
-                      a: '66 books (39 Old Testament, 27 New Testament)',
+                      a: 'In a Protestant Bible, 66 books (39 Old Testament, 27 New Testament)',
                     },
                     {
                       q: 'What is the first book of the Bible?',
@@ -501,8 +501,8 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       a: 'Revelation',
                     },
                     {
-                      q: 'Which book tells the story of Jesus\' birth?',
-                      a: 'The Gospels (Matthew, Mark, Luke, and John)',
+                      q: "Which book tells the story of Jesus' birth?",
+                      a: "The story of Jesus' birth is told in two books of the Bible, the Gospels of Matthew and Luke",
                     },
                     {
                       q: 'What are the first four books of the New Testament called?',
@@ -510,7 +510,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'In what language was most of the Old Testament originally written?',
-                      a: 'Hebrew',
+                      a: 'Hebrew (with some parts in Aramaic)',
                     },
                     {
                       q: 'What city is called "The Holy City" in the Bible?',
@@ -581,7 +581,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'What prayer did Jesus teach His disciples?',
-                      a: 'The Lord\'s Prayer (Our Father)',
+                      a: "The Lord's Prayer (Our Father)",
                     },
                     {
                       q: 'What are the fruits of the Spirit mentioned in Galatians?',
@@ -597,7 +597,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     },
                     {
                       q: 'What does the Bible say we should do when we pray?',
-                      a: 'Pray with faith, in Jesus\' name, and according to God\'s will',
+                      a: 'Pray with faith and keep talking to God',
                     },
                     {
                       q: 'What famous verse tells us that God loved the world so much?',
@@ -714,13 +714,13 @@ export default function BibleTriviaQuestionsForKidsPage() {
                       What age is appropriate for Bible trivia?
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Bible trivia can be adapted for all ages! Preschoolers (3-5)
-                      can handle very simple questions about basic Bible stories.
-                      Elementary kids (6-10) can answer more detailed questions
-                      about characters and events. Tweens and teens can tackle
-                      questions about Bible books, deeper theology, and
-                      scripture verses. The key is adjusting the difficulty to
-                      match the child's knowledge and reading level.
+                      Bible trivia can be adapted for all ages! Preschoolers
+                      (3-5) can handle very simple questions about basic Bible
+                      stories. Elementary kids (6-10) can answer more detailed
+                      questions about characters and events. Tweens and teens
+                      can tackle questions about Bible books, deeper theology,
+                      and scripture verses. The key is adjusting the difficulty
+                      to match the child's knowledge and reading level.
                     </p>
                   </div>
                 </div>
@@ -742,8 +742,8 @@ export default function BibleTriviaQuestionsForKidsPage() {
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                   These questions cover the essential stories every child should
-                  know, from Creation to the Resurrection, from Noah to Paul.
-                  As children answer these questions, they're not just learning
+                  know, from Creation to the Resurrection, from Noah to Paul. As
+                  children answer these questions, they're not just learning
                   facts – they're discovering the amazing story of God's love
                   for His people throughout history.
                 </p>
