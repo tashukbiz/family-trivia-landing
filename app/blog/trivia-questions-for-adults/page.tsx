@@ -22,8 +22,138 @@ export const metadata: Metadata = {
 };
 
 export default function TriviaQuestionsForAdultsPage() {
+  const triviaQuestions = [
+    {
+      q: 'Which year did the Berlin Wall fall?',
+      a: '1989',
+    },
+    {
+      q: 'What is the chemical symbol for gold?',
+      a: 'Au',
+    },
+    {
+      q: "Who wrote the novel '1984'?",
+      a: 'George Orwell',
+    },
+    {
+      q: 'What is the largest planet in our solar system?',
+      a: 'Jupiter',
+    },
+    {
+      q: 'Who painted the ceiling of the Sistine Chapel?',
+      a: 'Michelangelo',
+    },
+    {
+      q: 'Which country is known as the Land of the Rising Sun?',
+      a: 'Japan',
+    },
+    {
+      q: 'What is the smallest prime number?',
+      a: '2',
+    },
+    {
+      q: "Which U.S. state is nicknamed the 'Sunshine State'?",
+      a: 'Florida',
+    },
+    {
+      q: 'Who discovered penicillin?',
+      a: 'Alexander Fleming',
+    },
+    {
+      q: 'What is the capital city of Canada?',
+      a: 'Ottawa',
+    },
+    {
+      q: 'Which classic film features the quote, "Here\'s looking at you, kid"?',
+      a: 'Casablanca',
+    },
+    {
+      q: 'What is the hardest natural substance on Earth?',
+      a: 'Diamond',
+    },
+    {
+      q: 'Which Shakespeare play features the characters Oberon and Titania?',
+      a: "A Midsummer Night's Dream",
+    },
+    {
+      q: 'Who was the first woman to win a Nobel Prize?',
+      a: 'Marie Curie',
+    },
+    {
+      q: 'What is the square root of 144?',
+      a: '12',
+    },
+    {
+      q: 'Which artist had a hit with the song "Purple Rain"?',
+      a: 'Prince',
+    },
+    {
+      q: 'In computing, what does HTML stand for?',
+      a: 'HyperText Markup Language',
+    },
+    {
+      q: 'Which ancient civilization built Machu Picchu?',
+      a: 'The Inca civilization',
+    },
+    {
+      q: 'What organ is affected by hepatitis?',
+      a: 'The liver',
+    },
+    {
+      q: 'What is the boiling point of water in Celsius?',
+      a: '100 degrees Celsius',
+    },
+  ] as const;
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline:
+          'Trivia Questions for Adults – 20 Challenging Questions for Game Night!',
+        description:
+          'Looking for trivia questions for adults? Discover 20 challenging trivia questions perfect for game night, gatherings, and parties. Test your knowledge with our Family Trivia app!',
+        image: 'https://familytrivia.app/og-image.png',
+        author: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          url: 'https://familytrivia.app',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://familytrivia.app/favicon.ico',
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://familytrivia.app/blog/trivia-questions-for-adults',
+        },
+        keywords: 'trivia questions for adults, adult trivia, trivia questions',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: triviaQuestions.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className='min-h-screen bg-white dark:bg-slate-900'>
         <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
           <div className='flex flex-col max-w-4xl flex-1'>
@@ -68,23 +198,40 @@ export default function TriviaQuestionsForAdultsPage() {
             <article className='prose prose-lg dark:prose-invert max-w-none'>
               <header className='mb-12'>
                 <h1 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight'>
-                  Trivia Questions for Adults – 20 Challenging Questions for Game Night!
+                  Trivia Questions for Adults – 20 Challenging Questions for
+                  Game Night!
                 </h1>
                 <p className='text-gray-600 dark:text-gray-400 text-lg'>
-                  Test your knowledge with engaging trivia questions perfect for adults, parties, and game nights
+                  Test your knowledge with engaging trivia questions perfect for
+                  adults, parties, and game nights
                 </p>
               </header>
 
               {/* Introduction */}
               <section className='mb-10'>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  There's something uniquely satisfying about a great trivia night. Whether you're gathering with friends for game night, hosting a dinner party, or looking for the perfect ice-breaker activity, trivia questions for adults offer the ideal blend of entertainment, friendly competition, and intellectual stimulation.
+                  There's something uniquely satisfying about a great trivia
+                  night. Whether you're gathering with friends for game night,
+                  hosting a dinner party, or looking for the perfect ice-breaker
+                  activity, trivia questions for adults offer the ideal blend of
+                  entertainment, friendly competition, and intellectual
+                  stimulation.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  Adults love trivia because it taps into our natural competitive spirit while celebrating the diverse knowledge we've accumulated over the years. From pop culture to world history, science to literature, a well-rounded trivia game brings people together and sparks engaging conversations that last long after the final question.
+                  Adults love trivia because it taps into our natural
+                  competitive spirit while celebrating the diverse knowledge
+                  we've accumulated over the years. From pop culture to world
+                  history, science to literature, a well-rounded trivia game
+                  brings people together and sparks engaging conversations that
+                  last long after the final question.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
-                  In this article, we've compiled 20 original trivia questions specifically designed for adults. These questions span various topics and difficulty levels, ensuring everyone in your group gets a chance to shine. Plus, we'll share why trivia is such a powerful tool for connection and how you can take your game night to the next level.
+                  In this article, we've compiled 20 original trivia questions
+                  specifically designed for adults. These questions span various
+                  topics and difficulty levels, ensuring everyone in your group
+                  gets a chance to shine. Plus, we'll share why trivia is such a
+                  powerful tool for connection and how you can take your game
+                  night to the next level.
                 </p>
               </section>
 
@@ -95,7 +242,10 @@ export default function TriviaQuestionsForAdultsPage() {
                 </h2>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  Trivia games have exploded in popularity among adults, and it's easy to see why. Beyond the fun and laughter, trivia offers numerous benefits that make it a go-to activity for gatherings of all kinds:
+                  Trivia games have exploded in popularity among adults, and
+                  it's easy to see why. Beyond the fun and laughter, trivia
+                  offers numerous benefits that make it a go-to activity for
+                  gatherings of all kinds:
                 </p>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-8'>
@@ -104,7 +254,9 @@ export default function TriviaQuestionsForAdultsPage() {
                       <span className='text-2xl'>🧠</span> Mental Stimulation
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Trivia keeps your mind sharp by engaging memory recall, critical thinking, and problem-solving skills. It's like a workout for your brain that happens to be incredibly fun.
+                      Trivia keeps your mind sharp by engaging memory recall,
+                      critical thinking, and problem-solving skills. It's like a
+                      workout for your brain that happens to be incredibly fun.
                     </p>
                   </div>
 
@@ -113,7 +265,9 @@ export default function TriviaQuestionsForAdultsPage() {
                       <span className='text-2xl'>🎉</span> Social Connection
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Trivia games break the ice and get people talking. They create shared experiences and friendly competition that strengthens relationships and builds camaraderie.
+                      Trivia games break the ice and get people talking. They
+                      create shared experiences and friendly competition that
+                      strengthens relationships and builds camaraderie.
                     </p>
                   </div>
 
@@ -122,7 +276,10 @@ export default function TriviaQuestionsForAdultsPage() {
                       <span className='text-2xl'>🏆</span> Healthy Competition
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      There's something thrilling about testing your knowledge against others. Trivia offers low-stakes competition that brings out everyone's competitive spirit in a fun, lighthearted way.
+                      There's something thrilling about testing your knowledge
+                      against others. Trivia offers low-stakes competition that
+                      brings out everyone's competitive spirit in a fun,
+                      lighthearted way.
                     </p>
                   </div>
 
@@ -131,14 +288,19 @@ export default function TriviaQuestionsForAdultsPage() {
                       <span className='text-2xl'>📚</span> Continuous Learning
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Every trivia game exposes you to new facts and perspectives. Even when you don't know the answer, you learn something new, expanding your knowledge base organically.
+                      Every trivia game exposes you to new facts and
+                      perspectives. Even when you don't know the answer, you
+                      learn something new, expanding your knowledge base
+                      organically.
                     </p>
                   </div>
                 </div>
 
                 <div className='bg-white dark:bg-slate-800 border-l-4 border-primary rounded-r-lg p-6 my-8'>
                   <p className='text-lg text-gray-800 dark:text-gray-200 mb-4'>
-                    <strong>💡 Ready for Unlimited Trivia?</strong> While these 20 questions are a great start, imagine having access to thousands of trivia questions across every topic imaginable!
+                    <strong>💡 Ready for Unlimited Trivia?</strong> While these
+                    20 questions are a great start, imagine having access to
+                    thousands of trivia questions across every topic imaginable!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
                     Our{' '}
@@ -148,7 +310,11 @@ export default function TriviaQuestionsForAdultsPage() {
                     >
                       Family Trivia app
                     </a>{' '}
-                    uses AI to generate personalized trivia questions for every player, no matter their age or interests. Whether you're playing with adults only or mixing generations, everyone gets questions perfectly matched to their level. It's the ultimate solution for inclusive, engaging game nights!
+                    uses AI to generate personalized trivia questions for every
+                    player, no matter their age or interests. Whether you're
+                    playing with adults only or mixing generations, everyone
+                    gets questions perfectly matched to their level. It's the
+                    ultimate solution for inclusive, engaging game nights!
                   </p>
                 </div>
               </section>
@@ -160,92 +326,15 @@ export default function TriviaQuestionsForAdultsPage() {
                 </h2>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
-                  Ready to put your knowledge to the test? Here are 20 carefully crafted trivia questions for adults covering history, science, pop culture, geography, and more. These questions range from moderately challenging to genuinely difficult – perfect for an engaging adult game night!
+                  Ready to put your knowledge to the test? Here are 20 carefully
+                  crafted trivia questions for adults covering history, science,
+                  pop culture, geography, and more. These questions range from
+                  moderately challenging to genuinely difficult – perfect for an
+                  engaging adult game night!
                 </p>
 
                 <div className='space-y-6'>
-                  {[
-                    {
-                      q: 'Which year did the Berlin Wall fall?',
-                      a: '1989',
-                    },
-                    {
-                      q: 'What is the chemical symbol for gold?',
-                      a: 'Au',
-                    },
-                    {
-                      q: "Who wrote the novel '1984'?",
-                      a: 'George Orwell',
-                    },
-                    {
-                      q: 'What is the largest planet in our solar system?',
-                      a: 'Jupiter',
-                    },
-                    {
-                      q: 'Who painted the ceiling of the Sistine Chapel?',
-                      a: 'Michelangelo',
-                    },
-                    {
-                      q: 'Which country is known as the Land of the Rising Sun?',
-                      a: 'Japan',
-                    },
-                    {
-                      q: 'What is the smallest prime number?',
-                      a: '2',
-                    },
-                    {
-                      q: "Which U.S. state is nicknamed the 'Sunshine State'?",
-                      a: 'Florida',
-                    },
-                    {
-                      q: 'Who discovered penicillin?',
-                      a: 'Alexander Fleming',
-                    },
-                    {
-                      q: 'What is the capital city of Canada?',
-                      a: 'Ottawa',
-                    },
-                    {
-                      q: 'Which classic film features the quote, "Here\'s looking at you, kid"?',
-                      a: 'Casablanca',
-                    },
-                    {
-                      q: 'What is the hardest natural substance on Earth?',
-                      a: 'Diamond',
-                    },
-                    {
-                      q: 'Which Shakespeare play features the characters Oberon and Titania?',
-                      a: 'A Midsummer Night\'s Dream',
-                    },
-                    {
-                      q: 'Who was the first woman to win a Nobel Prize?',
-                      a: 'Marie Curie',
-                    },
-                    {
-                      q: 'What is the square root of 144?',
-                      a: '12',
-                    },
-                    {
-                      q: 'Which artist had a hit with the song "Purple Rain"?',
-                      a: 'Prince',
-                    },
-                    {
-                      q: 'In computing, what does HTML stand for?',
-                      a: 'HyperText Markup Language',
-                    },
-                    {
-                      q: 'Which ancient civilization built Machu Picchu?',
-                      a: 'The Inca civilization',
-                    },
-                    {
-                      q: 'What organ is affected by hepatitis?',
-                      a: 'The liver',
-                    },
-                    {
-                      q: 'What is the boiling point of water in Celsius?',
-                      a: '100 degrees Celsius',
-                    },
-                  ].map((item, index) => (
+                  {triviaQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -285,7 +374,9 @@ export default function TriviaQuestionsForAdultsPage() {
                 </h2>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  Playing trivia regularly offers more than just an evening's entertainment. Research and anecdotal evidence suggest numerous cognitive and social benefits:
+                  Playing trivia regularly offers more than just an evening's
+                  entertainment. Research and anecdotal evidence suggest
+                  numerous cognitive and social benefits:
                 </p>
 
                 <div className='space-y-6'>
@@ -294,7 +385,11 @@ export default function TriviaQuestionsForAdultsPage() {
                       Improves Memory Retention
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Regular trivia play strengthens neural pathways associated with memory and recall. The process of retrieving information from long-term memory actually makes those memories more accessible in the future – it's the "use it or lose it" principle in action.
+                      Regular trivia play strengthens neural pathways associated
+                      with memory and recall. The process of retrieving
+                      information from long-term memory actually makes those
+                      memories more accessible in the future – it's the "use it
+                      or lose it" principle in action.
                     </p>
                   </div>
 
@@ -303,7 +398,11 @@ export default function TriviaQuestionsForAdultsPage() {
                       Reduces Stress and Anxiety
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Engaging in trivia provides a welcome mental break from daily stressors. The focused attention required for trivia creates a form of active meditation, while the social aspect and laughter that accompanies game play naturally reduces stress hormones.
+                      Engaging in trivia provides a welcome mental break from
+                      daily stressors. The focused attention required for trivia
+                      creates a form of active meditation, while the social
+                      aspect and laughter that accompanies game play naturally
+                      reduces stress hormones.
                     </p>
                   </div>
 
@@ -312,7 +411,10 @@ export default function TriviaQuestionsForAdultsPage() {
                       Enhances Problem-Solving Skills
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      When you don't know an answer outright, trivia encourages deductive reasoning and lateral thinking. You learn to make connections between different pieces of information, a skill that translates to real-world problem-solving.
+                      When you don't know an answer outright, trivia encourages
+                      deductive reasoning and lateral thinking. You learn to
+                      make connections between different pieces of information,
+                      a skill that translates to real-world problem-solving.
                     </p>
                   </div>
 
@@ -321,7 +423,10 @@ export default function TriviaQuestionsForAdultsPage() {
                       Builds Confidence and Self-Esteem
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Successfully answering trivia questions provides immediate positive reinforcement. Over time, this builds confidence in your knowledge and abilities, which can positively impact other areas of life.
+                      Successfully answering trivia questions provides immediate
+                      positive reinforcement. Over time, this builds confidence
+                      in your knowledge and abilities, which can positively
+                      impact other areas of life.
                     </p>
                   </div>
 
@@ -330,7 +435,10 @@ export default function TriviaQuestionsForAdultsPage() {
                       Promotes Lifelong Learning
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Trivia cultivates curiosity and a love of learning. When you encounter an interesting fact or topic during a game, it often inspires you to learn more, fostering a mindset of continuous education and intellectual growth.
+                      Trivia cultivates curiosity and a love of learning. When
+                      you encounter an interesting fact or topic during a game,
+                      it often inspires you to learn more, fostering a mindset
+                      of continuous education and intellectual growth.
                     </p>
                   </div>
                 </div>
@@ -346,11 +454,20 @@ export default function TriviaQuestionsForAdultsPage() {
                     🎮 Access Unlimited Trivia Questions!
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                    These 20 questions are just the tip of the iceberg! If you enjoyed testing your knowledge with these trivia questions, you'll love having access to{' '}
-                    <strong>unlimited AI-generated trivia questions</strong> on any topic you can imagine.
+                    These 20 questions are just the tip of the iceberg! If you
+                    enjoyed testing your knowledge with these trivia questions,
+                    you'll love having access to{' '}
+                    <strong>unlimited AI-generated trivia questions</strong> on
+                    any topic you can imagine.
                   </p>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
-                    The <strong>Family Trivia app</strong> is perfect for adults who love trivia, whether you're playing solo, competing with friends, or hosting a multi-generational gathering. Choose from hundreds of topics, select your preferred difficulty level, and get questions that are perfectly calibrated to challenge and entertain you. Never run out of fresh content for your next game night, party, or casual trivia session!
+                    The <strong>Family Trivia app</strong> is perfect for adults
+                    who love trivia, whether you're playing solo, competing with
+                    friends, or hosting a multi-generational gathering. Choose
+                    from hundreds of topics, select your preferred difficulty
+                    level, and get questions that are perfectly calibrated to
+                    challenge and entertain you. Never run out of fresh content
+                    for your next game night, party, or casual trivia session!
                   </p>
 
                   <div className='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'>
@@ -380,7 +497,8 @@ export default function TriviaQuestionsForAdultsPage() {
                           Sophisticated AI Questions
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          Questions that challenge adults while remaining accessible and fun
+                          Questions that challenge adults while remaining
+                          accessible and fun
                         </p>
                       </div>
                     </div>
@@ -391,7 +509,8 @@ export default function TriviaQuestionsForAdultsPage() {
                           Hundreds of Topics
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          From history and science to pop culture and sports – find your expertise
+                          From history and science to pop culture and sports –
+                          find your expertise
                         </p>
                       </div>
                     </div>
@@ -402,7 +521,8 @@ export default function TriviaQuestionsForAdultsPage() {
                           Perfect for Social Gatherings
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          Single-device multiplayer makes hosting game night effortless
+                          Single-device multiplayer makes hosting game night
+                          effortless
                         </p>
                       </div>
                     </div>
@@ -413,7 +533,8 @@ export default function TriviaQuestionsForAdultsPage() {
                           Multi-Generational Play
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          Include kids, parents, and grandparents with personalized difficulty
+                          Include kids, parents, and grandparents with
+                          personalized difficulty
                         </p>
                       </div>
                     </div>
@@ -428,7 +549,9 @@ export default function TriviaQuestionsForAdultsPage() {
                 </h2>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  Want to take your trivia game to the next level? Here are some proven strategies for hosting a memorable trivia night that your friends will be talking about for weeks:
+                  Want to take your trivia game to the next level? Here are some
+                  proven strategies for hosting a memorable trivia night that
+                  your friends will be talking about for weeks:
                 </p>
 
                 <div className='space-y-6'>
@@ -437,7 +560,10 @@ export default function TriviaQuestionsForAdultsPage() {
                       1. Set the Right Atmosphere
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Create a comfortable, inviting space with good lighting and minimal distractions. Consider ambient music between rounds, comfortable seating, and refreshments. The right atmosphere turns a simple game into a memorable event.
+                      Create a comfortable, inviting space with good lighting
+                      and minimal distractions. Consider ambient music between
+                      rounds, comfortable seating, and refreshments. The right
+                      atmosphere turns a simple game into a memorable event.
                     </p>
                   </div>
 
@@ -446,7 +572,10 @@ export default function TriviaQuestionsForAdultsPage() {
                       2. Mix Up the Categories
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Variety keeps everyone engaged. Include questions from different categories – history, science, entertainment, sports, literature, and current events. This ensures that everyone has a chance to shine in their area of expertise.
+                      Variety keeps everyone engaged. Include questions from
+                      different categories – history, science, entertainment,
+                      sports, literature, and current events. This ensures that
+                      everyone has a chance to shine in their area of expertise.
                     </p>
                   </div>
 
@@ -455,7 +584,10 @@ export default function TriviaQuestionsForAdultsPage() {
                       3. Keep Teams Balanced
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      If playing in teams, mix different knowledge strengths together. The goal is friendly competition, not domination. Balanced teams lead to closer games and more excitement throughout the night.
+                      If playing in teams, mix different knowledge strengths
+                      together. The goal is friendly competition, not
+                      domination. Balanced teams lead to closer games and more
+                      excitement throughout the night.
                     </p>
                   </div>
 
@@ -464,7 +596,11 @@ export default function TriviaQuestionsForAdultsPage() {
                       4. Use Technology to Your Advantage
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Apps like Family Trivia eliminate the work of sourcing questions and keeping score. You can focus on being a great host and participating in the fun, rather than managing logistics. Plus, AI-generated questions mean you'll never run out of fresh content.
+                      Apps like Family Trivia eliminate the work of sourcing
+                      questions and keeping score. You can focus on being a
+                      great host and participating in the fun, rather than
+                      managing logistics. Plus, AI-generated questions mean
+                      you'll never run out of fresh content.
                     </p>
                   </div>
 
@@ -473,7 +609,11 @@ export default function TriviaQuestionsForAdultsPage() {
                       5. Encourage Friendly Competition
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Keep the mood light and fun. Celebrate great answers, laugh at silly mistakes, and remind everyone that the goal is entertainment first, winning second. The best trivia nights are the ones where everyone leaves smiling, regardless of the final score.
+                      Keep the mood light and fun. Celebrate great answers,
+                      laugh at silly mistakes, and remind everyone that the goal
+                      is entertainment first, winning second. The best trivia
+                      nights are the ones where everyone leaves smiling,
+                      regardless of the final score.
                     </p>
                   </div>
                 </div>
@@ -486,15 +626,28 @@ export default function TriviaQuestionsForAdultsPage() {
                 </h2>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  Trivia questions for adults offer the perfect combination of mental stimulation, social connection, and pure entertainment. Whether you're looking to spice up game night, break the ice at a party, or simply enjoy some intellectual competition with friends, trivia delivers every time.
+                  Trivia questions for adults offer the perfect combination of
+                  mental stimulation, social connection, and pure entertainment.
+                  Whether you're looking to spice up game night, break the ice
+                  at a party, or simply enjoy some intellectual competition with
+                  friends, trivia delivers every time.
                 </p>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  The 20 questions we've shared here are just the beginning. For endless trivia fun that never gets old, download the <strong>Family Trivia app</strong> and discover thousands of AI-generated questions across every topic imaginable. With personalized difficulty levels and unlimited content, you'll always have fresh questions ready for your next gathering.
+                  The 20 questions we've shared here are just the beginning. For
+                  endless trivia fun that never gets old, download the{' '}
+                  <strong>Family Trivia app</strong> and discover thousands of
+                  AI-generated questions across every topic imaginable. With
+                  personalized difficulty levels and unlimited content, you'll
+                  always have fresh questions ready for your next gathering.
                 </p>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
-                  Don't let another game night pass with the same old activities. Download Family Trivia today and transform your next gathering into an unforgettable experience. Your friends will thank you, and you might just learn something new along the way!
+                  Don't let another game night pass with the same old
+                  activities. Download Family Trivia today and transform your
+                  next gathering into an unforgettable experience. Your friends
+                  will thank you, and you might just learn something new along
+                  the way!
                 </p>
 
                 <BlogCtaSection />

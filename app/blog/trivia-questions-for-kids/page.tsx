@@ -21,8 +21,111 @@ export const metadata: Metadata = {
 };
 
 export default function TriviaQuestionsForKidsPage() {
+  const triviaQuestions = [
+    {
+      q: 'What is the largest animal on earth?',
+      a: 'The blue whale',
+    },
+    {
+      q: 'What color do you get when you mix red and yellow?',
+      a: 'Orange',
+    },
+    { q: 'Which planet is closest to the sun?', a: 'Mercury' },
+    { q: 'What food does a panda mostly eat?', a: 'Bamboo' },
+    { q: 'How many legs does a spider have?', a: 'Eight' },
+    { q: 'What is the capital city of France?', a: 'Paris' },
+    {
+      q: 'Who wrote the story of Harry Potter?',
+      a: 'J.K. Rowling',
+    },
+    { q: 'What is the fastest land animal?', a: 'The cheetah' },
+    {
+      q: 'Which ocean is the biggest?',
+      a: 'The Pacific Ocean',
+    },
+    {
+      q: 'What superhero can climb walls and shoot webs?',
+      a: 'Spider-Man',
+    },
+    {
+      q: 'What fruit keeps the doctor away if you eat one a day?',
+      a: 'An apple',
+    },
+    {
+      q: 'What is the national flower of Japan?',
+      a: 'Cherry blossom (or sakura)',
+    },
+    {
+      q: 'Which instrument has black and white keys?',
+      a: 'A piano',
+    },
+    {
+      q: 'What machine flies in the sky with passengers?',
+      a: 'An airplane (or aeroplane)',
+    },
+    { q: 'What is the tallest animal?', a: 'The giraffe' },
+    {
+      q: 'Which season comes after summer?',
+      a: 'Autumn (or fall)',
+    },
+    { q: 'What is the largest continent?', a: 'Asia' },
+    {
+      q: 'What bird is known for repeating human words?',
+      a: 'A parrot',
+    },
+    { q: 'How many continents are there?', a: 'Seven' },
+    { q: 'What is the main ingredient in bread?', a: 'Flour' },
+  ] as const;
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline:
+          'Trivia Questions for Kids – 20 Fun Questions to Play at Home!',
+        description:
+          'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions perfect for children of all ages. Play at home with our Family Trivia app!',
+        image: 'https://familytrivia.app/og-image.png',
+        author: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          url: 'https://familytrivia.app',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://familytrivia.app/favicon.ico',
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://familytrivia.app/blog/trivia-questions-for-kids',
+        },
+        keywords: 'trivia questions for kids, kids trivia, trivia questions',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: triviaQuestions.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className='min-h-screen bg-white dark:bg-slate-900'>
         <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
           <div className='flex flex-col max-w-4xl flex-1'>
@@ -198,61 +301,7 @@ export default function TriviaQuestionsForKidsPage() {
                 </p>
 
                 <div className='space-y-6'>
-                  {[
-                    {
-                      q: 'What is the largest animal on earth?',
-                      a: 'The blue whale',
-                    },
-                    {
-                      q: 'What color do you get when you mix red and yellow?',
-                      a: 'Orange',
-                    },
-                    { q: 'Which planet is closest to the sun?', a: 'Mercury' },
-                    { q: 'What food does a panda mostly eat?', a: 'Bamboo' },
-                    { q: 'How many legs does a spider have?', a: 'Eight' },
-                    { q: 'What is the capital city of France?', a: 'Paris' },
-                    {
-                      q: 'Who wrote the story of Harry Potter?',
-                      a: 'J.K. Rowling',
-                    },
-                    { q: 'What is the fastest land animal?', a: 'The cheetah' },
-                    {
-                      q: 'Which ocean is the biggest?',
-                      a: 'The Pacific Ocean',
-                    },
-                    {
-                      q: 'What superhero can climb walls and shoot webs?',
-                      a: 'Spider-Man',
-                    },
-                    {
-                      q: 'What fruit keeps the doctor away if you eat one a day?',
-                      a: 'An apple',
-                    },
-                    {
-                      q: 'What is the national flower of Japan?',
-                      a: 'Cherry blossom (or sakura)',
-                    },
-                    {
-                      q: 'Which instrument has black and white keys?',
-                      a: 'A piano',
-                    },
-                    {
-                      q: 'What machine flies in the sky with passengers?',
-                      a: 'An airplane (or aeroplane)',
-                    },
-                    { q: 'What is the tallest animal?', a: 'The giraffe' },
-                    {
-                      q: 'Which season comes after summer?',
-                      a: 'Autumn (or fall)',
-                    },
-                    { q: 'What is the largest continent?', a: 'Asia' },
-                    {
-                      q: 'What bird is known for repeating human words?',
-                      a: 'A parrot',
-                    },
-                    { q: 'How many continents are there?', a: 'Seven' },
-                    { q: 'What is the main ingredient in bread?', a: 'Flour' },
-                  ].map((item, index) => (
+                  {triviaQuestions.map((item, index) => (
                     <div
                       key={index}
                       className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
