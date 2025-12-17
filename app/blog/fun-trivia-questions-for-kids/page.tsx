@@ -230,8 +230,61 @@ export default function FunTriviaQuestionsForKidsPage() {
     },
   ] as const;
 
+  const allQuestions = [
+    ...weirdAnimalQuestions,
+    ...sillyScienceQuestions,
+    ...funGeographyQuestions,
+  ] as const;
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: '50 Fun Trivia Questions for Kids (With Answers)',
+        description:
+          'Looking for fun trivia questions for kids? Here are 50 playful and entertaining trivia questions covering weird animals, silly science, and fun geography. Perfect for family game night!',
+        image: 'https://familytrivia.app/og-image.png',
+        author: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          url: 'https://familytrivia.app',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://familytrivia.app/favicon.ico',
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://familytrivia.app/blog/fun-trivia-questions-for-kids',
+        },
+        keywords:
+          'fun trivia questions for kids, trivia questions for kids, random trivia questions for kids, good trivia questions for kids',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: allQuestions.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className='min-h-screen bg-white dark:bg-slate-900'>
         <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
           <div className='flex flex-col max-w-4xl flex-1'>

@@ -237,8 +237,65 @@ export default function BibleTriviaQuestionsForKidsPage() {
     },
   ] as const;
 
+  const allQuestions = [
+    ...oldTestamentStories,
+    ...newTestamentStories,
+    ...bibleCharacters,
+    ...bibleBasics,
+    ...bibleLessonsAndValues,
+  ] as const;
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline:
+          'Bible Trivia Questions for Kids (With Answers): 50 Questions for Home or Sunday School',
+        description:
+          'Looking for Bible trivia questions for kids? Here are 50 easy Bible trivia questions from Old and New Testament. Perfect for Sunday school, homeschool, or family devotions!',
+        image: 'https://familytrivia.app/og-image.png',
+        author: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          url: 'https://familytrivia.app',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://familytrivia.app/favicon.ico',
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id':
+            'https://familytrivia.app/blog/bible-trivia-questions-for-kids',
+        },
+        keywords:
+          'bible trivia questions for kids, bible trivia for kids, kids bible trivia, easy bible trivia, bible questions for kids, sunday school trivia',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: allQuestions.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className='min-h-screen bg-white dark:bg-slate-900'>
         <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
           <div className='flex flex-col max-w-4xl flex-1'>

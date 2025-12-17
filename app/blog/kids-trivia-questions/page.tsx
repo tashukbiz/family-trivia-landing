@@ -195,8 +195,63 @@ export default function KidsTriviaQuestionsPage() {
     },
   ] as const;
 
+  const allQuestions = [
+    ...easyStarterQuestions,
+    ...animalsAndPetsQuestions,
+    ...foodAndEverydayLifeQuestions,
+    ...historyAndGeographyQuestions,
+    ...mediumChallengeQuestions,
+  ] as const;
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: '50 Kids Trivia Questions (With Answers) for Ages 6–12',
+        description:
+          'Looking for kids trivia questions? Here are 50 easy to medium trivia questions perfect for children ages 6-12. Test your knowledge with our Family Trivia app!',
+        image: 'https://familytrivia.app/og-image.png',
+        author: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          url: 'https://familytrivia.app',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://familytrivia.app/favicon.ico',
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://familytrivia.app/blog/kids-trivia-questions',
+        },
+        keywords:
+          'kids trivia questions, trivia questions kids, questions for kids trivia, easy trivia questions for kids',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: allQuestions.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className='min-h-screen bg-white dark:bg-slate-900'>
         <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
           <div className='flex flex-col max-w-4xl flex-1'>

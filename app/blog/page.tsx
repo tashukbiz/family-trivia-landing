@@ -85,8 +85,37 @@ function formatTitle(slug: string): string {
 export default function BlogPage() {
   const posts = getBlogPosts();
 
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        name: 'Family Trivia Blog',
+        description:
+          'Discover trivia questions, family game night tips, and educational content for kids. Learn how to make family time more fun and engaging with Family Trivia.',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://familytrivia.app/blog',
+        },
+      },
+      {
+        '@type': 'ItemList',
+        itemListElement: posts.map((post, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `https://familytrivia.app/blog/${post.slug}`,
+          name: post.title,
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className='min-h-screen bg-white dark:bg-slate-900'>
         <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
           <div className='flex flex-col max-w-5xl flex-1'>

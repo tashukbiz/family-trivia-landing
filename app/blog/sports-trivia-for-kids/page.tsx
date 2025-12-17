@@ -236,8 +236,63 @@ export default function SportsTriviaForKidsPage() {
     },
   ] as const;
 
+  const allQuestions = [
+    ...soccerQuestions,
+    ...basketballQuestions,
+    ...olympicsQuestions,
+    ...otherSportsQuestions,
+    ...funSportsFactsQuestions,
+  ] as const;
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: 'Sports Trivia for Kids: 50 Fun Questions (With Answers)',
+        description:
+          'Looking for sports trivia for kids? Here are 50 fun sports trivia questions covering soccer, basketball, Olympics, and more. Perfect for young sports fans!',
+        image: 'https://familytrivia.app/og-image.png',
+        author: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          url: 'https://familytrivia.app',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Family Trivia',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://familytrivia.app/favicon.ico',
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://familytrivia.app/blog/sports-trivia-for-kids',
+        },
+        keywords:
+          'sports trivia for kids, sports trivia questions, sports trivia questions and answers, kids sports trivia',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: allQuestions.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className='min-h-screen bg-white dark:bg-slate-900'>
         <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
           <div className='flex flex-col max-w-4xl flex-1'>
