@@ -21,6 +21,215 @@ export const metadata: Metadata = {
 };
 
 export default function FunTriviaQuestionsForKidsPage() {
+  const weirdAnimalQuestions = [
+    {
+      q: 'How many hearts does an octopus have?',
+      a: 'Three hearts! Two pump blood to the gills, and one pumps blood to the rest of the body.',
+    },
+    {
+      q: "What color is a flamingo when it's born?",
+      a: 'Gray or white! Flamingos turn pink from eating shrimp and algae.',
+    },
+    {
+      q: "Can a shrimp's heart be found in its head?",
+      a: "Yes! A shrimp's heart is located in its head.",
+    },
+    {
+      q: "What's the only mammal that can truly fly?",
+      a: 'Bats! (Flying squirrels glide, but bats actively fly.)',
+    },
+    {
+      q: "How long is a chameleon's tongue compared to its body?",
+      a: 'About twice as long as its body! They use it to catch insects.',
+    },
+    {
+      q: 'Do polar bears have black or white skin?',
+      a: 'Black skin! Their fur is actually transparent and appears white.',
+    },
+    {
+      q: 'What animal can hold its breath the longest underwater?',
+      a: "Cuvier's beaked whale can hold its breath for over 2 hours.",
+    },
+    {
+      q: "What's a group of flamingos called?",
+      a: 'A flamboyance! How fitting for such colorful birds.',
+    },
+    {
+      q: 'Can a snail sleep (hibernate) for a very long time?',
+      a: 'Yes—some snails can hibernate for long periods during extreme weather.',
+    },
+    {
+      q: 'What bird can fly backward?',
+      a: 'A hummingbird! It can hover and fly backward.',
+    },
+    {
+      q: 'Do butterflies taste with their feet?',
+      a: 'Yes! They have taste sensors on their feet to help find food plants.',
+    },
+    {
+      q: 'Which animal has fingerprints that look a lot like humans?',
+      a: 'Koalas! Their fingerprints can look surprisingly similar.',
+    },
+    {
+      q: 'What animal is covered in “teeth” on its tongue?',
+      a: 'A cat! Their tongues have tiny backward-facing hooks that feel like sandpaper.',
+    },
+    {
+      q: 'How many stomach compartments does a cow have?',
+      a: 'Four compartments (often called “four stomachs”) to help digest tough plants.',
+    },
+    {
+      q: 'Which mammal lays eggs?',
+      a: 'The platypus (and echidnas) lay eggs even though they are mammals.',
+    },
+    {
+      q: 'What animal has blue blood?',
+      a: 'Octopuses have blue blood because their blood uses copper to carry oxygen.',
+    },
+    {
+      q: 'Can a starfish regrow an arm?',
+      a: 'Yes! Many starfish can regrow lost arms over time.',
+    },
+  ] as const;
+
+  const sillyScienceQuestions = [
+    {
+      q: 'How many bones does a baby have compared to an adult?',
+      a: 'About 300 bones! Adults have 206 because some bones fuse together as we grow.',
+    },
+    {
+      q: 'What gas do plants “breathe in” to grow?',
+      a: 'Carbon dioxide (CO₂). Plants use it during photosynthesis.',
+    },
+    {
+      q: "What's the strongest muscle in the human body (by force)?",
+      a: 'The jaw muscle (masseter) is often cited as one of the strongest by force.',
+    },
+    {
+      q: 'Do humans and giraffes have the same number of neck bones?',
+      a: 'Yes! Both usually have 7 neck vertebrae—giraffe bones are just much longer.',
+    },
+    {
+      q: 'Why do we see lightning before we hear thunder?',
+      a: 'Light travels much faster than sound, so the flash reaches you first.',
+    },
+    {
+      q: 'Why is the sky blue?',
+      a: "Because Earth's atmosphere scatters blue light more than other colors.",
+    },
+    {
+      q: 'How fast do your fingernails grow?',
+      a: 'Roughly 0.1 millimeters per day on average—fingernails usually grow faster than toenails.',
+    },
+    {
+      q: 'What planet is the biggest in our solar system?',
+      a: 'Jupiter—the largest planet by far.',
+    },
+    {
+      q: 'What makes popcorn “pop”?',
+      a: 'Water inside the kernel turns to steam, pressure builds up, and it explodes into fluffy popcorn.',
+    },
+    {
+      q: 'Can a cloud weigh as much as 100 elephants?',
+      a: 'Yes—clouds can be extremely heavy because they contain lots of tiny water droplets.',
+    },
+    {
+      q: "What's the only food that can last a very long time without spoiling?",
+      a: 'Honey can last for a very long time when stored well because it has low water and natural acidity.',
+    },
+    {
+      q: 'What is the hardest natural material on Earth?',
+      a: 'Diamond.',
+    },
+    {
+      q: 'How many teeth do most adults have?',
+      a: '32 (including wisdom teeth), though many people have fewer if wisdom teeth are removed.',
+    },
+    {
+      q: 'Where are the smallest bones in your body?',
+      a: 'In your ear—three tiny bones help you hear.',
+    },
+    {
+      q: 'What gas do humans need to breathe to live?',
+      a: 'Oxygen.',
+    },
+    {
+      q: 'What happens if you sneeze with your eyes open?',
+      a: "It's very hard to sneeze with eyes open, but nothing dangerous happens—your eyes won't pop out.",
+    },
+    {
+      q: 'What causes a rainbow?',
+      a: 'Sunlight bends and reflects inside raindrops, splitting into different colors.',
+    },
+  ] as const;
+
+  const funGeographyQuestions = [
+    {
+      q: "What's the smallest country in the world?",
+      a: 'Vatican City! It is tiny and surrounded by Rome, Italy.',
+    },
+    {
+      q: 'Which continent has the most countries?',
+      a: 'Africa, with 54 countries.',
+    },
+    {
+      q: 'What is the largest ocean on Earth?',
+      a: 'The Pacific Ocean.',
+    },
+    {
+      q: 'Which country is shaped like a boot?',
+      a: 'Italy.',
+    },
+    {
+      q: 'Which river runs through Paris?',
+      a: 'The Seine River.',
+    },
+    {
+      q: 'Is there a place on Earth where it barely rains?',
+      a: 'Yes! Parts of the Atacama Desert in Chile can go years with little to no rain.',
+    },
+    {
+      q: 'What country is both in Europe and Asia?',
+      a: 'Turkey (and also Russia) span two continents.',
+    },
+    {
+      q: 'Where is one of the hottest places on Earth?',
+      a: 'Death Valley, California is famous for extreme heat.',
+    },
+    {
+      q: 'Is there a country with no permanent rivers?',
+      a: 'Yes—Saudi Arabia has no permanent rivers.',
+    },
+    {
+      q: 'What country is wider than the moon?',
+      a: 'Australia is often compared as wider than the Moon in diameter.',
+    },
+    {
+      q: 'What is the tallest mountain on Earth?',
+      a: 'Mount Everest.',
+    },
+    {
+      q: 'What is the capital of Japan?',
+      a: 'Tokyo.',
+    },
+    {
+      q: 'Which U.S. state is the biggest by area?',
+      a: 'Alaska.',
+    },
+    {
+      q: 'Which continent is also a country?',
+      a: 'Australia.',
+    },
+    {
+      q: 'Where are the Great Pyramids of Giza?',
+      a: 'Egypt, near Cairo.',
+    },
+    {
+      q: 'Which continent is the coldest and also very dry?',
+      a: 'Antarctica.',
+    },
+  ] as const;
+
   return (
     <>
       <div className='min-h-screen bg-white dark:bg-slate-900'>
@@ -79,8 +288,8 @@ export default function FunTriviaQuestionsForKidsPage() {
               <section className='mb-10'>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
                   Looking for <strong>fun trivia questions for kids</strong>{' '}
-                  that spark giggles and "Whoa, really?" moments? You've come
-                  to the right place! The best trivia for kids isn't just
+                  that spark giggles and "Whoa, really?" moments? You've come to
+                  the right place! The best trivia for kids isn't just
                   educational – it's entertaining, surprising, and sometimes
                   downright silly. When kids are amazed by weird facts and
                   bizarre trivia, they remember them forever.
@@ -89,15 +298,15 @@ export default function FunTriviaQuestionsForKidsPage() {
                   We've compiled 50 of the most fun trivia questions for kids
                   that cover everything from weird animals (did you know
                   octopuses have three hearts?) to silly science facts (your
-                  nose can remember 50,000 different smells!). These aren't
-                  your typical boring quiz questions – they're random, playful,
-                  and guaranteed to make learning feel like pure entertainment.
+                  nose can remember 50,000 different smells!). These aren't your
+                  typical boring quiz questions – they're random, playful, and
+                  guaranteed to make learning feel like pure entertainment.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
                   Whether you're planning a family game night, looking for car
                   ride entertainment, or just want to see your kids' eyes light
-                  up with wonder, these fun trivia questions will deliver.
-                  Let's dive into the weird and wonderful world of kid-friendly
+                  up with wonder, these fun trivia questions will deliver. Let's
+                  dive into the weird and wonderful world of kid-friendly
                   trivia!
                 </p>
               </section>
@@ -147,8 +356,8 @@ export default function FunTriviaQuestionsForKidsPage() {
                     <p className='text-gray-700 dark:text-gray-300'>
                       Kids remember fun facts better than boring ones. They'll
                       never forget that a group of flamingos is called a
-                      "flamboyance" or that bananas are berries but
-                      strawberries aren't!
+                      "flamboyance" or that bananas are berries but strawberries
+                      aren't!
                     </p>
                   </div>
 
@@ -176,16 +385,16 @@ export default function FunTriviaQuestionsForKidsPage() {
                     >
                       Family Trivia app
                     </a>{' '}
-                    generates thousands of fun, random trivia questions
-                    tailored to each player's age and interests!
+                    generates thousands of fun, random trivia questions tailored
+                    to each player's age and interests!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    From weird animal facts to silly science, wacky geography
-                    to food funnies, Family Trivia keeps the surprises coming.
+                    From weird animal facts to silly science, wacky geography to
+                    food funnies, Family Trivia keeps the surprises coming.
                     Every question is personalized so your 5-year-old gets
                     age-appropriate silly questions while your teenager gets
-                    more challenging random trivia. Download today and never
-                    run out of fun facts!
+                    more challenging random trivia. Download today and never run
+                    out of fun facts!
                   </p>
                 </div>
               </section>
@@ -198,9 +407,9 @@ export default function FunTriviaQuestionsForKidsPage() {
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
                   Get ready for some of the most fun, weird, and wonderful
-                  trivia questions you've ever encountered! We've organized
-                  them into playful categories that kids absolutely love. Click
-                  "Show Answer" to reveal each surprising fact!
+                  trivia questions you've ever encountered! We've organized them
+                  into playful categories that kids absolutely love. Click "Show
+                  Answer" to reveal each surprising fact!
                 </p>
 
                 {/* Section 1: Weird & Wonderful Animals */}
@@ -210,48 +419,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                     Animals
                   </h3>
                   <div className='space-y-6'>
-                    {[
-                      {
-                        q: 'How many hearts does an octopus have?',
-                        a: 'Three hearts! Two pump blood to the gills, and one pumps blood to the rest of the body.',
-                      },
-                      {
-                        q: 'What color is a flamingo when it\'s born?',
-                        a: 'Gray or white! Flamingos turn pink from eating shrimp and algae.',
-                      },
-                      {
-                        q: 'Can a shrimp\'s heart be found in its head?',
-                        a: 'Yes! A shrimp\'s heart is actually located in its head.',
-                      },
-                      {
-                        q: 'What animal never sleeps?',
-                        a: 'Bullfrogs! They rest but never fully sleep.',
-                      },
-                      {
-                        q: 'What\'s the only mammal that can fly?',
-                        a: 'Bats! (Flying squirrels glide, but bats actually fly.)',
-                      },
-                      {
-                        q: 'How long is a chameleon\'s tongue compared to its body?',
-                        a: 'About twice as long as its body! They use it to catch insects.',
-                      },
-                      {
-                        q: 'Do polar bears have black or white skin?',
-                        a: 'Black skin! Their fur is actually transparent and appears white.',
-                      },
-                      {
-                        q: 'What animal can hold its breath the longest underwater?',
-                        a: 'The Cuvier\'s beaked whale can hold its breath for over 2 hours!',
-                      },
-                      {
-                        q: 'What\'s a group of flamingos called?',
-                        a: 'A flamboyance! How fitting for such colorful birds.',
-                      },
-                      {
-                        q: 'Can a snail sleep for three years?',
-                        a: 'Yes! Snails can hibernate for up to three years during extreme weather.',
-                      },
-                    ].map((item, index) => (
+                    {weirdAnimalQuestions.map((item, index) => (
                       <div
                         key={index}
                         className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -291,48 +459,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                     Human Body
                   </h3>
                   <div className='space-y-6'>
-                    {[
-                      {
-                        q: 'How many bones does a baby have compared to an adult?',
-                        a: 'About 300 bones! Adults have 206 because some bones fuse together as we grow.',
-                      },
-                      {
-                        q: 'Can your nose remember 50,000 different smells?',
-                        a: 'Yes! The human nose can identify about 50,000 different scents.',
-                      },
-                      {
-                        q: 'What\'s the strongest muscle in the human body?',
-                        a: 'The masseter (jaw muscle)! It can exert up to 200 pounds of force.',
-                      },
-                      {
-                        q: 'Do humans and giraffes have the same number of neck bones?',
-                        a: 'Yes! Both have 7 neck vertebrae – giraffe bones are just much longer.',
-                      },
-                      {
-                        q: 'Why is the sky blue?',
-                        a: 'Because blue light is scattered more than other colors by Earth\'s atmosphere!',
-                      },
-                      {
-                        q: 'What happens if you sneeze with your eyes open?',
-                        a: 'Nothing! It\'s nearly impossible to sneeze with eyes open, but they won\'t pop out.',
-                      },
-                      {
-                        q: 'How fast do your fingernails grow?',
-                        a: 'About 0.1 millimeters per day – fingernails grow faster than toenails!',
-                      },
-                      {
-                        q: 'What planet rains diamonds?',
-                        a: 'Jupiter and Saturn! Scientists believe it rains diamonds deep in their atmospheres.',
-                      },
-                      {
-                        q: 'Can a cloud weigh as much as 100 elephants?',
-                        a: 'Yes! An average cumulus cloud weighs about 1.1 million pounds (500,000 kg).',
-                      },
-                      {
-                        q: 'What\'s the only food that never goes bad?',
-                        a: 'Honey! Archaeologists have found 3,000-year-old honey in Egyptian tombs that\'s still edible.',
-                      },
-                    ].map((item, index) => (
+                    {sillyScienceQuestions.map((item, index) => (
                       <div
                         key={index}
                         className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -340,7 +467,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                         <div className='flex gap-4'>
                           <div className='flex-shrink-0'>
                             <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                              {index + 11}
+                              {index + weirdAnimalQuestions.length + 1}
                             </span>
                           </div>
                           <div className='flex-1'>
@@ -371,48 +498,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                     <span className='text-3xl'>🌍</span> Wacky World Geography
                   </h3>
                   <div className='space-y-6'>
-                    {[
-                      {
-                        q: 'What\'s the smallest country in the world?',
-                        a: 'Vatican City! It\'s only 0.17 square miles (0.44 km²).',
-                      },
-                      {
-                        q: 'Which continent has the most countries?',
-                        a: 'Africa, with 54 countries!',
-                      },
-                      {
-                        q: 'What\'s the longest river in the world?',
-                        a: 'The Nile River in Africa, at about 4,135 miles (6,650 km) long.',
-                      },
-                      {
-                        q: 'Is there a place on Earth where it hasn\'t rained for over 400 years?',
-                        a: 'Yes! The Atacama Desert in Chile – some areas haven\'t seen rain in over 400 years.',
-                      },
-                      {
-                        q: 'Which country has the most islands?',
-                        a: 'Sweden, with over 267,000 islands!',
-                      },
-                      {
-                        q: 'What country is both in Europe and Asia?',
-                        a: 'Turkey (and Russia)! They span both continents.',
-                      },
-                      {
-                        q: 'Where is the hottest place on Earth?',
-                        a: 'Death Valley, California – it reached 134°F (56.7°C) in 1913!',
-                      },
-                      {
-                        q: 'What city has more bridges than Venice?',
-                        a: 'Hamburg, Germany has over 2,500 bridges – more than Venice, Amsterdam, and London combined!',
-                      },
-                      {
-                        q: 'Is there a country with no rivers?',
-                        a: 'Yes! Saudi Arabia has no permanent rivers.',
-                      },
-                      {
-                        q: 'What country is wider than the moon?',
-                        a: 'Australia! It\'s about 2,485 miles wide, while the moon is 2,159 miles wide.',
-                      },
-                    ].map((item, index) => (
+                    {funGeographyQuestions.map((item, index) => (
                       <div
                         key={index}
                         className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
@@ -420,7 +506,10 @@ export default function FunTriviaQuestionsForKidsPage() {
                         <div className='flex gap-4'>
                           <div className='flex-shrink-0'>
                             <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                              {index + 21}
+                              {index +
+                                weirdAnimalQuestions.length +
+                                sillyScienceQuestions.length +
+                                1}
                             </span>
                           </div>
                           <div className='flex-1'>
@@ -454,7 +543,7 @@ export default function FunTriviaQuestionsForKidsPage() {
                     🎉 Loving These Fun Facts?
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                    These 30 questions are just the beginning! Imagine having{' '}
+                    These questions are just the beginning! Imagine having{' '}
                     <strong>unlimited fun trivia</strong> with thousands of
                     random, surprising facts covering every topic imaginable.
                   </p>
@@ -481,167 +570,6 @@ export default function FunTriviaQuestionsForKidsPage() {
                     for each age &nbsp;•&nbsp; ✓ New surprises every game
                     &nbsp;•&nbsp; ✓ Safe for kids
                   </p>
-                </div>
-
-                {/* Section 4: Food Funnies & Sweet Treats */}
-                <div className='mb-10'>
-                  <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2'>
-                    <span className='text-3xl'>🍕</span> Food Funnies & Sweet
-                    Treats
-                  </h3>
-                  <div className='space-y-6'>
-                    {[
-                      {
-                        q: 'Are strawberries actually berries?',
-                        a: 'No! But bananas, avocados, and watermelons are technically berries.',
-                      },
-                      {
-                        q: 'What was chocolate used as in ancient times?',
-                        a: 'Money! The Aztecs used cacao beans as currency.',
-                      },
-                      {
-                        q: 'Can pineapples eat you?',
-                        a: 'Sort of! Pineapples contain bromelain, an enzyme that breaks down protein – it can make your tongue tingle.',
-                      },
-                      {
-                        q: 'What fruit has its seeds on the outside?',
-                        a: 'Strawberries! Those tiny "seeds" are actually the fruit, and the red part is the stem.',
-                      },
-                      {
-                        q: 'How many licks does it take to get to the center of a Tootsie Pop?',
-                        a: 'Studies say between 144-411 licks, depending on licking technique!',
-                      },
-                      {
-                        q: 'What\'s the most expensive spice in the world?',
-                        a: 'Saffron! It costs more than gold by weight.',
-                      },
-                      {
-                        q: 'Do carrots help you see in the dark?',
-                        a: 'Not really! This was British propaganda from WWII to hide their radar technology.',
-                      },
-                      {
-                        q: 'What vegetable was the first to be grown in space?',
-                        a: 'Potatoes! They were grown aboard the Space Shuttle Columbia in 1995.',
-                      },
-                      {
-                        q: 'Can you make diamonds from peanut butter?',
-                        a: 'Theoretically yes! Scientists can turn peanut butter into diamonds with extreme pressure.',
-                      },
-                      {
-                        q: 'What M&M color was removed and then brought back?',
-                        a: 'Red M&Ms! They were removed in 1976 and brought back in 1987.',
-                      },
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
-                      >
-                        <div className='flex gap-4'>
-                          <div className='flex-shrink-0'>
-                            <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                              {index + 31}
-                            </span>
-                          </div>
-                          <div className='flex-1'>
-                            <h3 className='text-xl font-semibold text-gray-900 dark:text-white mb-3'>
-                              {item.q}
-                            </h3>
-                            <details className='group'>
-                              <summary className='cursor-pointer text-primary hover:text-primary/80 font-medium flex items-center gap-2'>
-                                <span>Show Answer</span>
-                                <span className='material-symbols-outlined text-sm transition-transform group-open:rotate-180'>
-                                  expand_more
-                                </span>
-                              </summary>
-                              <p className='mt-3 text-gray-700 dark:text-gray-300 bg-primary/5 dark:bg-primary/10 rounded p-3'>
-                                <strong>Answer:</strong> {item.a}
-                              </p>
-                            </details>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Section 5: Random Fun Facts */}
-                <div className='mb-10'>
-                  <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2'>
-                    <span className='text-3xl'>🎲</span> Random Fun Facts
-                  </h3>
-                  <div className='space-y-6'>
-                    {[
-                      {
-                        q: 'What letter doesn\'t appear in any U.S. state name?',
-                        a: 'Q! It\'s the only letter not used in any state name.',
-                      },
-                      {
-                        q: 'How long would it take to fall to the center of the Earth?',
-                        a: 'About 42 minutes and 12 seconds if there was a hole straight through!',
-                      },
-                      {
-                        q: 'What did Nintendo originally sell before video games?',
-                        a: 'Playing cards! Nintendo started as a playing card company in 1889.',
-                      },
-                      {
-                        q: 'Can a clap of thunder reach 120 decibels?',
-                        a: 'Yes! That\'s as loud as a rock concert or chainsaw.',
-                      },
-                      {
-                        q: 'How many possible ways can you arrange a deck of cards?',
-                        a: 'About 8×10⁶⁷ ways – more than atoms on Earth!',
-                      },
-                      {
-                        q: 'What\'s the most common name in the world?',
-                        a: 'Muhammad! It\'s the most popular name globally.',
-                      },
-                      {
-                        q: 'Can you fold a piece of paper more than 7 times?',
-                        a: 'It\'s extremely difficult! The record is 12 folds (using a huge piece of paper).',
-                      },
-                      {
-                        q: 'What animal is the symbol on the Ferrari logo?',
-                        a: 'A prancing horse! It was originally the symbol of an Italian WWI pilot.',
-                      },
-                      {
-                        q: 'How many dimples does a golf ball have?',
-                        a: 'Between 300-500 dimples! They help the ball fly farther.',
-                      },
-                      {
-                        q: 'What color were the original LEGO bricks?',
-                        a: 'Red and white! These were the first colors available in 1949.',
-                      },
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'
-                      >
-                        <div className='flex gap-4'>
-                          <div className='flex-shrink-0'>
-                            <span className='inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold'>
-                              {index + 41}
-                            </span>
-                          </div>
-                          <div className='flex-1'>
-                            <h3 className='text-xl font-semibold text-gray-900 dark:text-white mb-3'>
-                              {item.q}
-                            </h3>
-                            <details className='group'>
-                              <summary className='cursor-pointer text-primary hover:text-primary/80 font-medium flex items-center gap-2'>
-                                <span>Show Answer</span>
-                                <span className='material-symbols-outlined text-sm transition-transform group-open:rotate-180'>
-                                  expand_more
-                                </span>
-                              </summary>
-                              <p className='mt-3 text-gray-700 dark:text-gray-300 bg-primary/5 dark:bg-primary/10 rounded p-3'>
-                                <strong>Answer:</strong> {item.a}
-                              </p>
-                            </details>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </section>
 
@@ -704,8 +632,8 @@ export default function FunTriviaQuestionsForKidsPage() {
                       surprised at the answers yourself, and celebrate both
                       correct and creative wrong answers. Mix up your question
                       types with themed rounds like "Weird Animals" or "Food
-                      Funnies." Let kids choose categories they're interested
-                      in – whether that's{' '}
+                      Funnies." Let kids choose categories they're interested in
+                      – whether that's{' '}
                       <Link
                         href='/blog/disney-trivia-questions-for-kids'
                         className='text-primary hover:underline'
@@ -722,13 +650,12 @@ export default function FunTriviaQuestionsForKidsPage() {
                       , or silly science.
                     </p>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      Add sound effects, use props, or create a "fun fact of
-                      the day" tradition. Most importantly, keep it light and
-                      fun – trivia should feel like play, not a test. The
-                      Family Trivia app automatically keeps things exciting
-                      with varied questions, sound effects, and personalized
-                      content that matches each child's interests and age
-                      level.
+                      Add sound effects, use props, or create a "fun fact of the
+                      day" tradition. Most importantly, keep it light and fun –
+                      trivia should feel like play, not a test. The Family
+                      Trivia app automatically keeps things exciting with varied
+                      questions, sound effects, and personalized content that
+                      matches each child's interests and age level.
                     </p>
                   </div>
 
@@ -737,14 +664,14 @@ export default function FunTriviaQuestionsForKidsPage() {
                       What trivia topics do kids find most interesting?
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300 mb-4'>
-                      Kids absolutely love weird animal facts (the stranger,
-                      the better!), gross science topics (bodily functions are
+                      Kids absolutely love weird animal facts (the stranger, the
+                      better!), gross science topics (bodily functions are
                       always a hit), food trivia (especially candy and
                       desserts), and random facts that seem impossible. Popular
                       categories include: animals with unusual abilities,
-                      bizarre world records, space and planets, dinosaurs,
-                      video games and technology, and anything that makes them
-                      say "Eww!" or "No way!"
+                      bizarre world records, space and planets, dinosaurs, video
+                      games and technology, and anything that makes them say
+                      "Eww!" or "No way!"
                     </p>
                     <p className='text-gray-700 dark:text-gray-300'>
                       The key is variety – kids get bored with one topic
@@ -801,12 +728,11 @@ export default function FunTriviaQuestionsForKidsPage() {
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                   Now you have 50 of the most fun, weird, and wonderful trivia
-                  questions to entertain your kids! From bizarre animal facts
-                  to silly science, wacky geography to food funnies, these
-                  questions prove that learning can be hilarious and
-                  surprising. The best part? These random trivia questions for
-                  kids work for any occasion – road trips, rainy days, waiting
-                  rooms, or family game nights.
+                  questions to entertain your kids! From bizarre animal facts to
+                  silly science and wacky geography, these questions prove that
+                  learning can be hilarious and surprising. The best part? These
+                  random trivia questions for kids work for any occasion – road
+                  trips, rainy days, waiting rooms, or family game nights.
                 </p>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
