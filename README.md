@@ -2,6 +2,8 @@
 
 Fun for kids. Challenging for adults. Fair for everyone. Endless, AI-generated trivia questions tailored to each person’s interests — all on a single device.
 
+[https://familytrivia.app](https://familytrivia.app)
+
 ## SEO Configuration
 
 This project automatically generates `robots.txt` and `sitemap.xml` for search engine optimization.
