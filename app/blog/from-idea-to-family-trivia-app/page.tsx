@@ -101,23 +101,22 @@ export default function FromIdeaToFamilyTriviaAppPage() {
 
               <section className='mb-10'>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  The story of the Family Trivia app started with a spark of
-                  inspiration I heard on the <strong>Chris Koerner YouTube channel</strong>.
-                  He mentioned a simple idea: use AI to generate trivia questions
-                  for a quick family game night. That single suggestion sent me
-                  down a fun rabbit hole.
+                  The Family Trivia app started with a single spark from the
+                  <strong> Chris Koerner YouTube channel</strong>. He tossed out
+                  a simple idea: use AI to generate trivia questions for a
+                  quick family game night. That little suggestion stuck with me.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  I opened ChatGPT and tried it right away with my daughter. We
-                  played several rounds, and it actually worked pretty well. I
-                  asked it to quiz us, gave it topics and difficulty levels, and
-                  even asked it to track our scores. It was surprisingly fun!
+                  I opened ChatGPT and tried it that night with my daughter.
+                  We picked a topic, asked for questions, and kept score. It was
+                  instantly fun, and it felt like we had discovered a new way to
+                  play together.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
-                  But after a few sessions, the rough edges showed up. I had to
-                  repeat the instructions every time, the interface felt clunky,
-                  and it wasn&apos;t easy to keep the game flowing. That&apos;s when
-                  the idea shifted from “this is fun” to “this could be a real
+                  A few sessions in, the rough edges showed up. I had to repeat
+                  the same instructions, the flow kept breaking, and it felt
+                  more like chatting with a bot than playing a game. That&apos;s
+                  when the idea shifted from “this is fun” to “this should be an
                   app.”
                 </p>
               </section>
@@ -159,6 +158,13 @@ export default function FromIdeaToFamilyTriviaAppPage() {
                   iteration. Each play session revealed little things that could
                   be better—faster setup, clearer instructions, and smoother
                   transitions between questions.
+                </p>
+                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
+                  One of the biggest improvements came from prompt engineering.
+                  I tuned the prompts and tested different models so the
+                  questions felt sharper, more age-appropriate, and consistent.
+                  We added checks to ensure every topic and question stays
+                  kid-friendly and safe before it reaches families.
                 </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   <div className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'>
