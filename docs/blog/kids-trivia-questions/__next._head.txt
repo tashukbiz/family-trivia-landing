@@ -3,6 +3,6 @@
 4:I[42178,["/_next/static/chunks/8e5cbd5277a6eb4f.js","/_next/static/chunks/351283919579e33c.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
 7:I[29748,["/_next/static/chunks/8e5cbd5277a6eb4f.js","/_next/static/chunks/351283919579e33c.js"],"IconMark"]
-0:{"buildId":"cjwqDexrrOAEG58tWmlNr","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
+0:{"buildId":"XchWGszXi_A2buoSbifrx","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 6:[["$","title","0",{"children":"50 Kids Trivia Questions (With Answers) for Ages 6–12 | Family Trivia"}],["$","meta","1",{"name":"description","content":"Looking for kids trivia questions? Here are 50 easy to medium trivia questions perfect for children ages 6-12. Test your knowledge with our Family Trivia app!"}],["$","meta","2",{"name":"keywords","content":"kids trivia questions,trivia questions kids,questions for kids trivia,easy trivia questions for kids,Family Trivia app,kids games,educational games for kids"}],["$","link","3",{"rel":"icon","href":"/favicon.ico"}],["$","$L7","4",{}]]
