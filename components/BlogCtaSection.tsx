@@ -1,4 +1,4 @@
-import SignupButton from './SignupButton';
+import DownloadButtons from './DownloadButtons';
 
 export default function BlogCtaSection() {
   return (
@@ -6,14 +6,10 @@ export default function BlogCtaSection() {
       <p className='text-lg font-semibold text-gray-900 dark:text-white mb-4'>
         🎉 Ready for unlimited trivia fun? Download Family Trivia now!
       </p>
-      <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
-        <SignupButton className='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity'>
-          <span className='truncate'>Download for iOS</span>
-        </SignupButton>
-        <SignupButton className='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity'>
-          <span className='truncate'>Download for Android</span>
-        </SignupButton>
-      </div>
+      <DownloadButtons
+        containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center'
+        buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity'
+      />
       <p className='text-sm text-gray-600 dark:text-gray-400 mt-4'>
         Share this article with friends and family who love trivia!
       </p>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import SignupButton from '@/components/SignupButton';
+import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 
 export default function Home() {
@@ -63,14 +63,12 @@ export default function Home() {
                     Endless, AI-generated trivia questions tailored to each
                     person&apos;s interests — all on a single device.
                   </p>
-                  <div className='flex-wrap gap-4 flex justify-center mt-4'>
-                    <SignupButton className='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity'>
-                      <span className='truncate'>Download for iOS</span>
-                    </SignupButton>
-                    <SignupButton className='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-colors'>
-                      <span className='truncate'>Download for Android</span>
-                    </SignupButton>
-                  </div>
+                  <DownloadButtons
+                    containerClassName='flex-wrap gap-4 flex justify-center mt-4'
+                    buttonClassName='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:opacity-90'
+                    iosButtonClassName='transition-opacity'
+                    androidButtonClassName='transition-colors'
+                  />
                 </div>
               </section>
 
@@ -348,14 +346,10 @@ export default function Home() {
                     Start with a free trial. Keep playing with unlimited topics,
                     unlimited rounds, and unlimited new questions.
                   </p>
-                  <div className='mt-8 flex flex-col sm:flex-row justify-center items-center gap-4'>
-                    <SignupButton className='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold tracking-wide hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors'>
-                      <span className='truncate'>Download for iOS</span>
-                    </SignupButton>
-                    <SignupButton className='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold tracking-wide hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors'>
-                      <span className='truncate'>Download for Android</span>
-                    </SignupButton>
-                  </div>
+                  <DownloadButtons
+                    containerClassName='mt-8 flex flex-col sm:flex-row justify-center items-center gap-4'
+                    buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold tracking-wide hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors'
+                  />
                 </div>
               </section>
 

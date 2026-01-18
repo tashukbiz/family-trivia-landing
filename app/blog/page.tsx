@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import SignupButton from '@/components/SignupButton';
+import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import { readdirSync, statSync } from 'fs';
 import { join } from 'path';
@@ -199,14 +199,10 @@ export default function BlogPage() {
                 Download Family Trivia and enjoy thousands of questions powered
                 by AI, perfect for players of all ages.
               </p>
-              <div className='flex-wrap gap-4 flex justify-center'>
-                <SignupButton className='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white text-primary text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity'>
-                  <span className='truncate'>Download for iOS</span>
-                </SignupButton>
-                <SignupButton className='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white text-primary text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity'>
-                  <span className='truncate'>Download for Android</span>
-                </SignupButton>
-              </div>
+              <DownloadButtons
+                containerClassName='flex-wrap gap-4 flex justify-center'
+                buttonClassName='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white text-primary text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity'
+              />
             </section>
           </div>
         </div>

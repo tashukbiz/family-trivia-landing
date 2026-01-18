@@ -1,4 +1,4 @@
-import SignupButton from '@/components/SignupButton';
+import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
@@ -609,14 +609,10 @@ export default function FunTriviaQuestionsForKidsPage() {
                     challenge!
                   </p>
 
-                  <div className='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'>
-                    <SignupButton className='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'>
-                      <span className='truncate'>Download for iOS</span>
-                    </SignupButton>
-                    <SignupButton className='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'>
-                      <span className='truncate'>Download for Android</span>
-                    </SignupButton>
-                  </div>
+                  <DownloadButtons
+                    containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
+                    buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
+                  />
 
                   <p className='text-sm text-gray-600 dark:text-gray-400'>
                     ✓ Thousands of fun questions &nbsp;•&nbsp; ✓ Personalized
