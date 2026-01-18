@@ -38,6 +38,12 @@ export default function Home() {
                     >
                       FAQ
                     </a>
+                    <a
+                      className='text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary'
+                      href='/blog'
+                    >
+                      Blog
+                    </a>
                   </div>
                   <a
                     href='#cta'
