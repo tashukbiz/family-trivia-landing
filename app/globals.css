@@ -42,9 +42,6 @@ body {
   display: flex;
 }
 
-.signup-form #mc_embed_signup {
-  max-width: 500px;
+.signup-form .signup-panel {
   margin: 20px;
-  border-radius: 1rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }

@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupButton from '@/components/SignupButton';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
@@ -559,9 +558,12 @@ export default function KidsTriviaQuestionsPage() {
                     beyond. Every player gets questions that are just right for
                     them!
                   </p>
-                  <SignupButton className='inline-flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'>
-                    <span className='truncate'>Get the App Free</span>
-                  </SignupButton>
+                  <DownloadButtons
+                    containerClassName='flex flex-col items-center justify-center gap-3 sm:flex-row'
+                    buttonClassName='inline-flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
+                    iosLabel='Get the App on iOS'
+                    androidLabel='Get the App on Android'
+                  />
                 </div>
 
                 {/* Section 4: History & Geography (Simplified) */}

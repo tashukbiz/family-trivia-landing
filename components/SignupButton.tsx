@@ -3,11 +3,18 @@
 interface SignupButtonProps {
   children: React.ReactNode;
   className?: string;
+  target: 'ios' | 'android';
 }
 
-export default function SignupButton({ children, className = '' }: SignupButtonProps) {
+export default function SignupButton({
+  children,
+  className = '',
+  target,
+}: SignupButtonProps) {
   const handleClick = () => {
-    document.querySelector('.signup-form')?.classList.add('show');
+    document
+      .querySelector(`.signup-form--${target}`)
+      ?.classList.add('show');
   };
 
   return (

@@ -7,125 +7,119 @@ export default function SignupForm() {
     }
   };
 
-  const handleSubmit = () => {
-    setTimeout(() => {
-      document.querySelector('.signup-form')?.classList.remove('show');
-    }, 500);
+  const handleClose = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const modal = event.currentTarget.closest('.signup-form');
+    modal?.classList.remove('show');
   };
 
   return (
-    <div className='signup-form' onClick={handleOutsideClick}>
-      <div id='mc_embed_shell'>
-        <link
-          href='//cdn-images.mailchimp.com/embedcode/classic-061523.css'
-          rel='stylesheet'
-          type='text/css'
-        />
-        <style type='text/css'>{`
-          #mc_embed_signup {
-            background: #fff;
-            clear: left;
-            font: 14px Helvetica, Arial, sans-serif;
-          }
-        `}</style>
-        <div id='mc_embed_signup'>
-          <form
-            action='https://github.us14.list-manage.com/subscribe/post?u=d40cc9cab694cb16969088077&amp;id=8a94ea6022&amp;f_id=002db6e5f0'
-            method='post'
-            id='mc-embedded-subscribe-form'
-            name='mc-embedded-subscribe-form'
-            className='validate'
-            target='_blank'
-            onSubmit={handleSubmit}
-          >
-            <div id='mc_embed_signup_scroll' className='p-3'>
-              <h2>We&apos;re still building.</h2>
-              Want to test the app before we launch? We're looking for a limited
-              number of beta testers only.
-              <div className='indicates-required'>
-                <span className='asterisk'>*</span> indicates required
-              </div>
-              <div className='mc-field-group'>
-                <label htmlFor='mce-EMAIL'>
-                  Email Address <span className='asterisk'>*</span>
-                </label>
-                <input
-                  type='email'
-                  name='EMAIL'
-                  className='required email'
-                  id='mce-EMAIL'
-                  required
-                />
-              </div>
-              <div id='mce-responses' className='clear foot'>
-                <div
-                  className='response'
-                  id='mce-error-response'
-                  style={{ display: 'none' }}
-                ></div>
-                <div
-                  className='response'
-                  id='mce-success-response'
-                  style={{ display: 'none' }}
-                ></div>
-              </div>
-              <div
-                aria-hidden='true'
-                style={{ position: 'absolute', left: '-5000px' }}
+    <>
+      <div
+        className='signup-form signup-form--ios'
+        onClick={handleOutsideClick}
+      >
+        <div
+          className='signup-panel w-[min(520px,92vw)] rounded-2xl bg-white p-6 text-slate-900 shadow-2xl sm:p-8'
+          role='dialog'
+          aria-modal='true'
+          aria-labelledby='early-testing-title-ios'
+        >
+          <div className='flex items-start justify-between gap-4'>
+            <div>
+              <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>
+                Early Testing
+              </p>
+              <h2
+                id='early-testing-title-ios'
+                className='mt-2 text-2xl font-bold'
               >
-                <input
-                  type='text'
-                  name='b_d40cc9cab694cb16969088077_8a94ea6022'
-                  tabIndex={-1}
-                />
-              </div>
-              <div className='optionalParent'>
-                <div className='clear foot'>
-                  <input
-                    type='submit'
-                    name='subscribe'
-                    id='mc-embedded-subscribe'
-                    className='button'
-                    value='Sign up'
-                  />
-                  <p style={{ margin: '0px auto' }}>
-                    <a
-                      href='http://eepurl.com/jsvEfA'
-                      title='Mailchimp - email marketing made easy and fun'
-                    >
-                      <span
-                        style={{
-                          display: 'inline-block',
-                          backgroundColor: 'transparent',
-                          borderRadius: '4px',
-                        }}
-                      >
-                        <img
-                          className='refferal_badge'
-                          src='https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg'
-                          alt='Intuit Mailchimp'
-                          style={{
-                            width: '220px',
-                            height: '40px',
-                            display: 'flex',
-                            padding: '2px 0px',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                          }}
-                        />
-                      </span>
-                    </a>
-                  </p>
-                </div>
-              </div>
+                Family Trivia is in early testing
+              </h2>
             </div>
-          </form>
+            <button
+              type='button'
+              onClick={handleClose}
+              className='rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-500 transition hover:border-slate-300 hover:text-slate-700'
+              aria-label='Close iOS download popup'
+            >
+              Close
+            </button>
+          </div>
+          <p className='mt-4 text-sm leading-relaxed text-slate-600'>
+            We&apos;re inviting early testers to try the app before the public
+            launch. Install the iOS beta with TestFlight.
+          </p>
+          <a
+            href='https://testflight.apple.com/join/zAf9TQNb'
+            target='_blank'
+            rel='noreferrer'
+            className='mt-6 inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90'
+          >
+            Join TestFlight
+          </a>
         </div>
-        <script
-          type='text/javascript'
-          src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'
-        ></script>
       </div>
-    </div>
+      <div
+        className='signup-form signup-form--android'
+        onClick={handleOutsideClick}
+      >
+        <div
+          className='signup-panel w-[min(520px,92vw)] rounded-2xl bg-white p-6 text-slate-900 shadow-2xl sm:p-8'
+          role='dialog'
+          aria-modal='true'
+          aria-labelledby='early-testing-title-android'
+        >
+          <div className='flex items-start justify-between gap-4'>
+            <div>
+              <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>
+                Early Testing
+              </p>
+              <h2
+                id='early-testing-title-android'
+                className='mt-2 text-2xl font-bold'
+              >
+                Family Trivia is in early testing
+              </h2>
+            </div>
+            <button
+              type='button'
+              onClick={handleClose}
+              className='rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-500 transition hover:border-slate-300 hover:text-slate-700'
+              aria-label='Close Android download popup'
+            >
+              Close
+            </button>
+          </div>
+          <p className='mt-4 text-sm leading-relaxed text-slate-600'>
+            We&apos;re inviting early testers to try the app before the public
+            launch. Follow these quick steps to install on Android.
+          </p>
+          <ol className='mt-5 space-y-3 text-sm text-slate-600'>
+            <li>
+              <a
+                href='https://groups.google.com/g/family-trivia-testers'
+                target='_blank'
+                rel='noreferrer'
+                className='font-semibold text-slate-900 underline decoration-slate-300 underline-offset-2'
+              >
+                Join the Family Trivia tester group
+              </a>
+              .
+            </li>
+            <li>
+              <a
+                href='https://play.google.com/store/apps/details?id=app.tashuk.familytrivia'
+                target='_blank'
+                rel='noreferrer'
+                className='font-semibold text-slate-900 underline decoration-slate-300 underline-offset-2'
+              >
+                Install the app from Google Play
+              </a>
+              .
+            </li>
+          </ol>
+        </div>
+      </div>
+    </>
   );
 }

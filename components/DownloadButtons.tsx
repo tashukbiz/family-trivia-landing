@@ -32,10 +32,10 @@ export default function DownloadButtons({
 
   return (
     <div className={containerClasses}>
-      <SignupButton className={iosClasses}>
+      <SignupButton className={iosClasses} target='ios'>
         <span className={labelClassName}>{iosLabel}</span>
       </SignupButton>
-      <SignupButton className={androidClasses}>
+      <SignupButton className={androidClasses} target='android'>
         <span className={labelClassName}>{androidLabel}</span>
       </SignupButton>
     </div>
