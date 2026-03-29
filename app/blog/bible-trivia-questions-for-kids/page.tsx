@@ -3,6 +3,7 @@ import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -249,34 +250,13 @@ export default function BibleTriviaQuestionsForKidsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Article',
-        headline:
-          'Bible Trivia Questions for Kids (With Answers): 50 Questions for Home or Sunday School',
-        description:
-          'Looking for Bible trivia questions for kids? Here are 50 easy Bible trivia questions from Old and New Testament. Perfect for Sunday school, homeschool, or family devotions!',
-        image: 'https://familytrivia.app/og-image.png',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id':
-            'https://familytrivia.app/blog/bible-trivia-questions-for-kids',
-        },
-        keywords:
-          'bible trivia questions for kids, bible trivia for kids, kids bible trivia, easy bible trivia, bible questions for kids, sunday school trivia',
-      },
+      buildBlogPostingSchema({
+        type: 'Article',
+        headline: 'Bible Trivia Questions for Kids (With Answers): 50 Questions for Home or Sunday School',
+        description: 'Looking for Bible trivia questions for kids? Here are 50 easy Bible trivia questions from Old and New Testament. Perfect for Sunday school, homeschool, or family devotions!',
+        path: '/blog/bible-trivia-questions-for-kids',
+        keywords: 'bible trivia questions for kids, bible trivia for kids, kids bible trivia, easy bible trivia, bible questions for kids, sunday school trivia',
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: allQuestions.map((item) => ({

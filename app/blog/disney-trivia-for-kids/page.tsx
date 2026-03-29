@@ -4,6 +4,7 @@ import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildBlogPostingSchema, OG_IMAGE_URL } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
   title: 'Disney Trivia for Kids (Ages 5–10) | Family Trivia',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://familytrivia.app/og-image.png',
+        url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
         alt: 'Family Trivia',
@@ -168,33 +169,15 @@ export default function DisneyTriviaForKidsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'BlogPosting',
+      buildBlogPostingSchema({
+        type: 'BlogPosting',
         headline: 'Disney Trivia for Kids (Ages 5–10): Easy & Fun Questions',
-        description:
-          'Disney trivia for kids ages 5–10 with easy questions by age, tips for mixed ages, and a simple way to play together as a family game at home or on trips.',
-        image: 'https://familytrivia.app/og-image.png',
+        description: 'Disney trivia for kids ages 5–10 with easy questions by age, tips for mixed ages, and a simple way to play together as a family game at home or on trips.',
         datePublished: '2025-02-10T00:00:00Z',
         dateModified: '2025-02-10T00:00:00Z',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://familytrivia.app/blog/disney-trivia-for-kids',
-        },
+        path: '/blog/disney-trivia-for-kids',
         keywords: 'disney trivia for kids, disney trivia questions, disney trivia game',
-      },
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: faqItems.map((item) => ({

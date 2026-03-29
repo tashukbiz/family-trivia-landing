@@ -3,6 +3,7 @@ import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -109,32 +110,13 @@ export default function TriviaQuestionsForAdultsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Article',
-        headline:
-          'Trivia Questions for Adults – 20 Challenging Questions for Game Night!',
-        description:
-          'Looking for trivia questions for adults? Discover 20 challenging trivia questions perfect for game night, gatherings, and parties. Test your knowledge with our Family Trivia app!',
-        image: 'https://familytrivia.app/og-image.png',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://familytrivia.app/blog/trivia-questions-for-adults',
-        },
+      buildBlogPostingSchema({
+        type: 'Article',
+        headline: 'Trivia Questions for Adults – 20 Challenging Questions for Game Night!',
+        description: 'Looking for trivia questions for adults? Discover 20 challenging trivia questions perfect for game night, gatherings, and parties. Test your knowledge with our Family Trivia app!',
+        path: '/blog/trivia-questions-for-adults',
         keywords: 'trivia questions for adults, adult trivia, trivia questions',
-      },
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: triviaQuestions.map((item) => ({
