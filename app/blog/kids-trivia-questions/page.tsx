@@ -3,6 +3,7 @@ import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -207,32 +208,13 @@ export default function KidsTriviaQuestionsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Article',
+      buildBlogPostingSchema({
+        type: 'Article',
         headline: '50 Kids Trivia Questions (With Answers) for Ages 6–12',
-        description:
-          'Looking for kids trivia questions? Here are 50 easy to medium trivia questions perfect for children ages 6-12. Test your knowledge with our Family Trivia app!',
-        image: 'https://familytrivia.app/og-image.png',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://familytrivia.app/blog/kids-trivia-questions',
-        },
-        keywords:
-          'kids trivia questions, trivia questions kids, questions for kids trivia, easy trivia questions for kids',
-      },
+        description: 'Looking for kids trivia questions? Here are 50 easy to medium trivia questions perfect for children ages 6-12. Test your knowledge with our Family Trivia app!',
+        path: '/blog/kids-trivia-questions',
+        keywords: 'kids trivia questions, trivia questions kids, questions for kids trivia, easy trivia questions for kids',
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: allQuestions.map((item) => ({

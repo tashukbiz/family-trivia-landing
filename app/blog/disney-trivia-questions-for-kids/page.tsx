@@ -3,6 +3,7 @@ import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -26,36 +27,15 @@ export default function DisneyTriviaQuestionsForKidsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Article',
-        headline:
-          'Disney Trivia Questions for Kids (With Answers): 50 Magical Questions',
-        description:
-          'Looking for Disney trivia questions for kids? Here are 50 magical Disney trivia questions covering Pixar, princesses, villains, and classic movies. Perfect for Disney fans!',
-        image: 'https://familytrivia.app/og-image.png',
+      buildBlogPostingSchema({
+        type: 'Article',
+        headline: 'Disney Trivia Questions for Kids (With Answers): 50 Magical Questions',
+        description: 'Looking for Disney trivia questions for kids? Here are 50 magical Disney trivia questions covering Pixar, princesses, villains, and classic movies. Perfect for Disney fans!',
         datePublished: '2024-12-17T00:00:00Z',
         dateModified: '2024-12-17T00:00:00Z',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id':
-            'https://familytrivia.app/blog/disney-trivia-questions-for-kids',
-        },
-        keywords:
-          'disney trivia questions for kids, disney trivia for kids, disney trivia questions, disney trivia',
-      },
+        path: '/blog/disney-trivia-questions-for-kids',
+        keywords: 'disney trivia questions for kids, disney trivia for kids, disney trivia questions, disney trivia',
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: [

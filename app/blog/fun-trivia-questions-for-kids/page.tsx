@@ -3,6 +3,7 @@ import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -241,32 +242,13 @@ export default function FunTriviaQuestionsForKidsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Article',
+      buildBlogPostingSchema({
+        type: 'Article',
         headline: '50 Fun Trivia Questions for Kids (With Answers)',
-        description:
-          'Looking for fun trivia questions for kids? Here are 50 playful and entertaining trivia questions covering weird animals, silly science, and fun geography. Perfect for family game night!',
-        image: 'https://familytrivia.app/og-image.png',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://familytrivia.app/blog/fun-trivia-questions-for-kids',
-        },
-        keywords:
-          'fun trivia questions for kids, trivia questions for kids, random trivia questions for kids, good trivia questions for kids',
-      },
+        description: 'Looking for fun trivia questions for kids? Here are 50 playful and entertaining trivia questions covering weird animals, silly science, and fun geography. Perfect for family game night!',
+        path: '/blog/fun-trivia-questions-for-kids',
+        keywords: 'fun trivia questions for kids, trivia questions for kids, random trivia questions for kids, good trivia questions for kids',
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: allQuestions.map((item) => ({

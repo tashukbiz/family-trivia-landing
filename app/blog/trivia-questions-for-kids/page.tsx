@@ -3,6 +3,7 @@ import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -81,32 +82,13 @@ export default function TriviaQuestionsForKidsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Article',
-        headline:
-          'Trivia Questions for Kids – 20 Fun Questions to Play at Home!',
-        description:
-          'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions perfect for children of all ages. Play at home with our Family Trivia app!',
-        image: 'https://familytrivia.app/og-image.png',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://familytrivia.app/blog/trivia-questions-for-kids',
-        },
+      buildBlogPostingSchema({
+        type: 'Article',
+        headline: 'Trivia Questions for Kids – 20 Fun Questions to Play at Home!',
+        description: 'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions perfect for children of all ages. Play at home with our Family Trivia app!',
+        path: '/blog/trivia-questions-for-kids',
         keywords: 'trivia questions for kids, kids trivia, trivia questions',
-      },
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: triviaQuestions.map((item) => ({

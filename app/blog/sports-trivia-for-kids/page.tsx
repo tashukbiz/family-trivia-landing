@@ -3,6 +3,7 @@ import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -248,32 +249,13 @@ export default function SportsTriviaForKidsPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Article',
+      buildBlogPostingSchema({
+        type: 'Article',
         headline: 'Sports Trivia for Kids: 50 Fun Questions (With Answers)',
-        description:
-          'Looking for sports trivia for kids? Here are 50 fun sports trivia questions covering soccer, basketball, Olympics, and more. Perfect for young sports fans!',
-        image: 'https://familytrivia.app/og-image.png',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://familytrivia.app/blog/sports-trivia-for-kids',
-        },
-        keywords:
-          'sports trivia for kids, sports trivia questions, sports trivia questions and answers, kids sports trivia',
-      },
+        description: 'Looking for sports trivia for kids? Here are 50 fun sports trivia questions covering soccer, basketball, Olympics, and more. Perfect for young sports fans!',
+        path: '/blog/sports-trivia-for-kids',
+        keywords: 'sports trivia for kids, sports trivia questions, sports trivia questions and answers, kids sports trivia',
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: allQuestions.map((item) => ({

@@ -4,6 +4,7 @@ import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildBlogPostingSchema, OG_IMAGE_URL } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
   title: 'Disney Movie Trivia: Classic & Modern Films for Families',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://familytrivia.app/og-image.png',
+        url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
         alt: 'Family Trivia',
@@ -168,33 +169,15 @@ export default function DisneyMovieTriviaPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'BlogPosting',
+      buildBlogPostingSchema({
+        type: 'BlogPosting',
         headline: 'Disney Movie Trivia: Classic & Modern Films',
-        description:
-          'Disney movie trivia with classic favorites, modern Pixar hits, and villains & sidekicks questions, plus a quick family game format for kids and parents.',
-        image: 'https://familytrivia.app/og-image.png',
+        description: 'Disney movie trivia with classic favorites, modern Pixar hits, and villains & sidekicks questions, plus a quick family game format for kids and parents.',
         datePublished: '2025-02-10T00:00:00Z',
         dateModified: '2025-02-10T00:00:00Z',
-        author: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          url: 'https://familytrivia.app',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Family Trivia',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://familytrivia.app/favicon.ico',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://familytrivia.app/blog/disney-movie-trivia',
-        },
+        path: '/blog/disney-movie-trivia',
         keywords: 'disney movie trivia, disney trivia, disney trivia questions',
-      },
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: faqItems.map((item) => ({

@@ -28,7 +28,7 @@ export default function FromIdeaToFamilyTriviaAppPage() {
     headline: 'From Idea to Family Trivia App: First Steps & Iterations',
     description:
       'Follow the early journey of building the Family Trivia app: the first idea, the MVP, iterative improvements, and how we are now testing on iOS and Android.',
-    image: 'https://familytrivia.app/og-image.png',
+    image: 'https://familytrivia.app/og-image.jpg',
     author: {
       '@type': 'Person',
       name: 'Family Trivia Team',
