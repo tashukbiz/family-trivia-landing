@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Terms of Service - Family Trivia',
   description: 'Terms of Service for Family Trivia app',
-};
+  path: '/terms',
+  type: 'website',
+});
 
 export default function TermsPage() {
   return (

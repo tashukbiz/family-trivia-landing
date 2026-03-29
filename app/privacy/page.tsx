@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Privacy Policy - Family Trivia',
   description: 'Privacy Policy for Family Trivia app',
-};
+  path: '/privacy',
+  type: 'website',
+});
 
 export default function PrivacyPage() {
   return (

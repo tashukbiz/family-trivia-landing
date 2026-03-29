@@ -2,11 +2,16 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { AHrefsAnalytics } from '@/components/analytics/AHrefsAnalytics';
 import { GoogleAnalyticsRegistration } from '@/components/analytics/GoogleAnalytics';
+import { buildPageMetadata, seoSiteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Family Trivia - The Trivia Game for Everyone',
-  description:
-    "Fun for kids. Challenging for adults. Fair for everyone. Endless, AI-generated trivia questions tailored to each person's interests — all on a single device.",
+  metadataBase: new URL(seoSiteConfig.siteUrl),
+  ...buildPageMetadata({
+    title: 'Family Trivia - The Trivia Game for Everyone',
+    description:
+      "Fun for kids. Challenging for adults. Fair for everyone. Endless, AI-generated trivia questions tailored to each person's interests — all on a single device.",
+    path: '/',
+  }),
   icons: {
     icon: '/favicon.ico',
   },
