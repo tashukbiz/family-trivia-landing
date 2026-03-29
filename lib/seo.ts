@@ -12,7 +12,7 @@ interface BuildPageMetadataParams {
 
 const SITE_NAME = 'Family Trivia';
 const SITE_URL = 'https://familytrivia.app';
-const DEFAULT_OG_IMAGE = '/og-image.png';
+const DEFAULT_OG_IMAGE = '/og-image.jpg';
 
 export function buildPageMetadata({
   title,
