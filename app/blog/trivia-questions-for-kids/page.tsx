@@ -2,14 +2,14 @@ import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = {
-  title:
-    'Trivia Questions for Kids - 20 Fun Questions to Play at Home! | Family Trivia',
-  description:
-    'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions perfect for children of all ages. Play at home with our Family Trivia app!',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Trivia Questions for Kids - 20 Fun Questions to Play at Home! | Family Trivia',
+  description: 'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions perfect for children of all ages. Play at home with our Family Trivia app!',
+  path: '/blog/trivia-questions-for-kids',
   keywords: [
     'trivia questions',
     'trivia questions for kids',
@@ -18,7 +18,8 @@ export const metadata: Metadata = {
     'family games',
     'educational games for kids',
   ],
-};
+  type: 'article',
+});
 
 export default function TriviaQuestionsForKidsPage() {
   const triviaQuestions = [

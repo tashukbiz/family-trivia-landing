@@ -2,14 +2,14 @@ import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = {
-  title:
-    'Sports Trivia for Kids: 50 Fun Questions (With Answers) | Family Trivia',
-  description:
-    'Looking for sports trivia for kids? Here are 50 fun sports trivia questions covering soccer, basketball, Olympics, and more. Perfect for young sports fans!',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Sports Trivia for Kids: 50 Fun Questions (With Answers) | Family Trivia',
+  description: 'Looking for sports trivia for kids? Here are 50 fun sports trivia questions covering soccer, basketball, Olympics, and more. Perfect for young sports fans!',
+  path: '/blog/sports-trivia-for-kids',
   keywords: [
     'sports trivia for kids',
     'sports trivia questions',
@@ -18,7 +18,8 @@ export const metadata: Metadata = {
     'Family Trivia app',
     'sports games for kids',
   ],
-};
+  type: 'article',
+});
 
 export default function SportsTriviaForKidsPage() {
   const soccerQuestions = [

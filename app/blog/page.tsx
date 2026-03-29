@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/seo';
 import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import { readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Family Trivia Blog - Tips, Questions, and Fun Family Game Ideas',
-  description:
-    'Discover trivia questions, family game night tips, and educational content for kids. Learn how to make family time more fun and engaging with Family Trivia.',
+  description: 'Discover trivia questions, family game night tips, and educational content for kids. Learn how to make family time more fun and engaging with Family Trivia.',
+  path: '/blog',
   keywords: [
     'family trivia',
     'trivia questions',
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
     'kids activities',
     'educational games',
   ],
-};
+  type: 'website',
+});
 
 interface BlogPost {
   slug: string;
