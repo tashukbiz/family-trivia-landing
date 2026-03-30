@@ -3,9 +3,117 @@ import Link from 'next/link';
 import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 
+type HomepageFaq = {
+  question: string;
+  answer: string;
+  footnoteId?: string;
+};
+
+const homepageFaqs: HomepageFaq[] = [
+  {
+    question: 'What ages is this for?',
+    answer:
+      'Family Trivia is designed for all ages! The personalized difficulty and topics ensure everyone gets questions that are right for them.',
+  },
+  {
+    question: 'Why personalization?',
+    answer:
+      'Personalization is the key to fairness and fun. It prevents kids from getting discouraged by questions that are too hard and keeps adults engaged.',
+  },
+  {
+    question: 'How many players?',
+    answer:
+      'You can add up to 10 individual players or teams, making it perfect for small families or large gatherings.',
+  },
+  {
+    question: 'Do questions repeat?',
+    answer: 'Our AI generates fresh questions for every single game.',
+    footnoteId: 'footnote-ai',
+  },
+  {
+    question: 'How does the subscription work?',
+    answer:
+      "Start with a free trial period to explore all features at no cost. If you don't cancel before the trial ends, your subscription will automatically begin and you'll be charged through your App Store or Google Play account. You can cancel anytime before the trial ends to avoid charges, or keep your subscription to continue enjoying unlimited topics, rounds, and questions.",
+  },
+  {
+    question: 'Can I cancel anytime?',
+    answer:
+      "Yes, you can easily cancel your subscription at any time through your device's app store settings.",
+  },
+  {
+    question: 'Do I need multiple devices?',
+    answer:
+      'Nope! The whole game is designed to be played on a single phone or tablet that you pass around the group or read the questions to other players.',
+  },
+] as const;
+
+const homepageStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Family Trivia',
+      url: 'https://familytrivia.app',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://familytrivia.app/favicon.ico',
+      },
+      email: 'familytrivia.app@gmail.com',
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Family Trivia',
+      url: 'https://familytrivia.app',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Family Trivia',
+        url: 'https://familytrivia.app',
+      },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Family Trivia',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'iOS, Android',
+      url: 'https://familytrivia.app',
+      description:
+        'A family trivia game where each player chooses their own topic and difficulty, with AI-generated questions and local multiplayer on a shared device.',
+      featureList: [
+        '1 to 10 players or teams',
+        'Shared-device local multiplayer',
+        'iOS availability',
+        'Android availability',
+        'Personalized topics and difficulty per player',
+      ],
+      publisher: {
+        '@type': 'Organization',
+        name: 'Family Trivia',
+        url: 'https://familytrivia.app',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: homepageFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageStructuredData),
+        }}
+      />
       <div className='relative w-full flex flex-col group/design-root overflow-x-hidden'>
         <div className='layout-container flex h-full grow flex-col'>
           <div className='px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5'>
@@ -366,101 +474,27 @@ export default function Home() {
                     Frequently asked questions
                   </h2>
                   <div className='mt-10 space-y-4'>
-                    <details className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'>
-                      <summary className='flex justify-between items-center font-medium'>
-                        What ages is this for?
-                        <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
-                          expand_more
-                        </span>
-                      </summary>
-                      <p className='text-slate-600 dark:text-slate-400 mt-3'>
-                        Family Trivia is designed for all ages! The personalized
-                        difficulty and topics ensure everyone gets questions
-                        that are right for them.
-                      </p>
-                    </details>
-                    <details className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'>
-                      <summary className='flex justify-between items-center font-medium'>
-                        Why personalization?
-                        <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
-                          expand_more
-                        </span>
-                      </summary>
-                      <p className='text-slate-600 dark:text-slate-400 mt-3'>
-                        Personalization is the key to fairness and fun. It
-                        prevents kids from getting discouraged by questions that
-                        are too hard and keeps adults engaged.
-                      </p>
-                    </details>
-                    <details className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'>
-                      <summary className='flex justify-between items-center font-medium'>
-                        How many players?
-                        <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
-                          expand_more
-                        </span>
-                      </summary>
-                      <p className='text-slate-600 dark:text-slate-400 mt-3'>
-                        You can add up to 10 individual players or teams, making
-                        it perfect for small families or large gatherings.
-                      </p>
-                    </details>
-                    <details className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'>
-                      <summary className='flex justify-between items-center font-medium'>
-                        Do questions repeat?
-                        <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
-                          expand_more
-                        </span>
-                      </summary>
-                      <p className='text-slate-600 dark:text-slate-400 mt-3'>
-                        Our AI generates fresh questions for every single game.
-                        <a href='#footnote-ai' className='text-primary'>
-                          *
-                        </a>
-                      </p>
-                    </details>
-                    <details className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'>
-                      <summary className='flex justify-between items-center font-medium'>
-                        How does the subscription work?
-                        <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
-                          expand_more
-                        </span>
-                      </summary>
-                      <p className='text-slate-600 dark:text-slate-400 mt-3'>
-                        Start with a free trial period to explore all features
-                        at no cost. If you don&apos;t cancel before the trial
-                        ends, your subscription will automatically begin and
-                        you&apos;ll be charged through your App Store or Google
-                        Play account. You can cancel anytime before the trial
-                        ends to avoid charges, or keep your subscription to
-                        continue enjoying unlimited topics, rounds, and
-                        questions.
-                      </p>
-                    </details>
-                    <details className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'>
-                      <summary className='flex justify-between items-center font-medium'>
-                        Can I cancel anytime?
-                        <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
-                          expand_more
-                        </span>
-                      </summary>
-                      <p className='text-slate-600 dark:text-slate-400 mt-3'>
-                        Yes, you can easily cancel your subscription at any time
-                        through your device&apos;s app store settings.
-                      </p>
-                    </details>
-                    <details className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'>
-                      <summary className='flex justify-between items-center font-medium'>
-                        Do I need multiple devices?
-                        <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
-                          expand_more
-                        </span>
-                      </summary>
-                      <p className='text-slate-600 dark:text-slate-400 mt-3'>
-                        Nope! The whole game is designed to be played on a
-                        single phone or tablet that you pass around the group or
-                        read the questions to other players.
-                      </p>
-                    </details>
+                    {homepageFaqs.map((faq) => (
+                      <details
+                        key={faq.question}
+                        className='group bg-white dark:bg-slate-800 rounded-lg p-5 cursor-pointer'
+                      >
+                        <summary className='flex justify-between items-center font-medium'>
+                          {faq.question}
+                          <span className='material-symbols-outlined transition-transform group-open:rotate-180'>
+                            expand_more
+                          </span>
+                        </summary>
+                        <p className='text-slate-600 dark:text-slate-400 mt-3'>
+                          {faq.answer}
+                          {faq.footnoteId ? (
+                            <a href={`#${faq.footnoteId}`} className='text-primary'>
+                              *
+                            </a>
+                          ) : null}
+                        </p>
+                      </details>
+                    ))}
                   </div>
                 </div>
               </section>
