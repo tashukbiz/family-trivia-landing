@@ -2,12 +2,12 @@ import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'Bible Trivia Questions for Kids (With Answers): 50 Questions for Home or Sunday School | Family Trivia',
   description: 'Looking for Bible trivia questions for kids? Here are 50 easy Bible trivia questions from Old and New Testament. Perfect for Sunday school, homeschool, or family devotions!',
   path: '/blog/bible-trivia-questions-for-kids',
@@ -20,7 +20,6 @@ export const metadata: Metadata = buildPageMetadata({
     'sunday school trivia',
     'Family Trivia app',
   ],
-  type: 'article',
 });
 
 export default function BibleTriviaQuestionsForKidsPage() {

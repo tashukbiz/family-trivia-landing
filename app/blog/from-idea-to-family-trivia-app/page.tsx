@@ -1,11 +1,11 @@
 import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'From Idea to Family Trivia App: First Steps & Iterations | Family Trivia',
   description: 'Follow the early journey of building the Family Trivia app: the first idea, the MVP, iterative improvements, and how we are now testing on iOS and Android.',
   path: '/blog/from-idea-to-family-trivia-app',
@@ -18,7 +18,6 @@ export const metadata: Metadata = buildPageMetadata({
     'TestFlight beta',
     'Google Play testing',
   ],
-  type: 'article',
 });
 
 export default function FromIdeaToFamilyTriviaAppPage() {

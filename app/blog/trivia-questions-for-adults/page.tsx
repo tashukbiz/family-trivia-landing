@@ -2,12 +2,12 @@ import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'Trivia Questions for Adults - 20 Challenging Questions for Game Night! | Family Trivia',
   description: 'Looking for trivia questions for adults? Discover 20 challenging trivia questions perfect for game night, gatherings, and parties. Test your knowledge with our Family Trivia app!',
   path: '/blog/trivia-questions-for-adults',
@@ -20,7 +20,6 @@ export const metadata: Metadata = buildPageMetadata({
     'trivia games',
     'party games for adults',
   ],
-  type: 'article',
 });
 
 export default function TriviaQuestionsForAdultsPage() {

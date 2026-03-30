@@ -4,12 +4,14 @@ import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBlogArticleMetadata({
   title:
     'How to Use Family Trivia App + 10 Best Topics to Start (Movie, Disney, Sports, Bible)',
   description:
     'Step-by-step guide to using the Family Trivia app on one shared device. Learn setup, rounds, turn flow, and 10 top trivia topics including movie, Disney, sports, and Bible trivia.',
+  path: '/blog/how-to-play-family-trivia-game',
   keywords: [
     'movie trivia questions',
     'disney trivia questions',
@@ -17,27 +19,9 @@ export const metadata: Metadata = {
     'bible trivia questions and answers',
     'family trivia app',
   ],
-  alternates: {
-    canonical: 'https://familytrivia.app/blog/how-to-play-family-trivia-game',
-  },
-  openGraph: {
-    title:
-      'How to Use Family Trivia App + 10 Best Topics to Start (Movie, Disney, Sports, Bible)',
-    description:
-      'Step-by-step guide to using the Family Trivia app on one shared device. Learn setup, rounds, turn flow, and 10 top trivia topics including movie, Disney, sports, and Bible trivia.',
-    url: 'https://familytrivia.app/blog/how-to-play-family-trivia-game',
-    siteName: 'Family Trivia',
-    type: 'article',
-    images: [
-      {
-        url: 'https://familytrivia.app/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Family Trivia app gameplay',
-      },
-    ],
-  },
-};
+  publishedTime: '2026-03-29T00:00:00Z',
+  modifiedTime: '2026-03-29T00:00:00Z',
+});
 
 export default function HowToPlayFamilyTriviaGamePage() {
   const topTopics = [
