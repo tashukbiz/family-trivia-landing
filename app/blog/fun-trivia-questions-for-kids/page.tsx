@@ -2,12 +2,12 @@ import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: '50 Fun Trivia Questions for Kids (With Answers) | Family Trivia',
   description: 'Looking for fun trivia questions for kids? Here are 50 playful and entertaining trivia questions covering weird animals, silly science, and fun geography. Perfect for family game night!',
   path: '/blog/fun-trivia-questions-for-kids',
@@ -20,7 +20,6 @@ export const metadata: Metadata = buildPageMetadata({
     'Family Trivia app',
     'family games',
   ],
-  type: 'article',
 });
 
 export default function FunTriviaQuestionsForKidsPage() {

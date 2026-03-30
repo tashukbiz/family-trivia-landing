@@ -4,38 +4,23 @@ import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema, OG_IMAGE_URL } from '@/lib/structured-data';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'Disney Trivia Game: How to Play With Kids on One Phone',
   description:
     'Learn how to run a Disney trivia game on one phone with kids, compare formats, and start a quick family round in minutes at home or on trips with no prep.',
+  path: '/blog/disney-trivia-game',
   keywords: [
     'disney trivia game',
     'disney trivia for kids',
     'disney trivia questions',
     'family trivia',
   ],
-  alternates: {
-    canonical: 'https://familytrivia.app/blog/disney-trivia-game',
-  },
-  openGraph: {
-    title: 'Disney Trivia Game: How to Play With Kids on One Phone',
-    description:
-      'Learn how to run a Disney trivia game on one phone with kids, compare formats, and start a quick family round in minutes at home or on trips with no prep.',
-    url: 'https://familytrivia.app/blog/disney-trivia-game',
-    siteName: 'Family Trivia',
-    type: 'article',
-    images: [
-      {
-        url: OG_IMAGE_URL,
-        width: 1200,
-        height: 630,
-        alt: 'Family Trivia',
-      },
-    ],
-  },
-};
+  publishedTime: '2025-02-10T00:00:00Z',
+  modifiedTime: '2025-02-10T00:00:00Z',
+});
 
 export default function DisneyTriviaGamePage() {
   const sampleQuestions = [

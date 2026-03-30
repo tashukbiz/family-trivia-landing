@@ -4,12 +4,14 @@ import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema, OG_IMAGE_URL } from '@/lib/structured-data';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'Disney Trivia Questions for Kids & Families (Free Game)',
   description:
     'Enjoy Disney trivia questions for kids and families with easy, medium, and hard rounds, a family game guide, and a quick phone-friendly way to play together.',
+  path: '/blog/disney-trivia-questions',
   keywords: [
     'disney trivia questions',
     'disney trivia',
@@ -17,26 +19,9 @@ export const metadata: Metadata = {
     'disney trivia game',
     'family trivia',
   ],
-  alternates: {
-    canonical: 'https://familytrivia.app/blog/disney-trivia-questions',
-  },
-  openGraph: {
-    title: 'Disney Trivia Questions for Kids & Families (Free Game)',
-    description:
-      'Enjoy Disney trivia questions for kids and families with easy, medium, and hard rounds, a family game guide, and a quick phone-friendly way to play together.',
-    url: 'https://familytrivia.app/blog/disney-trivia-questions',
-    siteName: 'Family Trivia',
-    type: 'article',
-    images: [
-      {
-        url: OG_IMAGE_URL,
-        width: 1200,
-        height: 630,
-        alt: 'Family Trivia',
-      },
-    ],
-  },
-};
+  publishedTime: '2025-02-10T00:00:00Z',
+  modifiedTime: '2025-02-10T00:00:00Z',
+});
 
 export default function DisneyTriviaQuestionsPage() {
   const easyQuestions = [

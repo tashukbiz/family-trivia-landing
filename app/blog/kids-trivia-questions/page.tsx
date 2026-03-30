@@ -2,12 +2,12 @@ import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: '50 Kids Trivia Questions (With Answers) for Ages 6–12 | Family Trivia',
   description: 'Looking for kids trivia questions? Here are 50 easy to medium trivia questions perfect for children ages 6-12. Test your knowledge with our Family Trivia app!',
   path: '/blog/kids-trivia-questions',
@@ -20,7 +20,6 @@ export const metadata: Metadata = buildPageMetadata({
     'kids games',
     'educational games for kids',
   ],
-  type: 'article',
 });
 
 export default function KidsTriviaQuestionsPage() {

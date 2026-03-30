@@ -2,12 +2,12 @@ import DownloadButtons from '@/components/DownloadButtons';
 import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema } from '@/lib/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = buildPageMetadata({
+export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'Disney Trivia Questions for Kids (With Answers): 50 Magical Questions | Family Trivia',
   description: 'Looking for Disney trivia questions for kids? Here are 50 magical Disney trivia questions covering Pixar, princesses, villains, and classic movies. Perfect for Disney fans!',
   path: '/blog/disney-trivia-questions-for-kids',
@@ -20,7 +20,6 @@ export const metadata: Metadata = buildPageMetadata({
     'Family Trivia app',
     'disney games for kids',
   ],
-  type: 'article',
 });
 
 export default function DisneyTriviaQuestionsForKidsPage() {

@@ -8,6 +8,8 @@ interface BuildPageMetadataParams {
   path: `/${string}`;
   keywords?: string[];
   type?: PageType;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 const SITE_NAME = 'Family Trivia';
@@ -20,7 +22,11 @@ export function buildPageMetadata({
   path,
   keywords,
   type = 'website',
+  publishedTime,
+  modifiedTime,
 }: BuildPageMetadataParams): Metadata {
+  const isArticle = type === 'article';
+
   return {
     title,
     description,
@@ -34,6 +40,10 @@ export function buildPageMetadata({
       url: path,
       siteName: SITE_NAME,
       type,
+      ...(isArticle && {
+        publishedTime,
+        modifiedTime,
+      }),
       images: [
         {
           url: DEFAULT_OG_IMAGE,
@@ -50,6 +60,17 @@ export function buildPageMetadata({
       images: [DEFAULT_OG_IMAGE],
     },
   };
+}
+
+type BuildBlogArticleMetadataParams = Omit<BuildPageMetadataParams, 'type'>;
+
+export function buildBlogArticleMetadata(
+  params: BuildBlogArticleMetadataParams
+): Metadata {
+  return buildPageMetadata({
+    ...params,
+    type: 'article',
+  });
 }
 
 export const seoSiteConfig = {
