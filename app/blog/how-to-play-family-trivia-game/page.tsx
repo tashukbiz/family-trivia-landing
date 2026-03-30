@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://familytrivia.app/og-image.png',
+        url: 'https://familytrivia.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Family Trivia app gameplay',
@@ -125,7 +125,7 @@ export default function HowToPlayFamilyTriviaGamePage() {
           'How to Use Family Trivia App + 10 Best Topics to Start (Movie, Disney, Sports, Bible)',
         description:
           'Step-by-step guide to using the Family Trivia app on one shared device. Learn setup, rounds, turn flow, and 10 top trivia topics including movie, Disney, sports, and Bible trivia.',
-        image: 'https://familytrivia.app/og-image.png',
+        image: 'https://familytrivia.app/og-image.jpg',
         datePublished: '2026-03-29T00:00:00Z',
         dateModified: '2026-03-29T00:00:00Z',
         author: {
