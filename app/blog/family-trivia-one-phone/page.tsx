@@ -222,6 +222,9 @@ export default function FamilyTriviaOnePhonePage() {
                     and no downloads for everyone else.
                   </p>
                 </div>
+                <div className='mt-8'>
+                  <BlogCtaSection />
+                </div>
               </section>
 
               {/* Why one phone */}
@@ -406,8 +409,6 @@ export default function FamilyTriviaOnePhonePage() {
                 </div>
               </section>
             </article>
-
-            <BlogCtaSection />
 
             {/* CTA Section */}
             <section
