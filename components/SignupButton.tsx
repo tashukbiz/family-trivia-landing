@@ -11,6 +11,8 @@ interface SignupButtonProps {
 const IOS_APP_STORE_URL =
   'https://apps.apple.com/us/app/family-trivia-kids-parents/id6757133105';
 
+const ANDROID_PAGE_URL = '/android';
+
 export default function SignupButton({
   children,
   className = '',
@@ -28,22 +30,11 @@ export default function SignupButton({
     }
   };
 
-  const handleClick = () => {
-    trackClick();
-    document.querySelector(`.signup-form--${target}`)?.classList.add('show');
-  };
-
-  if (target === 'ios') {
-    return (
-      <a href={IOS_APP_STORE_URL} onClick={trackClick} className={className}>
-        {children}
-      </a>
-    );
-  }
+  const href = target === 'ios' ? IOS_APP_STORE_URL : ANDROID_PAGE_URL;
 
   return (
-    <button onClick={handleClick} className={className}>
+    <a href={href} onClick={trackClick} className={className}>
       {children}
-    </button>
+    </a>
   );
 }
