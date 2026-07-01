@@ -26,31 +26,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date('2026-06-25'),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-06-25'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/android`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-07-02'),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-06-25'),
       changeFrequency: 'monthly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-06-25'),
       changeFrequency: 'monthly',
       priority: 0.3,
     },
