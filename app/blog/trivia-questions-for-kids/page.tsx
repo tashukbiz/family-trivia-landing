@@ -19,6 +19,8 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'family games',
     'educational games for kids',
   ],
+  publishedTime: '2026-03-30T00:00:00Z',
+  modifiedTime: '2026-03-30T00:00:00Z',
 });
 
 export default function TriviaQuestionsForKidsPage() {

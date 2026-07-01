@@ -18,6 +18,8 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'TestFlight beta',
     'Google Play testing',
   ],
+  publishedTime: '2026-03-30T00:00:00Z',
+  modifiedTime: '2026-03-30T00:00:00Z',
 });
 
 export default function FromIdeaToFamilyTriviaAppPage() {

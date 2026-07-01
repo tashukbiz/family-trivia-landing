@@ -20,6 +20,8 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'sunday school trivia',
     'Family Trivia app',
   ],
+  publishedTime: '2026-03-30T00:00:00Z',
+  modifiedTime: '2026-03-30T00:00:00Z',
 });
 
 export default function BibleTriviaQuestionsForKidsPage() {

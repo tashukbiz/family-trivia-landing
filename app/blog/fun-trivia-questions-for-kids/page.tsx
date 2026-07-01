@@ -20,6 +20,8 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'Family Trivia app',
     'family games',
   ],
+  publishedTime: '2026-03-30T00:00:00Z',
+  modifiedTime: '2026-03-30T00:00:00Z',
 });
 
 export default function FunTriviaQuestionsForKidsPage() {

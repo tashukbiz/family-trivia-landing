@@ -1,28 +1,31 @@
 import { MetadataRoute } from 'next';
-import { readdirSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 
 export const dynamic = 'force-static';
 
-// Function to get all blog post slugs
-function getBlogPostSlugs(): string[] {
+function getBlogPages(): MetadataRoute.Sitemap {
   const blogDir = join(process.cwd(), 'app', 'blog');
+  const slugs = readdirSync(blogDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
 
-  try {
-    const entries = readdirSync(blogDir, { withFileTypes: true });
-    return entries
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => entry.name);
-  } catch {
-    return [];
-  }
+  return slugs.map((slug) => {
+    const source = readFileSync(join(blogDir, slug, 'page.tsx'), 'utf-8');
+    const match = source.match(/modifiedTime:\s*'([^']+)'/);
+    const lastModified = match ? new Date(match[1]) : new Date();
+    return {
+      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/blog/${slug}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    };
+  });
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  const blogSlugs = getBlogPostSlugs();
 
-  // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -56,13 +59,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Blog posts
-  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }));
-
-  return [...staticPages, ...blogPages];
+  return [...staticPages, ...getBlogPages()];
 }

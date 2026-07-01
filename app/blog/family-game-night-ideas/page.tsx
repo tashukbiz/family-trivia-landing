@@ -21,6 +21,8 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'how to host a family game night',
     'family game night activities',
   ],
+  publishedTime: '2026-06-18T00:00:00Z',
+  modifiedTime: '2026-06-18T00:00:00Z',
 });
 
 export default function FamilyGameNightIdeasPage() {

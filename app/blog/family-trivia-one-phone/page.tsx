@@ -22,6 +22,8 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'pass the phone trivia',
     'shared device trivia',
   ],
+  publishedTime: '2026-06-25T00:00:00Z',
+  modifiedTime: '2026-06-25T00:00:00Z',
 });
 
 export default function FamilyTriviaOnePhonePage() {
