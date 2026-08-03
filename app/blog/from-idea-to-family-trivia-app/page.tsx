@@ -229,7 +229,6 @@ export default function FromIdeaToFamilyTriviaAppPage() {
                   containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                   buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   iosLabel='Join iOS TestFlight'
-                  androidLabel='Join Android Testing'
                 />
                 <p className='text-sm text-gray-600 dark:text-gray-400'>
                   Thanks for being part of the early community!

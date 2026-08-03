@@ -546,7 +546,6 @@ export default function KidsTriviaQuestionsPage() {
                     containerClassName='flex flex-col items-center justify-center gap-3 sm:flex-row'
                     buttonClassName='inline-flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                     iosLabel='Get the App on iOS'
-                    androidLabel='Get the App on Android'
                   />
                 </div>
 

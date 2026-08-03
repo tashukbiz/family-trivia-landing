@@ -33,7 +33,7 @@ const homepageFaqs: HomepageFaq[] = [
   {
     question: 'How does the subscription work?',
     answer:
-      "Start with a free trial period to explore all features at no cost. If you don't cancel before the trial ends, your subscription will automatically begin and you'll be charged through your App Store or Google Play account. You can cancel anytime before the trial ends to avoid charges, or keep your subscription to continue enjoying unlimited topics, rounds, and questions.",
+      "Start with a free trial period to explore all features at no cost. If you don't cancel before the trial ends, your subscription will automatically begin and you'll be charged through your Apple App Store account. You can cancel anytime before the trial ends to avoid charges, or keep your subscription to continue enjoying unlimited topics, rounds, and questions.",
   },
   {
     question: 'Can I cancel anytime?',
@@ -74,7 +74,7 @@ const homepageStructuredData = {
       '@type': 'SoftwareApplication',
       name: 'Family Trivia',
       applicationCategory: 'GameApplication',
-      operatingSystem: 'iOS, Android',
+      operatingSystem: 'iOS',
       url: 'https://familytrivia.app',
       description:
         'A family trivia game where each player chooses their own topic and difficulty, with AI-generated questions and local multiplayer on a shared device.',
@@ -82,7 +82,6 @@ const homepageStructuredData = {
         '1 to 10 players or teams',
         'Shared-device local multiplayer',
         'iOS availability',
-        'Android availability',
         'Personalized topics and difficulty per player',
       ],
       publisher: {
@@ -181,7 +180,6 @@ export default function Home() {
                     containerClassName='flex-wrap gap-4 flex justify-center mt-4'
                     buttonClassName='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:opacity-90'
                     iosButtonClassName='transition-opacity'
-                    androidButtonClassName='transition-colors'
                   />
                 </div>
               </section>

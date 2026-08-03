@@ -5,13 +5,11 @@ import { trackGoogleAnalyticsEvent } from './analytics/GoogleAnalytics';
 interface SignupButtonProps {
   children: React.ReactNode;
   className?: string;
-  target: 'ios' | 'android';
+  target: 'ios';
 }
 
 const IOS_APP_STORE_URL =
   'https://apps.apple.com/us/app/family-trivia-kids-parents/id6757133105';
-
-const ANDROID_PAGE_URL = '/android';
 
 export default function SignupButton({
   children,
@@ -19,7 +17,7 @@ export default function SignupButton({
   target,
 }: SignupButtonProps) {
   const trackClick = () => {
-    const gtagEvent = target === 'ios' ? 'cta_ios_click' : 'cta_android_click';
+    const gtagEvent = 'cta_ios_click';
     trackGoogleAnalyticsEvent(gtagEvent);
 
     if (typeof window !== 'undefined' && window.gtag) {
@@ -30,10 +28,8 @@ export default function SignupButton({
     }
   };
 
-  const href = target === 'ios' ? IOS_APP_STORE_URL : ANDROID_PAGE_URL;
-
   return (
-    <a href={href} onClick={trackClick} className={className}>
+    <a href={IOS_APP_STORE_URL} onClick={trackClick} className={className}>
       {children}
     </a>
   );

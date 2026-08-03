@@ -4,9 +4,7 @@ interface DownloadButtonsProps {
   containerClassName?: string;
   buttonClassName?: string;
   iosButtonClassName?: string;
-  androidButtonClassName?: string;
   iosLabel?: string;
-  androidLabel?: string;
   labelClassName?: string;
 }
 
@@ -14,9 +12,7 @@ export default function DownloadButtons({
   containerClassName,
   buttonClassName = '',
   iosButtonClassName = '',
-  androidButtonClassName = '',
   iosLabel = 'Download for iOS',
-  androidLabel = 'Download for Android',
   labelClassName = 'truncate',
 }: DownloadButtonsProps) {
   const containerClasses =
@@ -25,18 +21,11 @@ export default function DownloadButtons({
     .filter(Boolean)
     .join(' ')
     .trim();
-  const androidClasses = [buttonClassName, androidButtonClassName]
-    .filter(Boolean)
-    .join(' ')
-    .trim();
 
   return (
     <div className={containerClasses}>
       <SignupButton className={iosClasses} target='ios'>
         <span className={labelClassName}>{iosLabel}</span>
-      </SignupButton>
-      <SignupButton className={androidClasses} target='android'>
-        <span className={labelClassName}>{androidLabel}</span>
       </SignupButton>
     </div>
   );
