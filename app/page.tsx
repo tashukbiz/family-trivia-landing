@@ -177,6 +177,7 @@ export default function Home() {
                     person&apos;s interests — all on a single device.
                   </p>
                   <DownloadButtons
+                    placement='web-home-hero'
                     containerClassName='flex-wrap gap-4 flex justify-center mt-4'
                     buttonClassName='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:opacity-90'
                     iosButtonClassName='transition-opacity'
@@ -459,6 +460,7 @@ export default function Home() {
                     unlimited rounds, and unlimited new questions.
                   </p>
                   <DownloadButtons
+                    placement='web-home-footer'
                     containerClassName='mt-8 flex flex-col sm:flex-row justify-center items-center gap-4'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold tracking-wide hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors'
                   />

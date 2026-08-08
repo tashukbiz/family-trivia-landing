@@ -6,6 +6,8 @@ interface DownloadButtonsProps {
   iosButtonClassName?: string;
   iosLabel?: string;
   labelClassName?: string;
+  /** Campaign token identifying where on the site the click came from. */
+  placement?: string;
 }
 
 export default function DownloadButtons({
@@ -14,6 +16,7 @@ export default function DownloadButtons({
   iosButtonClassName = '',
   iosLabel = 'Download for iOS',
   labelClassName = 'truncate',
+  placement = 'web-blog',
 }: DownloadButtonsProps) {
   const containerClasses =
     containerClassName ?? 'flex flex-wrap gap-4 justify-center';
@@ -24,7 +27,7 @@ export default function DownloadButtons({
 
   return (
     <div className={containerClasses}>
-      <SignupButton className={iosClasses} target='ios'>
+      <SignupButton className={iosClasses} target='ios' placement={placement}>
         <span className={labelClassName}>{iosLabel}</span>
       </SignupButton>
     </div>

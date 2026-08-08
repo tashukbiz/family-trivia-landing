@@ -1,35 +1,37 @@
 'use client';
 
 import { trackGoogleAnalyticsEvent } from './analytics/GoogleAnalytics';
+import { appStoreUrl } from '@/lib/app-store';
 
 interface SignupButtonProps {
   children: React.ReactNode;
   className?: string;
   target: 'ios';
+  /** Campaign token identifying where on the site the click came from. */
+  placement: string;
 }
-
-const IOS_APP_STORE_URL =
-  'https://apps.apple.com/us/app/family-trivia-kids-parents/id6757133105';
 
 export default function SignupButton({
   children,
   className = '',
   target,
+  placement,
 }: SignupButtonProps) {
-  const trackClick = () => {
-    const gtagEvent = 'cta_ios_click';
-    trackGoogleAnalyticsEvent(gtagEvent);
+  const href = appStoreUrl(placement);
 
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', gtagEvent, {
-        event_category: 'cta',
-        event_label: target,
-      });
-    }
+  const trackClick = () => {
+    // transport_type beacon so the event survives navigating away to the App Store.
+    trackGoogleAnalyticsEvent('cta_ios_click', {
+      event_category: 'cta',
+      event_label: target,
+      placement,
+      link_url: href,
+      transport_type: 'beacon',
+    });
   };
 
   return (
-    <a href={IOS_APP_STORE_URL} onClick={trackClick} className={className}>
+    <a href={href} onClick={trackClick} className={className}>
       {children}
     </a>
   );

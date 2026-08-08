@@ -69,6 +69,27 @@ Both are client components (marked with `'use client'`) because they use browser
 - Meta descriptions for each page
 - Favicon properly configured
 
+## Analytics & App Store Attribution
+
+All App Store CTAs go through `DownloadButtons` → `SignupButton`, which builds
+the link via `lib/app-store.ts`:
+
+- **Apple**: links carry App Analytics campaign params (`pt`/`ct`/`mt=8`) when
+  `NEXT_PUBLIC_APPLE_PROVIDER_TOKEN` is set in `.env.production` (gitignored).
+  Campaign tokens are placements: `web-home-hero`, `web-home-footer`,
+  `web-blog` (default). Downloads per token appear in App Store Connect →
+  Analytics → Acquisition → Campaigns (needs ≥5 downloads and ~24h). Keep
+  tokens ≤30 chars.
+- **Google Analytics**: each CTA click fires a single `cta_ios_click` event
+  with `placement` and `link_url` params (beacon transport). GA attaches
+  `page_location` automatically, so per-page detail lives in GA.
+- **Safari Smart App Banner** (`itunes` metadata in `app/layout.tsx`): installs
+  from it show as web referrals from familytrivia.app in Apple analytics.
+- **RevenueCat**: not an attribution network — iOS apps cannot read Apple's
+  `ct` token, so web-referred subscribers can only be matched in aggregate
+  (App Store Connect campaign downloads vs. RevenueCat cohorts). Per-user
+  attribution would require an MMP (Branch/AppsFlyer) or RevenueCat Funnels.
+
 ## Build Process
 
 ### Development

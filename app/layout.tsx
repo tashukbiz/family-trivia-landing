@@ -3,9 +3,15 @@ import './globals.css';
 import { AHrefsAnalytics } from '@/components/analytics/AHrefsAnalytics';
 import { GoogleAnalyticsRegistration } from '@/components/analytics/GoogleAnalytics';
 import { buildPageMetadata, seoSiteConfig } from '@/lib/seo';
+import { APP_STORE_ID } from '@/lib/app-store';
 
 export const metadata: Metadata = {
   metadataBase: new URL(seoSiteConfig.siteUrl),
+  // Safari Smart App Banner; installs from it count as web referrals from
+  // familytrivia.app in App Store Connect analytics.
+  itunes: {
+    appId: APP_STORE_ID,
+  },
   ...buildPageMetadata({
     title: 'Family Trivia - The Trivia Game for Everyone',
     description:
