@@ -41,10 +41,12 @@ export default function TermsPage() {
             </p>
             <p className='mb-4'>
               <strong>
-                You must be at least 13 years old to use this App.
+                The App must be operated by someone at least 13 years old.
               </strong>{' '}
               By using the App, you represent and warrant that you are at least
-              13 years of age. If you are under 13, you may not use the App.
+              13 years of age. Family members under 13 may participate in a
+              game run by a qualifying operator, such as answering questions
+              read aloud by a parent, but may not operate the App themselves.
             </p>
           </section>
 
@@ -299,14 +301,15 @@ export default function TermsPage() {
               11. Age Requirement
             </h2>
             <p className='mb-4'>
-              The App is intended for users aged 13 and older. If you are under
-              13, you are not permitted to use the App. We reserve the right to
-              terminate accounts of users we discover are under 13 years of age.
+              The App is operated by users aged 13 and older. If you are under
+              13, you may not operate the App; you may take part in a game run
+              by a parent, guardian, or other qualifying operator. The App has
+              no user accounts.
             </p>
             <p className='mb-4'>
-              Parents and guardians of users aged 13-17 are encouraged to
-              supervise their children&apos;s use of the App and determine
-              whether content is appropriate.
+              Parents and guardians are encouraged to supervise their
+              children&apos;s participation in the game and determine whether
+              content is appropriate.
             </p>
           </section>
 

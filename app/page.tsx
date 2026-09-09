@@ -13,7 +13,12 @@ const homepageFaqs: HomepageFaq[] = [
   {
     question: 'What ages is this for?',
     answer:
-      'Family Trivia is designed for all ages! The personalized difficulty and topics ensure everyone gets questions that are right for them.',
+      'The whole family plays together. A grown-up (or teen) runs the game on their phone: they set up the players, pick topics and difficulty for each person, and read the questions aloud while everyone answers. The personalized topics and difficulty mean everyone from a 6-year-old to Grandma gets questions that are right for them.',
+  },
+  {
+    question: 'What data does the app collect?',
+    answer:
+      'Your game stays on your device: player names, topics, scores, and history are never uploaded. We collect anonymous usage statistics through Google Analytics to improve the app, and you can turn that off anytime in the app\'s About screen. Subscriptions are processed by Apple. See our Privacy Policy for details.',
   },
   {
     question: 'Why personalization?',
@@ -174,7 +179,7 @@ export default function Home() {
                   <p className='text-base md:text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400'>
                     Fun for kids. Challenging for adults. Fair for everyone.
                     Endless, AI-generated trivia questions tailored to each
-                    person&apos;s interests — all on a single device.
+                    person&apos;s interests, all on a single device.
                   </p>
                   <DownloadButtons
                     placement='web-home-hero'
@@ -217,12 +222,12 @@ export default function Home() {
                   <p className='text-base md:text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400'>
                     Your <b>6-year-old</b> can pick <b>animals - easy</b>.
                     <br />
-                    Your <b>10-year-old</b> can choose <b>Minecraft – medium</b>
+                    Your <b>10-year-old</b> can choose <b>Minecraft - medium</b>
                     .
                     <br />
-                    <b>You</b> can select <b>Australian movies – medium</b>.
+                    <b>You</b> can select <b>Australian movies - medium</b>.
                     <br />
-                    <b>Grandma</b> chooses <b>gardening – hard</b>.
+                    <b>Grandma</b> chooses <b>gardening - hard</b>.
                   </p>
                   <p className='mt-5 text-base md:text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400'>
                     Everyone finally gets questions that match their world.
@@ -428,7 +433,7 @@ export default function Home() {
                       <span className='material-symbols-outlined text-green-500'>
                         check_circle
                       </span>
-                      No personal data tracking
+                      No accounts, no ads
                     </li>
                     <li className='flex items-center gap-2'>
                       <span className='material-symbols-outlined text-green-500'>
