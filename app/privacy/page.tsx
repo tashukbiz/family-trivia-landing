@@ -74,7 +74,7 @@ export default function PrivacyPage() {
                 also sent to our server to run the game, as described below.
               </li>
               <li>
-                Usage analytics is optional and off until you allow it. It links
+                Usage analytics is enabled by default unless you switch it off. It links
                 app activity and subscription events using a random app identifier,
                 not your name or email. You can change your choice without a
                 subscription (see section 7).
@@ -204,10 +204,12 @@ export default function PrivacyPage() {
                 deletion periods.
               </li>
               <li>
-                <strong>Choice:</strong> analytics is off until you allow it.
-                Choose Allow or No Thanks before entering the app. You can change
-                this later in About on Home, or Analytics settings on the welcome
-                and subscription screens. See section 7 for details.
+                <strong>Choice:</strong> analytics is enabled by default after
+                your saved preference is loaded. Existing opt-outs are respected.
+                The Home banner explains analytics; “I consent” dismisses the
+                notice and does not change your setting. Switch analytics off in
+                About on Home or Analytics settings on the welcome and subscription
+                screens, without a subscription. See section 7 for details.
               </li>
             </ul>
           </Section>

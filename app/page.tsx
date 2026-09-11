@@ -18,7 +18,7 @@ const homepageFaqs: HomepageFaq[] = [
   {
     question: 'What data does the app collect?',
     answer:
-      'Games are saved on your device. To run a game, we send player names, topics and difficulty choices to our server; question generation also uses recently seen questions to avoid repeats. Optional usage analytics links app activity and subscription events using a random app identifier. You can allow or decline it and change your choice in the app, even without a subscription. See our Privacy Policy for details.',
+      'Games are saved on your device. To run a game, we send player names, topics and difficulty choices to our server; question generation also uses recently seen questions to avoid repeats. Optional usage analytics links app activity and subscription events using a random app identifier. It is enabled by default, and you can turn it off in the app even without a subscription. See our Privacy Policy for details.',
   },
   {
     question: 'Why personalization?',
