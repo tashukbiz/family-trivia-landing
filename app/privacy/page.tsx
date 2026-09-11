@@ -45,7 +45,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className='text-gray-600 dark:text-gray-400'>
-            Last updated: September 10, 2026
+            Last updated: September 11, 2026
           </p>
         </div>
 
@@ -60,42 +60,39 @@ export default function PrivacyPage() {
               shared, how long it is kept, and the choices you have.
             </p>
             <p className='mb-4'>
-              Family Trivia is a parent-operated game. An adult or teenage
-              &quot;quizmaster&quot; sets up and runs each game on their own
-              device: they enter player names, choose topics, and read
-              questions aloud while everyone answers together, including
-              younger children. The app has no user accounts, no chat, and no
-              advertising.
+              Family Trivia is for independent use from age 13. Children aged
+              6–12 can participate when a parent or guardian sets up and manages
+              the game, chooses topics and difficulty, and reads questions aloud.
+              The app has no user accounts, no chat, and no advertising.
             </p>
           </Section>
 
           <Section id='summary' title='2. The short version'>
             <ul className='list-disc pl-6 mb-4 space-y-2'>
               <li>
-                Your game data (player names, topics, scores, question
-                history) is stored on your device and is removed when you
-                uninstall the app.
+                Games are saved on your device. Some of this information is
+                also sent to our server to run the game, as described below.
               </li>
               <li>
-                We use Google Analytics for Firebase to understand how the app
-                is used. It is on by default and tied to a random app
-                identifier, not to your name or email. You can turn it off at
-                any time in the app (see section 7).
+                Usage analytics is optional and off until you allow it. It links
+                app activity and subscription events using a random app identifier,
+                not your name or email. You can change your choice without a
+                subscription (see section 7).
               </li>
               <li>
-                Subscriptions are processed by Apple. Our subscription tool
-                RevenueCat records subscription events (such as trials,
-                renewals, and cancellations) under an anonymous identifier.
+                The app store processes payments. Our subscription provider
+                records purchases, trials, renewals and cancellations under a
+                randomly assigned customer identifier.
               </li>
               <li>
-                To generate questions, we send the topic, difficulty, and
-                recently seen questions to our server, which uses OpenAI. We
-                never send player names to the AI.
+                Game setup sends player names, topics and difficulty choices
+                to our server. Question generation sends topics, difficulty and
+                recently seen questions to our AI provider. Player name fields
+                are not sent to the AI.
               </li>
               <li>
-                Question reports and feedback you choose to send are stored in
-                Airtable, including your name and email only if you type them
-                into the feedback form.
+                We store reports and feedback you choose to send, including
+                your name and email only if you provide them.
               </li>
               <li>We do not sell personal information.</li>
             </ul>
@@ -103,9 +100,9 @@ export default function PrivacyPage() {
 
           <Section id='collect' title='3. Information the app handles'>
             <h3 className='text-xl font-semibold text-gray-900 dark:text-white mb-3'>
-              3.1 Stored only on your device
+              3.1 Saved on your device
             </h3>
-            <p className='mb-4'>The following never leave your device:</p>
+            <p className='mb-4'>The app saves the following on your device. The next section explains what is also transmitted:</p>
             <ul className='list-disc pl-6 mb-4 space-y-2'>
               <li>
                 Player and team names you enter, and each player&apos;s topic
@@ -124,15 +121,14 @@ export default function PrivacyPage() {
               3.2 Sent to our server
             </h3>
             <p className='mb-4'>
-              Our server (a Cloudflare Worker) receives the following to make
-              the game work:
+              Our server receives the following to make the game work:
             </p>
             <ul className='list-disc pl-6 mb-4 space-y-2'>
               <li>
                 When a game starts: the chosen topics, difficulty levels, and
-                player names, so we can check that the topics are safe and
-                family-friendly. Player names are checked in transit and are
-                not written to our database or logs.
+                player names as part of the game setup. Topics are checked for
+                suitability. Player names are not saved in our database or
+                deliberately included in our application logs.
               </li>
               <li>
                 When questions are generated: the topic, difficulty, and the
@@ -142,11 +138,11 @@ export default function PrivacyPage() {
               </li>
               <li>
                 When you report a question: the question itself, the screen you
-                reported it from, and any comment you type. Stored in Airtable.
+                reported it from, and any comment you type. Stored by our feedback provider.
               </li>
               <li>
                 When you send feedback: your message, and your name and email
-                address only if you choose to provide them. Stored in Airtable.
+                address only if you choose to provide them. Stored by our feedback provider.
               </li>
               <li>
                 Aggregate topic popularity (how often each topic is played,
@@ -163,15 +159,15 @@ export default function PrivacyPage() {
               3.3 AI question generation
             </h3>
             <p className='mb-4'>
-              Questions are generated by OpenAI models through the OpenAI API
-              on our server. OpenAI receives the topic, the difficulty, the
-              safety-check results, and recently seen question texts. OpenAI
-              does not receive player names, and we do not send it any other
-              information about you or your family.
+              Our AI provider, OpenAI, receives topics for safety checks and
+              question generation, along with difficulty, safety-check results
+              and recently seen question texts. We do not send player name fields
+              to the AI. Please do not include names or other personal information
+              in topics or feedback about questions.
             </p>
           </Section>
 
-          <Section id='analytics' title='4. Google Analytics for Firebase'>
+          <Section id='analytics' title='4. Optional usage analytics'>
             <p className='mb-4'>
               The app includes Google Analytics for Firebase, Google&apos;s
               analytics service, to help us understand which features are
@@ -201,15 +197,17 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong>Retention:</strong> event-level data is retained for
-                up to 14 months, after which Google deletes it. Aggregate
-                reports Google has already computed (for example, totals and
-                averages) are not affected by this deletion.
+                14 months, with expired data deleted during Google&apos;s monthly
+                deletion process. User-level data has a separate 14-month period
+                that restarts when you return and analytics is enabled. Aggregate
+                reports, such as totals and averages, are not affected by these
+                deletion periods.
               </li>
               <li>
-                <strong>Choice:</strong> analytics is on by default. You can
-                turn it off at any time in the app: open Home, tap the About
-                button, and switch off &quot;Share anonymous usage
-                statistics.&quot; See section 7 for what happens when you do.
+                <strong>Choice:</strong> analytics is off until you allow it.
+                Choose Allow or No Thanks before entering the app. You can change
+                this later in About on Home, or Analytics settings on the welcome
+                and subscription screens. See section 7 for details.
               </li>
             </ul>
           </Section>
@@ -222,16 +220,15 @@ export default function PrivacyPage() {
             </p>
             <p className='mb-4'>
               We use RevenueCat to validate purchases and manage
-              entitlements. RevenueCat receives your subscription lifecycle
+              subscription access. It receives your subscription lifecycle
               information (trials, purchases, renewals, cancellations, and
-              expirations), tied to an anonymous RevenueCat user ID and your
+              expirations), tied to a randomly assigned customer identifier and your
               device&apos;s transaction data from Apple. If analytics is
               enabled, the app
               also shares the Google Analytics app-instance identifier with
               RevenueCat so that subscription events can be analyzed together
-              with app usage in Google Analytics. RevenueCat does not receive
-              your name or email unless you send us feedback and include it
-              there.
+              with app usage in Google Analytics. We do not send your player
+              names, email or feedback messages to our subscription provider.
             </p>
             <p className='mb-4'>
               RevenueCat retains this data for as long as it is relevant to
@@ -261,15 +258,18 @@ export default function PrivacyPage() {
 
           <Section id='choices' title='7. Your choices and rights'>
             <h3 className='text-xl font-semibold text-gray-900 dark:text-white mb-3'>
-              7.1 Analytics opt-out
+              7.1 Your analytics choice
             </h3>
             <p className='mb-4'>
-              Open Home, tap the About button, and switch off &quot;Share
-              anonymous usage statistics.&quot; This stops the app from
-              sending analytics events, tells Google to delete certain
-              user-level analytics data associated with your app instance, and
-              stops sharing the analytics identifier with RevenueCat. It does
-              not affect gameplay or your subscription.
+              Open About on Home, or Analytics settings on the welcome or
+              subscription screen, and switch off &quot;Share usage analytics.&quot;
+              This stops app analytics collection and requests removal of the
+              identifier used to link subscription events to app activity.
+              That removal needs an internet connection; the app retries pending
+              updates when you return or reconnect. Subscription analytics may
+              continue until the provider receives the update. This does not
+              erase previously collected events or affect gameplay, purchases
+              or subscription access.
             </p>
 
             <h3 className='text-xl font-semibold text-gray-900 dark:text-white mb-3'>
@@ -289,9 +289,9 @@ export default function PrivacyPage() {
               our service providers to do the same where practical.
             </p>
             <p className='mb-4'>
-              Most data in Family Trivia lives only on your device: player
-              names, game history, and the question bank. Uninstalling the app
-              deletes all of it.
+              Uninstalling the app removes its local game data. Copies in device
+              backups may remain under your backup settings. Uninstalling does
+              not delete information already sent to us or our providers.
             </p>
             <p className='mb-4'>
               If you are a California or EU/UK resident, you also have rights
@@ -304,31 +304,29 @@ export default function PrivacyPage() {
 
           <Section id='children' title='8. Children&apos;s privacy'>
             <p className='mb-4'>
-              Family Trivia is designed to be operated by a person who is at
-              least 13 years old. Younger children can take part in the game
-              under the supervision of the operator: questions are read aloud
-              and children answer verbally. Children never need to create an
-              account, sign in, or provide any information to play.
+              Independent use is for ages 13 and over. Children aged 6–12 may
+              participate only when a parent or guardian sets up and manages
+              the game, chooses the content and reads questions aloud. Children
+              can answer verbally and do not need an account or contact details.
             </p>
             <p className='mb-4'>
-              Because the operator types player names and topics, we ask
-              parents to use nicknames or first names only, not full names.
-              Topic texts entered in the app are sent to our server for
-              safety-checking and question generation as described in section
-              3.
+              Parents should use made-up nicknames or team labels rather than
+              children&apos;s real names. Player names and topics entered during
+              setup are sent to our server; topics also go to our AI provider.
+              Avoid putting personal information in topics, reports or feedback.
+              The parent or guardian should make the optional analytics choice.
             </p>
             <p className='mb-4'>
-              We do not knowingly collect personal information from children
-              under 13. If you believe a child has provided information
-              through the app (for example, by entering it as a player name or
-              in feedback), contact us at{' '}
+              We do not ask children to submit personal information. If you
+              believe information about a child has been sent through the app,
+              contact us at{' '}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className='text-primary hover:underline'
               >
                 {CONTACT_EMAIL}
               </a>{' '}
-              and we will delete it.
+              and we will help identify and delete records we hold.
             </p>
           </Section>
 
@@ -355,7 +353,7 @@ export default function PrivacyPage() {
                 safety checks (section 3.3)
               </li>
               <li>
-                <strong>Cloudflare:</strong> hosting our API and database
+                <strong>Cloudflare:</strong> hosting our services and database
               </li>
               <li>
                 <strong>Airtable:</strong> storing question reports and
@@ -385,7 +383,7 @@ export default function PrivacyPage() {
                 retention policy (section 5)
               </li>
               <li>
-                Reports and feedback in Airtable: kept until handled, and
+                Reports and feedback: kept while needed to handle your request, and
                 deleted on request
               </li>
               <li>
@@ -402,8 +400,7 @@ export default function PrivacyPage() {
 
           <Section id='security' title='11. Security'>
             <p className='mb-4'>
-              All connections to our services use TLS encryption. Access
-              credentials for our providers exist only on our server. No
+              Connections to our services are encrypted. No
               method of transmission or storage is completely secure, and we
               cannot guarantee absolute security.
             </p>

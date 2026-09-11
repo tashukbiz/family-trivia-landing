@@ -13,12 +13,12 @@ const homepageFaqs: HomepageFaq[] = [
   {
     question: 'What ages is this for?',
     answer:
-      'The whole family plays together. A grown-up (or teen) runs the game on their phone: they set up the players, pick topics and difficulty for each person, and read the questions aloud while everyone answers. The personalized topics and difficulty mean everyone from a 6-year-old to Grandma gets questions that are right for them.',
+      'Ages 13+ for independent use. Children aged 6–12 can join when a parent or guardian sets up and manages the game, chooses topics and difficulty, and reads questions aloud. Personalized questions help the whole family play together.',
   },
   {
     question: 'What data does the app collect?',
     answer:
-      'Your game stays on your device: player names, topics, scores, and history are never uploaded. We collect anonymous usage statistics through Google Analytics to improve the app, and you can turn that off anytime in the app\'s About screen. Subscriptions are processed by Apple. See our Privacy Policy for details.',
+      'Games are saved on your device. To run a game, we send player names, topics and difficulty choices to our server; question generation also uses recently seen questions to avoid repeats. Optional usage analytics links app activity and subscription events using a random app identifier. You can allow or decline it and change your choice in the app, even without a subscription. See our Privacy Policy for details.',
   },
   {
     question: 'Why personalization?',

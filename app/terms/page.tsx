@@ -41,12 +41,12 @@ export default function TermsPage() {
             </p>
             <p className='mb-4'>
               <strong>
-                The App must be operated by someone at least 13 years old.
+                Independent use of the App is for ages 13 and over.
               </strong>{' '}
               By using the App, you represent and warrant that you are at least
-              13 years of age. Family members under 13 may participate in a
-              game run by a qualifying operator, such as answering questions
-              read aloud by a parent, but may not operate the App themselves.
+              13 years of age if operating it independently. Children aged 6–12
+              may participate only when a parent or guardian sets up and manages
+              the game, chooses the content and reads questions aloud.
             </p>
           </section>
 
@@ -301,10 +301,9 @@ export default function TermsPage() {
               11. Age Requirement
             </h2>
             <p className='mb-4'>
-              The App is operated by users aged 13 and older. If you are under
-              13, you may not operate the App; you may take part in a game run
-              by a parent, guardian, or other qualifying operator. The App has
-              no user accounts.
+              Independent use is for ages 13 and over. Children aged 6–12 may
+              participate only in a game set up and managed by a parent or
+              guardian. The App has no user accounts.
             </p>
             <p className='mb-4'>
               Parents and guardians are encouraged to supervise their
