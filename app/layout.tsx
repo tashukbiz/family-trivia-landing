@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     appId: APP_STORE_ID,
   },
   ...buildPageMetadata({
-    title: 'Family Trivia - The Trivia Game for Everyone',
+    title: 'Family Trivia — Your Topic. Your Difficulty.',
     description:
-      "Fun for kids. Challenging for adults. Fair for everyone. Endless, AI-generated trivia questions tailored to each person's interests, all on a single device.",
+      "Your topic. Your difficulty. One family game. Choose a topic and challenge for each player, then take turns together on one iPhone or iPad.",
     path: '/',
   }),
   icons: {
