@@ -92,7 +92,7 @@ export default function Home() {
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}><span aria-hidden='true'>✦</span> A little friendly competition</p>
             <h1 id='hero-heading'>Your topic.<br />Your difficulty.<br /><span>One family game.</span></h1>
-            <p className={styles.lead}>Everyone picks what interests them and chooses their own challenge. Then take turns answering questions together on one iPhone or iPad.</p>
+            <p className={styles.lead}>Waiting for food or your next adventure? Make the most of a few spare minutes. Everyone picks their own topic and difficulty, then takes turns on one phone.</p>
             <Download placement='web-home-hero' />
             <p className={styles.platform}>One device. Up to 10 players or teams.</p>
             <a className={styles.textLink} href='#features'>Take a peek at the game <span aria-hidden='true'>↘</span></a>
@@ -126,8 +126,8 @@ export default function Home() {
         </section>
 
         <section id='how-it-works' className={styles.howTo} aria-labelledby='steps-heading'>
-          <p className={styles.eyebrow}>Your next family quiz night</p>
-          <h2 id='steps-heading'>Gather round. Get playing.</h2>
+          <p className={styles.eyebrow}>A few spare minutes together</p>
+          <h2 id='steps-heading'>Got a moment? Get playing.</h2>
           <ol className={styles.steps}>
             <li><span>1</span><h3>Add your people</h3><p>Play as individuals or teams, all on one device.</p></li>
             <li><span>2</span><h3>Make it yours</h3><p>Pick a topic and difficulty for each player, then choose how many rounds.</p></li>
@@ -150,8 +150,8 @@ export default function Home() {
         <section id='cta' className={styles.finalCta} aria-labelledby='cta-heading'>
           <span aria-hidden='true' className={styles.spark}>✦</span>
           <p className={styles.eyebrow}>One device. Everyone together.</p>
-          <h2 id='cta-heading'>Make tonight<br />a quiz night.</h2>
-          <p>Your people. Their favourite topics. A little friendly competition.</p>
+          <h2 id='cta-heading'>A little wait.<br />A little friendly competition.</h2>
+          <p>Waiting for your order at a restaurant or in line for a rollercoaster? Bring everyone into the same game.</p>
           <Download placement='web-home-footer' />
         </section>
       </main>
