@@ -81,14 +81,32 @@ the link via `lib/app-store.ts`:
   Analytics → Acquisition → Campaigns (needs ≥5 downloads and ~24h). Keep
   tokens ≤30 chars.
 - **Google Analytics**: each CTA click fires a single `cta_ios_click` event
-  with `placement` and `link_url` params (beacon transport). GA attaches
-  `page_location` automatically, so per-page detail lives in GA.
-- **Safari Smart App Banner** (`itunes` metadata in `app/layout.tsx`): installs
-  from it show as web referrals from familytrivia.app in Apple analytics.
+  with `placement`, `link_url` and `store` params (beacon transport). Creator
+  traffic also includes `creator_id`, `creator_campaign` and `creator_source`.
+  `creator_referral_visit` counts once per creator per tab session, not unique
+  people or GA sessions. GA attaches `page_location` automatically.
+- **Creator referrals**: `?ref=c01` accepts any ID of 1–25 ASCII letters,
+  digits, hyphens or underscores, starting with a letter or digit. IDs normalize
+  to lowercase. No hardcoded roster, approval list or database lookup exists.
+  Apple tokens are generated as `ft26-` plus the ID; incoming `ct` is ignored.
+  Legacy `utm_medium=creator&utm_content=c01` links also work. Optional
+  `utm_source` supplies a bounded source label, otherwise `unspecified`.
+  Session storage retains attribution within the tab; a new valid referral
+  replaces it, while an invalid referral or another tagged campaign clears it.
+  Untagged internal navigation preserves it. Blocked storage falls back to
+  document memory. Keep names, contact details and performance spreadsheets
+  outside the repository. Google Play remains hidden until verified.
+- **Safari Smart App Banner**: removed because static metadata cannot reliably
+  receive per-visitor campaign attribution. All visible store CTAs now use the
+  instrumented download button. No automatic store redirects are performed.
 - **RevenueCat**: not an attribution network — iOS apps cannot read Apple's
-  `ct` token, so web-referred subscribers can only be matched in aggregate
-  (App Store Connect campaign downloads vs. RevenueCat cohorts). Per-user
-  attribution would require an MMP (Branch/AppsFlyer) or RevenueCat Funnels.
+  `ct` token. Do not allocate overall RevenueCat subscriptions to creators.
+  Report creator trials/paid starts only from campaign-filtered store reports
+  or a separately verified attribution integration.
+
+Referral checks: `node --test lib/creator-referrals.test.mjs` (Node 22.18+).
+Register the event-scoped creator dimensions in the website GA property and
+verify delivery after deployment. Analytics failure must never block a link.
 
 ## Build Process
 
