@@ -32,8 +32,13 @@ export const trackGoogleAnalyticsEvent = (
   action: string,
   params?: Record<string, unknown>,
 ) => {
-  if (!GA_TRACKING_ID || !window.gtag) {
-    return;
+  if (!GA_TRACKING_ID || typeof window === 'undefined' || !window.gtag) {
+    return false;
   }
-  window.gtag('event', action, params);
+  try {
+    window.gtag('event', action, params);
+    return true;
+  } catch {
+    return false; // Analytics must never prevent following a store link.
+  }
 };

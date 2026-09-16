@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import './globals.css';
 import { AHrefsAnalytics } from '@/components/analytics/AHrefsAnalytics';
 import { GoogleAnalyticsRegistration } from '@/components/analytics/GoogleAnalytics';
 import { buildPageMetadata, seoSiteConfig } from '@/lib/seo';
-import { APP_STORE_ID } from '@/lib/app-store';
+import CreatorReferralTracking from '@/components/CreatorReferralTracking';
 
 export const metadata: Metadata = {
   metadataBase: new URL(seoSiteConfig.siteUrl),
-  // Safari Smart App Banner; installs from it count as web referrals from
-  // familytrivia.app in App Store Connect analytics.
-  itunes: {
-    appId: APP_STORE_ID,
-  },
+  // Native Smart App Banners cannot reliably receive per-visitor campaign tokens
+  // on a static export. Use the visible, instrumented download buttons instead.
   ...buildPageMetadata({
     title: 'Family Trivia — Your Topic. Your Difficulty.',
     description:
@@ -49,6 +47,9 @@ export default function RootLayout({
         />
       </head>
       <body className='bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display'>
+        <Suspense fallback={null}>
+          <CreatorReferralTracking />
+        </Suspense>
         {children}
       </body>
     </html>
