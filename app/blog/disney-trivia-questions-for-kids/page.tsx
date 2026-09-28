@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -29,11 +28,10 @@ export default function DisneyTriviaQuestionsForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: 'Disney Trivia Questions for Kids (With Answers): 50 Magical Questions',
         description: 'Looking for Disney trivia questions for kids? Here are 50 magical Disney trivia questions covering Pixar, princesses, villains, and classic movies. Perfect for Disney fans!',
-        datePublished: '2024-12-17T00:00:00Z',
-        dateModified: '2024-12-17T00:00:00Z',
         path: '/blog/disney-trivia-questions-for-kids',
         keywords: 'disney trivia questions for kids, disney trivia for kids, disney trivia questions, disney trivia',
       }),
@@ -466,11 +464,9 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                     other topics your kids will love!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    With AI-generated questions tailored to each player's age
-                    and difficulty level, everyone from your Disney Princess fan
-                    to your Marvel superhero enthusiast gets questions that are
-                    just right for them. Make every family game night magical
-                    with Family Trivia!
+                    Each player chooses a topic and difficulty. An adult can
+                    guide younger Disney fans, while older players pick their
+                    own challenge. Make game night magical with Family Trivia!
                   </p>
                 </div>
               </section>
@@ -629,11 +625,6 @@ export default function DisneyTriviaQuestionsForKidsPage() {
                     containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
-
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Free trial available &nbsp;•&nbsp; ✓ No ads &nbsp;•&nbsp;
-                    ✓ Safe for kids &nbsp;•&nbsp; ✓ Endless Disney fun
-                  </p>
                 </div>
 
                 {/* Section 4: Classic Disney */}
@@ -912,7 +903,6 @@ export default function DisneyTriviaQuestionsForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

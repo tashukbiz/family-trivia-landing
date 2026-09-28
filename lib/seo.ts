@@ -13,7 +13,7 @@ interface BuildPageMetadataParams {
 }
 
 const SITE_NAME = 'Family Trivia';
-const SITE_URL = 'https://familytrivia.app';
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 const DEFAULT_OG_IMAGE = '/og-image.jpg';
 
 export function buildPageMetadata({
@@ -62,15 +62,41 @@ export function buildPageMetadata({
   };
 }
 
-type BuildBlogArticleMetadataParams = Omit<BuildPageMetadataParams, 'type'>;
+type BuildBlogArticleMetadataParams = Omit<
+  BuildPageMetadataParams,
+  'type' | 'publishedTime' | 'modifiedTime'
+> & {
+  publishedTime: string;
+  modifiedTime: string;
+};
 
 export function buildBlogArticleMetadata(
-  params: BuildBlogArticleMetadataParams
+  params: BuildBlogArticleMetadataParams,
 ): Metadata {
   return buildPageMetadata({
     ...params,
     type: 'article',
   });
+}
+
+export function getArticleDates(metadata: Metadata) {
+  const openGraph = metadata.openGraph;
+  if (
+    !openGraph ||
+    !('publishedTime' in openGraph) ||
+    !('modifiedTime' in openGraph) ||
+    typeof openGraph.publishedTime !== 'string' ||
+    typeof openGraph.modifiedTime !== 'string'
+  ) {
+    throw new Error(
+      'Article metadata is missing publication or modification dates',
+    );
+  }
+
+  return {
+    publishedTime: openGraph.publishedTime,
+    modifiedTime: openGraph.modifiedTime,
+  };
 }
 
 export const seoSiteConfig = {

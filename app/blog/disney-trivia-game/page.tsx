@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -77,11 +76,10 @@ export default function DisneyTriviaGamePage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'BlogPosting',
         headline: 'Disney Trivia Game: How to Play With Kids on One Phone',
         description: 'Learn how to run a Disney trivia game on one phone with kids, compare formats, and start a quick family round in minutes at home or on trips with no prep.',
-        datePublished: '2025-02-10T00:00:00Z',
-        dateModified: '2025-02-10T00:00:00Z',
         path: '/blog/disney-trivia-game',
         keywords: 'disney trivia game, disney trivia for kids, disney trivia questions',
       }),
@@ -347,7 +345,6 @@ export default function DisneyTriviaGamePage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

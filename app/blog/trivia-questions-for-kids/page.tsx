@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -9,7 +8,7 @@ import Image from 'next/image';
 
 export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'Trivia Questions for Kids - 20 Fun Questions to Play at Home! | Family Trivia',
-  description: 'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions perfect for children of all ages. Play at home with our Family Trivia app!',
+  description: 'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions for family game night. Play together with our Family Trivia app!',
   path: '/blog/trivia-questions-for-kids',
   keywords: [
     'trivia questions',
@@ -84,9 +83,10 @@ export default function TriviaQuestionsForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: 'Trivia Questions for Kids – 20 Fun Questions to Play at Home!',
-        description: 'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions perfect for children of all ages. Play at home with our Family Trivia app!',
+        description: 'Looking for trivia questions for kids? Here are 20 fun and educational trivia questions for family game night. Play together with our Family Trivia app!',
         path: '/blog/trivia-questions-for-kids',
         keywords: 'trivia questions for kids, kids trivia, trivia questions',
       }),
@@ -231,7 +231,7 @@ export default function TriviaQuestionsForKidsPage() {
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
                       Playing trivia together creates lasting memories and gives
-                      families a screen-free activity to enjoy together. It's
+                      families a shared activity to enjoy together. It's
                       quality time that everyone can participate in.
                     </p>
                   </div>
@@ -258,15 +258,12 @@ export default function TriviaQuestionsForKidsPage() {
                     >
                       Family Trivia app
                     </a>{' '}
-                    provides a safe, engaging trivia experience designed
-                    specifically for kids and families!
+                    lets families play trivia together on one device!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    With endless AI-generated questions tailored to each
-                    player's age and interests, everyone gets questions that are
-                    just right for them. No more complaints about questions
-                    being too hard or too easy – Family Trivia makes game night
-                    fair and fun for everyone from toddlers to grandparents!
+                    Each player chooses a topic and difficulty. An adult can
+                    choose suitable settings and read aloud for younger
+                    children as the family plays together.
                   </p>
                 </div>
               </section>
@@ -366,11 +363,6 @@ export default function TriviaQuestionsForKidsPage() {
                     containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
-
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Free trial available &nbsp;•&nbsp; ✓ No ads &nbsp;•&nbsp;
-                    ✓ Safe for kids &nbsp;•&nbsp; ✓ Endless fun
-                  </p>
                 </div>
 
                 <div className='bg-white dark:bg-slate-800 rounded-lg p-8 my-8 border border-gray-200 dark:border-slate-700'>
@@ -385,8 +377,7 @@ export default function TriviaQuestionsForKidsPage() {
                           Personalized for Every Player
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          Each person gets questions matched to their age and
-                          interests
+                          Each person chooses a topic and difficulty
                         </p>
                       </div>
                     </div>
@@ -453,9 +444,9 @@ export default function TriviaQuestionsForKidsPage() {
                     <p className='text-gray-700 dark:text-gray-300'>
                       Make sure questions are age-appropriate for your children.
                       Younger kids need simpler questions, while older children
-                      can handle more complex topics. This is where the Family
-                      Trivia app really shines – it automatically adjusts
-                      difficulty for each player!
+                      can handle more complex topics. In the Family
+                      Trivia app, each player chooses Easy, Medium or Hard;
+                      adults can guide younger children.
                     </p>
                   </div>
 
@@ -532,7 +523,6 @@ export default function TriviaQuestionsForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

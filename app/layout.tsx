@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   // Native Smart App Banners cannot reliably receive per-visitor campaign tokens
   // on a static export. Use the visible, instrumented download buttons instead.
   ...buildPageMetadata({
-    title: 'Family Trivia — Your Topic. Your Difficulty.',
+    title: 'Family Trivia App for iPhone & iPad | One Device, Everyone Plays',
     description:
-      "Your topic. Your difficulty. One family game. Choose a topic and challenge for each player, then take turns together on one iPhone or iPad.",
+      'Play Family Trivia together on one iPhone or iPad. Each player picks a topic and difficulty, then takes turns in a game for the whole family.',
     path: '/',
   }),
   icons: {

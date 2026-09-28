@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -244,6 +243,7 @@ export default function FunTriviaQuestionsForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: '50 Fun Trivia Questions for Kids (With Answers)',
         description: 'Looking for fun trivia questions for kids? Here are 50 playful and entertaining trivia questions covering weird animals, silly science, and fun geography. Perfect for family game night!',
@@ -423,16 +423,14 @@ export default function FunTriviaQuestionsForKidsPage() {
                     >
                       Family Trivia app
                     </a>{' '}
-                    generates thousands of fun, random trivia questions tailored
-                    to each player's age and interests!
+                    generates trivia questions for each player's chosen topic
+                    and difficulty!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
                     From weird animal facts to silly science, wacky geography to
                     food funnies, Family Trivia keeps the surprises coming.
-                    Every question is personalized so your 5-year-old gets
-                    age-appropriate silly questions while your teenager gets
-                    more challenging random trivia. Download today and never run
-                    out of fun facts!
+                    An adult can choose suitable settings and read aloud for
+                    younger children, while older players take their own turns.
                   </p>
                 </div>
               </section>
@@ -589,9 +587,8 @@ export default function FunTriviaQuestionsForKidsPage() {
                     With the <strong>Family Trivia app</strong>, every game
                     brings new weird animal facts, silly science questions,
                     wacky geography, and so much more. Questions are
-                    personalized for each player's age, so everyone from
-                    toddlers to grandparents gets the perfect level of fun and
-                    challenge!
+                    generated for each player's chosen topic and difficulty.
+                    Adults can guide younger children as everyone takes a turn.
                   </p>
 
                   <DownloadButtons
@@ -599,11 +596,6 @@ export default function FunTriviaQuestionsForKidsPage() {
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
 
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Thousands of fun questions &nbsp;•&nbsp; ✓ Personalized
-                    for each age &nbsp;•&nbsp; ✓ New surprises every game
-                    &nbsp;•&nbsp; ✓ Safe for kids
-                  </p>
                 </div>
               </section>
 
@@ -772,10 +764,9 @@ export default function FunTriviaQuestionsForKidsPage() {
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                   But why stop at 50? If your kids loved these fun trivia
                   questions, imagine having access to thousands more – all
-                  personalized to each player's age and interests. The Family
-                  Trivia app brings unlimited entertainment with AI-generated
-                  questions that keep everyone engaged, from your silly
-                  5-year-old to your challenging teenager.
+                  based on each player's chosen topic and difficulty. In the
+                  Family Trivia app, an adult can guide younger children while
+                  older players take their turns on the same device.
                 </p>
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
@@ -798,7 +789,6 @@ export default function FunTriviaQuestionsForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

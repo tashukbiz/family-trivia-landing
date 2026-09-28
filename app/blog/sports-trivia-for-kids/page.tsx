@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -251,6 +250,7 @@ export default function SportsTriviaForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: 'Sports Trivia for Kids: 50 Fun Questions (With Answers)',
         description: 'Looking for sports trivia for kids? Here are 50 fun sports trivia questions covering soccer, basketball, Olympics, and more. Perfect for young sports fans!',
@@ -432,11 +432,9 @@ export default function SportsTriviaForKidsPage() {
                     levels!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    With AI-generated questions tailored to each player's age
-                    and interests, your sports-loving kids can enjoy endless
-                    trivia about their favorite teams, athletes, and sports.
-                    Plus, the whole family can play together with personalized
-                    difficulty levels for everyone!
+                    Choose a sports topic and difficulty for each player.
+                    An adult can help younger children choose suitable topics
+                    and read the questions aloud as the family plays together.
                   </p>
                 </div>
               </section>
@@ -587,8 +585,7 @@ export default function SportsTriviaForKidsPage() {
                   </p>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
                     Whether your kids love soccer, basketball, gymnastics, or
-                    any other sport, they'll find endless questions perfectly
-                    matched to their age and interest level. Plus, compete with
+                    any other sport, they'll find questions based on their chosen topic and difficulty. Plus, compete with
                     the whole family in multiplayer mode!
                   </p>
 
@@ -597,11 +594,6 @@ export default function SportsTriviaForKidsPage() {
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
 
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Unlimited sports questions &nbsp;•&nbsp; ✓ All ages
-                    welcome &nbsp;•&nbsp; ✓ Safe for kids &nbsp;•&nbsp; ✓
-                    Multiplayer fun
-                  </p>
                 </div>
 
                 {/* Section 4: Baseball, American Football & Other Sports */}
@@ -845,7 +837,6 @@ export default function SportsTriviaForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

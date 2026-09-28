@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -252,6 +251,7 @@ export default function BibleTriviaQuestionsForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: 'Bible Trivia Questions for Kids (With Answers): 50 Questions for Home or Sunday School',
         description: 'Looking for Bible trivia questions for kids? Here are 50 easy Bible trivia questions from Old and New Testament. Perfect for Sunday school, homeschool, or family devotions!',
@@ -438,11 +438,9 @@ export default function BibleTriviaQuestionsForKidsPage() {
                     educational topics!
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    With endless AI-generated questions tailored to each
-                    player's age and knowledge level, everyone from young
-                    children to adults gets questions that are just right for
-                    them. Perfect for family devotions, Sunday school, or
-                    Christian homeschooling!
+                    Each player chooses a topic and difficulty. An adult can
+                    guide younger children through a round for family devotions,
+                    Sunday school or homeschooling.
                   </p>
                 </div>
               </section>
@@ -594,21 +592,14 @@ export default function BibleTriviaQuestionsForKidsPage() {
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
                     Perfect for family devotions, Sunday school classes, and
                     Christian homeschooling. Each family member can choose Bible
-                    questions matched to their age and knowledge level, making
-                    scripture learning engaging for everyone from young children
-                    to adults!
+                    questions at a difficulty they choose. Adults can guide
+                    younger children as the family plays together.
                   </p>
 
                   <DownloadButtons
                     containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
-
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Free trial available &nbsp;•&nbsp; ✓ Safe for kids
-                    &nbsp;•&nbsp; ✓ Educational & fun &nbsp;•&nbsp; ✓ Perfect
-                    for families
-                  </p>
                 </div>
 
                 {/* Section 4: Bible Basics */}
@@ -880,7 +871,6 @@ export default function BibleTriviaQuestionsForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

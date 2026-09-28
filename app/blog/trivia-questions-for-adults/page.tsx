@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -112,6 +111,7 @@ export default function TriviaQuestionsForAdultsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: 'Trivia Questions for Adults – 20 Challenging Questions for Game Night!',
         description: 'Looking for trivia questions for adults? Discover 20 challenging trivia questions perfect for game night, gatherings, and parties. Test your knowledge with our Family Trivia app!',
@@ -458,11 +458,6 @@ export default function TriviaQuestionsForAdultsPage() {
                     containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
-
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Free trial available &nbsp;•&nbsp; ✓ No ads &nbsp;•&nbsp;
-                    ✓ Personalized difficulty &nbsp;•&nbsp; ✓ Endless topics
-                  </p>
                 </div>
 
                 <div className='bg-white dark:bg-slate-800 rounded-lg p-8 my-8 border border-gray-200 dark:border-slate-700'>
@@ -643,7 +638,6 @@ export default function TriviaQuestionsForAdultsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

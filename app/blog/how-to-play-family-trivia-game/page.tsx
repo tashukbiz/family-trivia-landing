@@ -1,10 +1,9 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { buildBlogArticleMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata, getArticleDates } from '@/lib/seo';
 
 export const metadata: Metadata = buildBlogArticleMetadata({
   title:
@@ -110,8 +109,8 @@ export default function HowToPlayFamilyTriviaGamePage() {
         description:
           'Step-by-step guide to using the Family Trivia app on one shared device. Learn setup, rounds, turn flow, and 10 top trivia topics including movie, Disney, sports, and Bible trivia.',
         image: 'https://familytrivia.app/og-image.jpg',
-        datePublished: '2026-03-29T00:00:00Z',
-        dateModified: '2026-03-29T00:00:00Z',
+        datePublished: getArticleDates(metadata).publishedTime,
+        dateModified: getArticleDates(metadata).modifiedTime,
         author: {
           '@type': 'Organization',
           name: 'Family Trivia',
@@ -413,7 +412,6 @@ export default function HowToPlayFamilyTriviaGamePage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

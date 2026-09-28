@@ -4,7 +4,7 @@ export default function BlogCtaSection() {
   return (
     <div className='bg-primary/10 dark:bg-primary/20 rounded-lg p-6 text-center'>
       <p className='text-lg font-semibold text-gray-900 dark:text-white mb-4'>
-        🎉 Ready for unlimited trivia fun? Download Family Trivia now!
+        🎉 Ready for another family round? Download Family Trivia!
       </p>
       <DownloadButtons
         containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center'

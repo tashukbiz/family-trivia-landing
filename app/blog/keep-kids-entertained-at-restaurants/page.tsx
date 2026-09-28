@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -220,6 +219,7 @@ export default function KeepKidsEntertainedAtRestaurantsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline:
           'How to Keep Kids Entertained at a Restaurant (While You Wait for Food)',
@@ -699,7 +699,6 @@ export default function KeepKidsEntertainedAtRestaurantsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

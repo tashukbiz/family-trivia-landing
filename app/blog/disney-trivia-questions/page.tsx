@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -8,7 +7,7 @@ import { buildBlogArticleMetadata } from '@/lib/seo';
 import { buildBlogPostingSchema, OG_IMAGE_URL } from '@/lib/structured-data';
 
 export const metadata: Metadata = buildBlogArticleMetadata({
-  title: 'Disney Trivia Questions for Kids & Families (Free Game)',
+  title: 'Disney Trivia Questions for Kids & Families',
   description:
     'Enjoy Disney trivia questions for kids and families with easy, medium, and hard rounds, a family game guide, and a quick phone-friendly way to play together.',
   path: '/blog/disney-trivia-questions',
@@ -177,11 +176,10 @@ export default function DisneyTriviaQuestionsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'BlogPosting',
-        headline: 'Disney Trivia Questions for Kids & Families (Free Game Included)',
+        headline: 'Disney Trivia Questions for Kids & Families',
         description: 'Enjoy Disney trivia questions for kids and families with easy, medium, and hard rounds, a family game guide, and a quick phone-friendly way to play together.',
-        datePublished: '2025-02-10T00:00:00Z',
-        dateModified: '2025-02-10T00:00:00Z',
         path: '/blog/disney-trivia-questions',
         keywords: 'disney trivia questions, disney trivia, disney trivia for kids, disney trivia game',
       }),
@@ -248,8 +246,7 @@ export default function DisneyTriviaQuestionsPage() {
             <article className='prose prose-lg dark:prose-invert max-w-none'>
               <header className='mb-12'>
                 <h1 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight'>
-                  Disney Trivia Questions for Kids & Families (Free Game
-                  Included)
+                  Disney Trivia Questions for Kids & Families
                 </h1>
                 <p className='text-gray-600 dark:text-gray-400 text-lg'>
                   A complete Disney trivia collection with easy, medium, and
@@ -462,7 +459,6 @@ export default function DisneyTriviaQuestionsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

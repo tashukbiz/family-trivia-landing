@@ -31,10 +31,10 @@ app/
 
 ### Components
 Located in `/components` directory:
-- `SignupButton.tsx` - Client component that opens signup modal
-- `SignupForm.tsx` - Mailchimp integration form (client component)
+- `SignupButton.tsx` - Client component that links to the public iOS App Store listing and tracks the click
+- `DownloadButtons.tsx` - Shared iOS download CTA
 
-Both are client components (marked with `'use client'`) because they use browser APIs and event handlers.
+`SignupButton` is a client component (marked with `'use client'`) because it uses browser APIs and event handlers.
 
 ## Styling System
 
@@ -57,11 +57,10 @@ Both are client components (marked with `'use client'`) because they use browser
 - Uses Tailwind's dark mode classes (e.g., `dark:bg-slate-800`)
 - Class-based dark mode (configured in root `<html>` tag)
 
-### 3. Email Signup (Mailchimp)
-- Modal popup with Mailchimp embedded form
-- Triggered by download buttons throughout the page
-- Form action points to Mailchimp subscription endpoint
-- Includes honeypot field for bot protection
+### 3. App Store Download
+- Download buttons link to the public iOS listing with placement attribution
+- Android is in early testing and has no public install link on this site
+- The site has no signup modal
 
 ### 4. SEO Optimization
 - Proper metadata in layout.tsx and page components
@@ -125,6 +124,10 @@ Build output:
 - Optimized CSS and JS bundles
 - All assets copied to `/out` directory
 - Ready for deployment to any static host
+
+Article publication and modification dates live in each article's page metadata.
+JSON-LD and the sitemap read from that metadata. Refresh the checked-in
+`docs/` GitHub Pages copy from `out/` before deployment.
 
 ## Custom Agents
 

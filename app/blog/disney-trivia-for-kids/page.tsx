@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -155,11 +154,10 @@ export default function DisneyTriviaForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'BlogPosting',
         headline: 'Disney Trivia for Kids (Ages 5–10): Easy & Fun Questions',
         description: 'Disney trivia for kids ages 5–10 with easy questions by age, tips for mixed ages, and a simple way to play together as a family game at home or on trips.',
-        datePublished: '2025-02-10T00:00:00Z',
-        dateModified: '2025-02-10T00:00:00Z',
         path: '/blog/disney-trivia-for-kids',
         keywords: 'disney trivia for kids, disney trivia questions, disney trivia game',
       }),
@@ -408,7 +406,6 @@ export default function DisneyTriviaForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

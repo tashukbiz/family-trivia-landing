@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -9,7 +8,7 @@ import Image from 'next/image';
 
 export const metadata: Metadata = buildBlogArticleMetadata({
   title: '50 Animal Trivia Questions for Kids (With Answers) | Family Trivia',
-  description: 'Looking for animal trivia questions for kids? Here are 50 fun animal trivia questions and answers, from ocean to jungle. Play free in our Family Trivia app!',
+  description: 'Looking for animal trivia questions for kids? Here are 50 fun animal trivia questions and answers, from ocean to jungle. Play together in our Family Trivia app!',
   path: '/blog/animal-trivia-questions-for-kids',
   keywords: [
     'animal trivia questions for kids',
@@ -271,7 +270,7 @@ export default function AnimalTriviaQuestionsForKidsPage() {
     },
     {
       q: 'Where can I find more animal trivia questions for kids?',
-      a: 'You can find unlimited animal trivia in the Family Trivia app, which generates fresh questions and automatically matches the difficulty to each player\'s age, so every child gets a fair and fun challenge.',
+      a: 'Choose animals as a topic in Family Trivia. Each player selects Easy, Medium or Hard, while an adult guides younger children.',
     },
   ] as const;
 
@@ -279,9 +278,10 @@ export default function AnimalTriviaQuestionsForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: '50 Animal Trivia Questions for Kids (With Answers)',
-        description: 'Looking for animal trivia questions for kids? Here are 50 fun animal trivia questions and answers, from ocean to jungle. Play free in our Family Trivia app!',
+        description: 'Looking for animal trivia questions for kids? Here are 50 fun animal trivia questions and answers, from ocean to jungle. Play together in our Family Trivia app!',
         path: '/blog/animal-trivia-questions-for-kids',
         keywords: 'animal trivia questions for kids, animal trivia for kids, animal trivia questions and answers for kids, fun animal facts for kids',
       }),
@@ -455,17 +455,16 @@ export default function AnimalTriviaQuestionsForKidsPage() {
 
                 <div className='bg-white dark:bg-slate-800 border-l-4 border-primary rounded-r-lg p-6 my-8'>
                   <p className='text-lg text-gray-800 dark:text-gray-200 mb-4'>
-                    <strong>💡 Pro Tip:</strong> Want unlimited animal trivia
-                    tailored to each child's age and interests? Our{' '}
+                    <strong>💡 Pro Tip:</strong> Want more animal trivia
+                    with a topic and difficulty for each player? Our{' '}
                     <a
                       href='#cta'
                       className='font-bold text-primary hover:underline'
                     >
                       Family Trivia app
                     </a>{' '}
-                    automatically adjusts difficulty for every player, so your
-                    5-year-old and your 12-year-old both get questions that are
-                    just right!
+                    lets each player choose a topic and difficulty. An adult
+                    can guide younger children through each turn.
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
                     With AI-generated questions personalized for each family
@@ -609,11 +608,9 @@ export default function AnimalTriviaQuestionsForKidsPage() {
                     🦓 Loving These Animal Trivia Questions?
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                    You're halfway through the animal kingdom! Want unlimited
-                    animal trivia tailored to each child's exact age and
-                    interests? The <strong>Family Trivia app</strong> provides
-                    endless AI-generated questions, so every player gets facts
-                    that are just right for them.
+                    You're halfway through the animal kingdom! The <strong>Family Trivia app</strong> can generate more
+                    animal questions. Choose a suitable difficulty for each
+                    player and help younger children read along.
                   </p>
                   <DownloadButtons
                     containerClassName='flex flex-col items-center justify-center gap-3 sm:flex-row'
@@ -790,27 +787,20 @@ export default function AnimalTriviaQuestionsForKidsPage() {
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                     These 50 questions are just the beginning! If your kids loved
                     them, imagine having access to{' '}
-                    <strong>unlimited animal trivia questions</strong> — all
-                    specially designed for different ages and difficulty levels.
+                    <strong>more animal trivia questions</strong> with a topic
+                    and difficulty chosen for each player.
                   </p>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
                     With our <strong>Family Trivia app</strong>, every family
-                    member gets questions matched to their age and interests.
-                    Your 5-year-old answers easy questions about puppies and
-                    kittens, while your 12-year-old tackles harder questions
-                    about reptiles and deep-sea creatures. Everyone plays
-                    together, everyone has fun, and everyone learns!
+                    member chooses a topic and difficulty. An adult can read
+                    questions aloud for younger children while older players
+                    take their turns. Everyone plays together on one device.
                   </p>
 
                   <DownloadButtons
                     containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
-
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Free trial available &nbsp;•&nbsp; ✓ No ads &nbsp;•&nbsp;
-                    ✓ Safe for kids &nbsp;•&nbsp; ✓ Endless fun
-                  </p>
                 </div>
 
                 <div className='bg-white dark:bg-slate-800 rounded-lg p-8 my-8 border border-gray-200 dark:border-slate-700'>
@@ -825,8 +815,7 @@ export default function AnimalTriviaQuestionsForKidsPage() {
                           Personalized for Every Player
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          Each person gets questions matched to their age and
-                          interests
+                          Each person chooses their own topic and difficulty
                         </p>
                       </div>
                     </div>
@@ -996,10 +985,9 @@ export default function AnimalTriviaQuestionsForKidsPage() {
                       Where can I find more animal trivia questions for kids?
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      You can find unlimited animal trivia in the Family Trivia
-                      app, which generates fresh questions and automatically
-                      matches the difficulty to each player's age, so every child
-                      gets a fair and fun challenge.
+                      Choose animals as a topic in Family Trivia. Each player
+                      selects Easy, Medium or Hard, while an adult guides
+                      younger children.
                     </p>
                   </div>
                 </div>
@@ -1045,7 +1033,6 @@ export default function AnimalTriviaQuestionsForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

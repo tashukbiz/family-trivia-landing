@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -210,6 +209,7 @@ export default function KidsTriviaQuestionsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: '50 Kids Trivia Questions (With Answers) for Ages 6–12',
         description: 'Looking for kids trivia questions? Here are 50 easy to medium trivia questions perfect for children ages 6-12. Test your knowledge with our Family Trivia app!',
@@ -381,22 +381,21 @@ export default function KidsTriviaQuestionsPage() {
 
                 <div className='bg-white dark:bg-slate-800 border-l-4 border-primary rounded-r-lg p-6 my-8'>
                   <p className='text-lg text-gray-800 dark:text-gray-200 mb-4'>
-                    <strong>💡 Pro Tip:</strong> Want unlimited questions
-                    tailored to each child's age and interests? Our{' '}
+                    <strong>💡 Pro Tip:</strong> Want more questions
+                    with a topic and difficulty for each player? Our{' '}
                     <a
                       href='#cta'
                       className='font-bold text-primary hover:underline'
                     >
                       Family Trivia app
                     </a>{' '}
-                    automatically adjusts difficulty for every player, ensuring
-                    fair and fun gameplay for ages 6-12 and beyond!
+                    lets every player choose Easy, Medium or Hard. An adult can
+                    help younger children join the round.
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    With AI-generated questions personalized for each family
-                    member, your 6-year-old gets age-appropriate easy questions
-                    while your 12-year-old faces medium challenges. No more
-                    frustration from questions being too hard or too easy!
+                    Each player chooses a topic and Easy, Medium or Hard. An adult
+                    can help younger children choose suitable settings and read
+                    questions aloud.
                   </p>
                 </div>
               </section>
@@ -535,12 +534,10 @@ export default function KidsTriviaQuestionsPage() {
                     🎯 Loving These Kids Trivia Questions?
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                    You're halfway through! Want unlimited trivia questions
-                    tailored to each child's exact age and difficulty level? The{' '}
-                    <strong>Family Trivia app</strong> provides endless
-                    AI-generated questions personalized for ages 6-12 and
-                    beyond. Every player gets questions that are just right for
-                    them!
+                    You're halfway through! Want more trivia questions for family game night? The{' '}
+                    <strong>Family Trivia app</strong> generates questions for
+                    the topic and difficulty each player chooses. Adults can
+                    help younger children play.
                   </p>
                   <DownloadButtons
                     containerClassName='flex flex-col items-center justify-center gap-3 sm:flex-row'
@@ -814,9 +811,8 @@ export default function KidsTriviaQuestionsPage() {
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                   These 50 kids trivia questions are a fantastic starting point,
-                  but why stop here? With the Family Trivia app, you'll never
-                  run out of age-appropriate questions perfectly matched to each
-                  child's level.
+                  but why stop here? In the Family Trivia app, each player can choose a topic and
+                  difficulty for a shared round.
                 </p>
 
                 <div
@@ -827,11 +823,9 @@ export default function KidsTriviaQuestionsPage() {
                     🎮 Ready for Unlimited Kids Trivia Questions?
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                    Imagine having thousands of trivia questions kids will love,
-                    all automatically adjusted for ages 6-12 (and beyond)! The{' '}
-                    <strong>Family Trivia app</strong> uses AI to generate
-                    personalized questions that are never too easy or too hard
-                    for each player.
+                    Choose a topic and difficulty for each player in the{' '}
+                    <strong>Family Trivia app</strong>. It generates questions
+                    for those choices, and adults can guide younger players.
                   </p>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
                     Your 6-year-old gets simple, confidence-building questions
@@ -844,11 +838,6 @@ export default function KidsTriviaQuestionsPage() {
                     containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
-
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Free trial available &nbsp;•&nbsp; ✓ No ads &nbsp;•&nbsp;
-                    ✓ Safe for kids &nbsp;•&nbsp; ✓ Perfectly age-appropriate
-                  </p>
                 </div>
 
                 <div className='bg-white dark:bg-slate-800 rounded-lg p-8 my-8 border border-gray-200 dark:border-slate-700'>
@@ -863,8 +852,7 @@ export default function KidsTriviaQuestionsPage() {
                           Age-Perfect Difficulty
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          AI adjusts every question to each child's exact age
-                          and skill level (6-12 and beyond)
+                          Questions use each player's chosen topic and difficulty
                         </p>
                       </div>
                     </div>
@@ -924,12 +912,9 @@ export default function KidsTriviaQuestionsPage() {
 
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
                   Remember, the best trivia questions kids enjoy are the ones
-                  matched to their age and interests. These questions progress
-                  naturally from easy to medium, building confidence while
-                  expanding knowledge. And when you're ready for unlimited
-                  personalized questions, the Family Trivia app is here to make
-                  every game night fair, fun, and educational for the whole
-                  family!
+                  suited to their interests. These questions progress from easy
+                  to medium. In Family Trivia, each player chooses a topic and
+                  difficulty, and an adult can help younger children play.
                 </p>
 
                 <BlogCtaSection />
@@ -945,7 +930,6 @@ export default function KidsTriviaQuestionsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

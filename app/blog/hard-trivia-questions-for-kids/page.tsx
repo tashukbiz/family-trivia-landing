@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -271,7 +270,7 @@ export default function HardTriviaQuestionsForKidsPage() {
     },
     {
       q: 'Where can I find more hard trivia questions for kids?',
-      a: 'You can find unlimited challenging trivia in the Family Trivia app, which automatically scales the difficulty to each player, so an 8-year-old and a 14-year-old both get a fair challenge in the same game.',
+      a: 'Choose Hard in the Family Trivia app for a tougher round. Each player selects their own topic and difficulty, and an adult can guide younger children.',
     },
   ] as const;
 
@@ -279,6 +278,7 @@ export default function HardTriviaQuestionsForKidsPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: '50 Hard Trivia Questions for Kids (With Answers)',
         description: 'Looking for hard trivia questions for kids? Here are 50 challenging trivia questions with answers for older kids ages 9-12. Test the whole family in our app!',
@@ -462,8 +462,9 @@ export default function HardTriviaQuestionsForKidsPage() {
                     >
                       Family Trivia app
                     </a>{' '}
-                    automatically adjusts difficulty, so an 8-year-old and a
-                    14-year-old both get a fair challenge in the same game!
+                    lets each player choose a difficulty, so children and
+                    adults can play in the same game. An adult should guide
+                    younger players.
                   </p>
                   <p className='text-gray-700 dark:text-gray-300'>
                     With AI-generated questions personalized for each family
@@ -607,11 +608,10 @@ export default function HardTriviaQuestionsForKidsPage() {
                     🏆 Finding These Hard Enough?
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                    You're halfway through the challenge! Want unlimited
-                    difficult questions that grow with your kids? The{' '}
-                    <strong>Family Trivia app</strong> auto-scales difficulty, so
-                    an 8-year-old and a 14-year-old both get a fair challenge in
-                    the very same game.
+                    You're halfway through the challenge! In the{' '}
+                    <strong>Family Trivia app</strong>, each player chooses
+                    their own topic and difficulty before taking a turn. An
+                    adult can guide younger children.
                   </p>
                   <DownloadButtons
                     containerClassName='flex flex-col items-center justify-center gap-3 sm:flex-row'
@@ -791,22 +791,15 @@ export default function HardTriviaQuestionsForKidsPage() {
                     run out.
                   </p>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
-                    The best part: the <strong>Family Trivia app</strong>{' '}
-                    automatically scales the difficulty for each player, so an
-                    8-year-old and a 14-year-old both get a fair challenge in the
-                    same game. No one is stuck with questions that are too hard or
-                    too easy — everyone competes on a level playing field.
+                    In the <strong>Family Trivia app</strong>, each player
+                    chooses their own topic and difficulty. An adult can help
+                    younger players choose suitable settings and read aloud.
                   </p>
 
                   <DownloadButtons
                     containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                     buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
                   />
-
-                  <p className='text-sm text-gray-600 dark:text-gray-400'>
-                    ✓ Free trial available &nbsp;•&nbsp; ✓ No ads &nbsp;•&nbsp;
-                    ✓ Safe for kids &nbsp;•&nbsp; ✓ Auto-scaling difficulty
-                  </p>
                 </div>
 
                 <div className='bg-white dark:bg-slate-800 rounded-lg p-8 my-8 border border-gray-200 dark:border-slate-700'>
@@ -821,8 +814,7 @@ export default function HardTriviaQuestionsForKidsPage() {
                           Personalized for Every Player
                         </strong>
                         <p className='text-gray-700 dark:text-gray-300 text-sm'>
-                          Each person gets questions matched to their age and
-                          skill level
+                          Each person chooses a topic and difficulty
                         </p>
                       </div>
                     </div>
@@ -989,10 +981,9 @@ export default function HardTriviaQuestionsForKidsPage() {
                       Where can I find more hard trivia questions for kids?
                     </h3>
                     <p className='text-gray-700 dark:text-gray-300'>
-                      You can find unlimited challenging trivia in the Family
-                      Trivia app, which automatically scales the difficulty to
-                      each player, so an 8-year-old and a 14-year-old both get a
-                      fair challenge in the same game.
+                      Choose Hard in the Family Trivia app for a tougher
+                      round. Each player selects their own topic and difficulty,
+                      and an adult can guide younger children.
                     </p>
                   </div>
                 </div>
@@ -1038,7 +1029,6 @@ export default function HardTriviaQuestionsForKidsPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

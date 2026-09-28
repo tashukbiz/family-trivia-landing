@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import { buildBlogArticleMetadata } from '@/lib/seo';
@@ -79,7 +78,7 @@ export default function FamilyGameNightIdeasPage() {
         {
           name: 'Family Trivia (app)',
           blurb:
-            'One device, AI per-player difficulty, and a question set that stays fair for every age at the same table.',
+            'One device, with a topic and difficulty chosen for each player. Adults can guide younger children.',
           ages: 'Best for ages 5+',
         },
         {
@@ -178,7 +177,7 @@ export default function FamilyGameNightIdeasPage() {
     {
       question: 'What is a good game night idea for a big age gap?',
       answer:
-        'Pick a game with per-player difficulty so younger kids get easier questions and adults get harder ones in the same round. Family Trivia does this automatically on a single shared device, which removes the “too hard / too easy” problem.',
+        'Pick a game with a difficulty choice for each player. In Family Trivia, each person selects Easy, Medium or Hard on one shared device, and an adult can guide younger children.',
     },
   ] as const;
 
@@ -186,6 +185,7 @@ export default function FamilyGameNightIdeasPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'Article',
         headline: 'Family Game Night Ideas: How to Make It Fun for Every Age',
         description:
@@ -613,11 +613,10 @@ export default function FamilyGameNightIdeasPage() {
                     🎮 Want the Easy-Mode Option for Mixed Ages?
                   </h3>
                   <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-8'>
-                    <strong>Family Trivia</strong> handles the difficulty for you.
-                    Each player gets questions matched to their age and level on
-                    one shared device, so a 7-year-old and a grandparent can play
-                    the very same round and both feel challenged — no scorekeeping
-                    headaches, no "too hard / too easy" complaints.
+                    With <strong>Family Trivia</strong>, each player chooses a
+                    topic and difficulty on one shared device. An adult can
+                    guide younger children, while older players take their own
+                    turns and follow the scores together.
                   </p>
 
                   <DownloadButtons
@@ -627,7 +626,7 @@ export default function FamilyGameNightIdeasPage() {
 
                   <p className='text-sm text-gray-600 dark:text-gray-400'>
                     ✓ Up to 10 players &nbsp;•&nbsp; ✓ One device &nbsp;•&nbsp; ✓
-                    Fair for every age &nbsp;•&nbsp; ✓ Endless questions
+                    A topic and difficulty for each player
                   </p>
                 </div>
               </section>
@@ -684,7 +683,6 @@ export default function FamilyGameNightIdeasPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

@@ -3,7 +3,6 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/seo';
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import { readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
@@ -198,8 +197,9 @@ export default function BlogPage() {
                 Ready for Family Fun?
               </h2>
               <p className='text-xl text-blue-100 mb-8 max-w-2xl mx-auto'>
-                Download Family Trivia and enjoy thousands of questions powered
-                by AI, perfect for players of all ages.
+                Play Family Trivia together on one iPhone or iPad. Each player
+                chooses their own topic and difficulty, while an adult guides
+                younger players.
               </p>
               <DownloadButtons
                 containerClassName='flex-wrap gap-4 flex justify-center'
@@ -209,7 +209,6 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

@@ -1,13 +1,12 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import type { Metadata } from 'next';
-import { buildBlogArticleMetadata } from '@/lib/seo';
+import { buildBlogArticleMetadata, getArticleDates } from '@/lib/seo';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = buildBlogArticleMetadata({
   title: 'From Idea to Family Trivia App: First Steps & Iterations | Family Trivia',
-  description: 'Follow the early journey of building the Family Trivia app: the first idea, the MVP, iterative improvements, and how we are now testing on iOS and Android.',
+  description: 'Follow how Family Trivia grew from a family game idea to a public iOS app, with Android testing still underway.',
   path: '/blog/from-idea-to-family-trivia-app',
   keywords: [
     'family trivia app',
@@ -15,11 +14,11 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'app development story',
     'from idea to app',
     'iterative app development',
-    'TestFlight beta',
-    'Google Play testing',
+    'iOS family trivia app',
+    'Android app testing',
   ],
   publishedTime: '2026-03-30T00:00:00Z',
-  modifiedTime: '2026-03-30T00:00:00Z',
+  modifiedTime: '2026-09-28T00:00:00Z',
 });
 
 export default function FromIdeaToFamilyTriviaAppPage() {
@@ -28,7 +27,9 @@ export default function FromIdeaToFamilyTriviaAppPage() {
     '@type': 'Article',
     headline: 'From Idea to Family Trivia App: First Steps & Iterations',
     description:
-      'Follow the early journey of building the Family Trivia app: the first idea, the MVP, iterative improvements, and how we are now testing on iOS and Android.',
+      'Follow how Family Trivia grew from a family game idea to a public iOS app, with Android testing still underway.',
+    datePublished: getArticleDates(metadata).publishedTime,
+    dateModified: getArticleDates(metadata).modifiedTime,
     image: 'https://familytrivia.app/og-image.jpg',
     author: {
       '@type': 'Person',
@@ -47,7 +48,7 @@ export default function FromIdeaToFamilyTriviaAppPage() {
       '@id': 'https://familytrivia.app/blog/from-idea-to-family-trivia-app',
     },
     keywords:
-      'family trivia app, build a trivia app, from idea to app, iterative app development, TestFlight beta',
+      'family trivia app, build a trivia app, from idea to app, iterative app development, iOS app launch',
   };
 
   return (
@@ -80,7 +81,7 @@ export default function FromIdeaToFamilyTriviaAppPage() {
                   href='#cta'
                   className='flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity'
                 >
-                  <span className='truncate'>Join Testing</span>
+                  <span className='truncate'>Download on the App Store</span>
                 </a>
               </div>
             </header>
@@ -98,7 +99,7 @@ export default function FromIdeaToFamilyTriviaAppPage() {
                 </h1>
                 <p className='text-gray-600 dark:text-gray-400 text-lg'>
                   A behind-the-scenes look at how a simple family game night idea
-                  turned into a real app now in early testing.
+                  became a public iOS app, with Android testing still underway.
                 </p>
               </header>
 
@@ -165,9 +166,9 @@ export default function FromIdeaToFamilyTriviaAppPage() {
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                   One of the biggest improvements came from prompt engineering.
                   I tuned the prompts and tested different models so the
-                  questions felt sharper, more age-appropriate, and consistent.
-                  We added checks to ensure every topic and question stays
-                  kid-friendly and safe before it reaches families.
+                  questions felt sharper and more consistent. AI-generated
+                  questions can still be inaccurate or unsuitable, so adults
+                  should choose appropriate topics and guide younger players.
                 </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   <div className='bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-slate-700'>
@@ -196,20 +197,18 @@ export default function FromIdeaToFamilyTriviaAppPage() {
 
               <section className='mb-12'>
                 <h2 className='text-3xl font-bold text-gray-900 dark:text-white mb-6'>
-                  From Idea to Real App Testing
+                  From Testing to the App Store
                 </h2>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
                   To share the app with more families, I registered developer
                   accounts for both the Apple App Store and Google Play. The app
-                  is now available for <strong>early testing</strong> on both
-                  platforms. It&apos;s not public yet, but testers can already
-                  download and play.
+                  is now publicly available on iPhone and iPad. Android is
+                  still in early testing.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  This stage is all about collecting high-level feedback: what
+                  Feedback is still helping us learn what
                   feels intuitive, what confuses people, and which features
-                  matter most. Early testing helps make the next iteration even
-                  stronger before the public release.
+                  matter most. It guides each new iteration of the app.
                 </p>
               </section>
 
@@ -218,20 +217,20 @@ export default function FromIdeaToFamilyTriviaAppPage() {
                 className='bg-gradient-to-r from-primary/10 to-blue-500/10 dark:from-primary/20 dark:to-blue-500/20 rounded-xl p-8 my-12 text-center'
               >
                 <h2 className='text-3xl font-bold text-gray-900 dark:text-white mb-4'>
-                  Want to Test the App for Free?
+                  Ready to Play Together?
                 </h2>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-6'>
-                  If you&apos;re interested, join the testing group, install the
-                  app, and play while it&apos;s completely free. Your feedback will
-                  help shape the public launch.
+                  Download Family Trivia on iPhone or iPad and bring your family
+                  together for a round. We welcome your feedback as the app
+                  continues to improve.
                 </p>
                 <DownloadButtons
                   containerClassName='flex flex-col sm:flex-row gap-4 justify-center items-center mb-6'
                   buttonClassName='w-full sm:w-auto flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity shadow-lg'
-                  iosLabel='Join iOS TestFlight'
+                  iosLabel='Download on the App Store'
                 />
                 <p className='text-sm text-gray-600 dark:text-gray-400'>
-                  Thanks for being part of the early community!
+                  Thanks for playing with us!
                 </p>
               </section>
 
@@ -240,14 +239,12 @@ export default function FromIdeaToFamilyTriviaAppPage() {
                   What&apos;s Next?
                 </h2>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  The next step is to gather the first wave of reviews and
-                  incorporate what matters most to families. That feedback will
-                  guide the final polish before the public release.
+                  We are listening to families and using their feedback to
+                  improve future releases. Android testing is continuing.
                 </p>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
-                  If you&apos;d like to be part of the story from the very beginning,
-                  join the testing group and let us know how Family Trivia fits
-                  into your game nights.
+                  If you play, let us know how Family Trivia fits into your game
+                  nights.
                 </p>
               </section>
             </article>
@@ -260,7 +257,6 @@ export default function FromIdeaToFamilyTriviaAppPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }

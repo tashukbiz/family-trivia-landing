@@ -1,5 +1,4 @@
 import DownloadButtons from '@/components/DownloadButtons';
-import SignupForm from '@/components/SignupForm';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -155,11 +154,10 @@ export default function DisneyMovieTriviaPage() {
     '@context': 'https://schema.org',
     '@graph': [
       buildBlogPostingSchema({
+        metadata,
         type: 'BlogPosting',
         headline: 'Disney Movie Trivia: Classic & Modern Films',
         description: 'Disney movie trivia with classic favorites, modern Pixar hits, and villains & sidekicks questions, plus a quick family game format for kids and parents.',
-        datePublished: '2025-02-10T00:00:00Z',
-        dateModified: '2025-02-10T00:00:00Z',
         path: '/blog/disney-movie-trivia',
         keywords: 'disney movie trivia, disney trivia, disney trivia questions',
       }),
@@ -393,7 +391,6 @@ export default function DisneyMovieTriviaPage() {
           </div>
         </div>
       </div>
-      <SignupForm />
     </>
   );
 }
