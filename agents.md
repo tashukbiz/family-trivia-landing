@@ -103,7 +103,7 @@ the link via `lib/app-store.ts`:
   Report creator trials/paid starts only from campaign-filtered store reports
   or a separately verified attribution integration.
 
-Referral checks: `node --test lib/creator-referrals.test.mjs` (Node 22.18+).
+Tests: `pnpm test` (vitest).
 Register the event-scoped creator dimensions in the website GA property and
 verify delivery after deployment. Analytics failure must never block a link.
 
@@ -159,50 +159,22 @@ An expert content writing agent specialized in creating engaging, SEO-optimized 
 - Tips for multi-generational family activities
 - Screen time that's both fun and educational
 
-## Social acquisition links (6 October 2026)
+## Social campaign links
 
-`lib/social-campaign.ts` handles the approved October campaign independently of
-creator referral storage. An active creator referral continues to take precedence.
-Ordinary social visits use allowlisted UTMs and store `ct` values; placement remains
-separate in click events. `SocialCampaignLinks` carries the bounded query through
-same-site navigation using full navigation so Next Link cannot discard it.
-No campaign cookie or local storage was added. Unknown/free-text/platform click
-identifiers are not forwarded; duplicate UTMs and explicit `ref` are rejected by
-the social mapper. Existing analytics consent behaviour is unchanged.
+`lib/social-campaign.ts` maps allowlisted social UTMs (`utm_source` youtube,
+instagram or tiktok; `utm_medium=organic_social`; the approved `utm_campaign`;
+`utm_content` of `profile` or an approved post ID) to an App Store campaign
+token, independently of creator referral storage. An active creator referral
+takes precedence. Explicit `ref`, duplicate UTMs and unknown or free-text
+values are rejected, and the historical `ig/social/link_in_bio` labels map to a
+separate legacy token. `SocialCampaignLinks` carries the bounded query through
+same-site navigation with full page loads so Next Link cannot discard it. No
+cookie or local storage is involved and consent behaviour is unchanged.
 
-Profile links use:
-`https://familytrivia.app/?utm_source=youtube&utm_medium=organic_social&utm_campaign=play_2026_10&utm_content=profile`.
-Substitute `instagram` or `tiktok` only for that platform's clickable placement.
-The store tokens are `ft26-yt-profile-oct`, `ft26-ig-profile-oct`,
-`ft26-tt-profile-oct`, using existing provider `128398768`. Shared profile links
-identify the channel/app, not a post. Use `ft-trivia-003` or `ft-trivia-004` only for
-an actual separately clickable post placement; store token appends `-yt`, `-ig`
-or `-tt`. Future campaigns/content IDs need an explicit mapping update. QA uses
-`qa_2026_10` and `qa-` tokens; exclude those from performance reports. Historical
-`ig/social/link_in_bio` stays a separate legacy bucket.
-
-On 6 October, after Alex's explicit approval, App Store Connect generated both
-`ft26-yt-profile-oct` and `ft26-ig-profile-oct` with provider `128398768` and `mt=8`.
-The provider is now independently verified for this app. Any further changes
-in App Store Connect still require separate explicit approval. The live site
-was using placement tokens without social propagation at audit time. Source PRs
-are not deployed: run the existing export/Pages workflow after review, then verify
-all live CTA placements and internal navigation. Android's public store destination
-was not present on the inspected site; confirm it is public before adding the
-promised Android CTA or scheduling content advertising that route.
-
-Validation: production build, TypeScript check, `pnpm test` (four campaign tests),
-and browser homepage → blog → App Store href with the same QA token passed.
-Existing `pnpm lint` lacks an ESLint 9 flat config, so lint remains a pre-existing
-tooling blocker. The companion app repo contains the live revenue audit and weekly
-report procedure in `project/acquisition-measurement-tech-design.md`.
-
-Exact approved App Store Connect output:
-
-- https://apps.apple.com/app/apple-store/id6757133105?pt=128398768&ct=ft26-yt-profile-oct&mt=8
-- https://apps.apple.com/app/apple-store/id6757133105?pt=128398768&ct=ft26-ig-profile-oct&mt=8
-
-The site's existing localized product URL uses the same verified app ID and
-campaign parameters. Generation does not establish attribution: Apple requires
-installs by at least five individual Apple Accounts before a campaign appears.
-No site/profile deployment, privacy edit or release was performed.
+Profile links identify the channel, not a post; use a post ID only for a
+separately clickable placement. New campaigns or post IDs need an explicit
+mapping update. QA campaigns produce `qa-` prefixed tokens; exclude them from
+performance reports. Apple campaign tokens, provider tokens, store links and
+contact details stay out of the repository: the provider token lives in the
+gitignored `.env.production`, and campaign tokens must be generated in App
+Store Connect before they can be reported.
