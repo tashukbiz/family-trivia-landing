@@ -22,13 +22,13 @@ export default function SignupButton({
   placement,
 }: SignupButtonProps) {
   const referral = useSyncExternalStore(subscribeToCreatorReferral, getCreatorReferral, getServerReferral);
-  const campaign = socialCampaign(useCampaignSearch(), 'ft');
+  const campaign = socialCampaign(useCampaignSearch());
   const href = appStoreUrl(referral?.campaignToken ?? campaign?.token ?? placement);
 
   const trackClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.type === 'auxclick' && event.button !== 1) return;
     const active = refreshCreatorReferral();
-    const social = socialCampaign(window.location.search, 'ft');
+    const social = socialCampaign(window.location.search);
     const destination = appStoreUrl(active?.campaignToken ?? social?.token ?? placement);
     event.currentTarget.href = destination;
     // transport_type beacon so the event survives navigating away to the App Store.
