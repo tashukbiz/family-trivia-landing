@@ -1,3 +1,4 @@
+import SocialCampaignLinks from '@/components/SocialCampaignLinks';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import './globals.css';
@@ -51,6 +52,7 @@ export default function RootLayout({
           <CreatorReferralTracking />
         </Suspense>
         {children}
+        <SocialCampaignLinks />
       </body>
     </html>
   );

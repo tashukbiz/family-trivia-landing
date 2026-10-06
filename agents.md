@@ -158,3 +158,39 @@ An expert content writing agent specialized in creating engaging, SEO-optimized 
 - Educational value of trivia games for children
 - Tips for multi-generational family activities
 - Screen time that's both fun and educational
+
+## Social acquisition links (6 October 2026)
+
+`lib/social-campaign.ts` handles the approved October campaign independently of
+creator referral storage. An active creator referral continues to take precedence.
+Ordinary social visits use allowlisted UTMs and store `ct` values; placement remains
+separate in click events. `SocialCampaignLinks` carries the bounded query through
+same-site navigation using full navigation so Next Link cannot discard it.
+No campaign cookie or local storage was added. Unknown/free-text/platform click
+identifiers are not forwarded; duplicate UTMs and explicit `ref` are rejected by
+the social mapper. Existing analytics consent behaviour is unchanged.
+
+Profile links use:
+`https://familytrivia.app/?utm_source=youtube&utm_medium=organic_social&utm_campaign=play_2026_10&utm_content=profile`.
+Substitute `instagram` or `tiktok` only for that platform's clickable placement.
+The store tokens are `ft26-yt-profile-oct`, `ft26-ig-profile-oct`,
+`ft26-tt-profile-oct`, using existing provider `128398768`. Shared profile links
+identify the channel/app, not a post. Use `ft-trivia-003` or `ft-trivia-004` only for
+an actual separately clickable post placement; store token appends `-yt`, `-ig`
+or `-tt`. Future campaigns/content IDs need an explicit mapping update. QA uses
+`qa_2026_10` and `qa-` tokens; exclude those from performance reports. Historical
+`ig/social/link_in_bio` stays a separate legacy bucket.
+
+Before publishing, confirm the provider/token in App Store Connect with read-only
+access and obtain Alex's explicit approval for any changes there. The live site
+was using placement tokens without social propagation at audit time. Source PRs
+are not deployed: run the existing export/Pages workflow after review, then verify
+all live CTA placements and internal navigation. Android's public store destination
+was not present on the inspected site; confirm it is public before adding the
+promised Android CTA or scheduling content advertising that route.
+
+Validation: production build, TypeScript check, `pnpm test` (four campaign tests),
+and browser homepage → blog → App Store href with the same QA token passed.
+Existing `pnpm lint` lacks an ESLint 9 flat config, so lint remains a pre-existing
+tooling blocker. The companion app repo contains the live revenue audit and weekly
+report procedure in `project/acquisition-measurement-tech-design.md`.
