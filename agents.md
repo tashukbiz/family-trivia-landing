@@ -103,7 +103,7 @@ the link via `lib/app-store.ts`:
   Report creator trials/paid starts only from campaign-filtered store reports
   or a separately verified attribution integration.
 
-Referral checks: `node --test lib/creator-referrals.test.mjs` (Node 22.18+).
+Tests: `pnpm test` (vitest).
 Register the event-scoped creator dimensions in the website GA property and
 verify delivery after deployment. Analytics failure must never block a link.
 
@@ -158,3 +158,23 @@ An expert content writing agent specialized in creating engaging, SEO-optimized 
 - Educational value of trivia games for children
 - Tips for multi-generational family activities
 - Screen time that's both fun and educational
+
+## Social campaign links
+
+`lib/social-campaign.ts` maps allowlisted social UTMs (`utm_source` youtube,
+instagram or tiktok; `utm_medium=organic_social`; the approved `utm_campaign`;
+`utm_content` of `profile` or an approved post ID) to an App Store campaign
+token, independently of creator referral storage. An active creator referral
+takes precedence. Explicit `ref`, duplicate UTMs and unknown or free-text
+values are rejected, and the historical `ig/social/link_in_bio` labels map to a
+separate legacy token. `SocialCampaignLinks` carries the bounded query through
+same-site navigation with full page loads so Next Link cannot discard it. No
+cookie or local storage is involved and consent behaviour is unchanged.
+
+Profile links identify the channel, not a post; use a post ID only for a
+separately clickable placement. New campaigns or post IDs need an explicit
+mapping update. QA campaigns produce `qa-` prefixed tokens; exclude them from
+performance reports. Apple campaign tokens, provider tokens, store links and
+contact details stay out of the repository: the provider token lives in the
+gitignored `.env.production`, and campaign tokens must be generated in App
+Store Connect before they can be reported.
