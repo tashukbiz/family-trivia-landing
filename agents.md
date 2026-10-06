@@ -181,8 +181,10 @@ or `-tt`. Future campaigns/content IDs need an explicit mapping update. QA uses
 `qa_2026_10` and `qa-` tokens; exclude those from performance reports. Historical
 `ig/social/link_in_bio` stays a separate legacy bucket.
 
-Before publishing, confirm the provider/token in App Store Connect with read-only
-access and obtain Alex's explicit approval for any changes there. The live site
+On 6 October, after Alex's explicit approval, App Store Connect generated both
+`ft26-yt-profile-oct` and `ft26-ig-profile-oct` with provider `128398768` and `mt=8`.
+The provider is now independently verified for this app. Any further changes
+in App Store Connect still require separate explicit approval. The live site
 was using placement tokens without social propagation at audit time. Source PRs
 are not deployed: run the existing export/Pages workflow after review, then verify
 all live CTA placements and internal navigation. Android's public store destination
@@ -194,3 +196,13 @@ and browser homepage → blog → App Store href with the same QA token passed.
 Existing `pnpm lint` lacks an ESLint 9 flat config, so lint remains a pre-existing
 tooling blocker. The companion app repo contains the live revenue audit and weekly
 report procedure in `project/acquisition-measurement-tech-design.md`.
+
+Exact approved App Store Connect output:
+
+- https://apps.apple.com/app/apple-store/id6757133105?pt=128398768&ct=ft26-yt-profile-oct&mt=8
+- https://apps.apple.com/app/apple-store/id6757133105?pt=128398768&ct=ft26-ig-profile-oct&mt=8
+
+The site's existing localized product URL uses the same verified app ID and
+campaign parameters. Generation does not establish attribution: Apple requires
+installs by at least five individual Apple Accounts before a campaign appears.
+No site/profile deployment, privacy edit or release was performed.
