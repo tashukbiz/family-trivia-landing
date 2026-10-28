@@ -10,19 +10,19 @@ const APPLE_PROVIDER_TOKEN =
   process.env.NEXT_PUBLIC_APPLE_PROVIDER_TOKEN || '';
 
 /**
- * App Store URL with Apple App Analytics campaign parameters, so downloads
- * are attributed per placement in App Store Connect → Analytics → Acquisition.
+ * Store URL with campaign parameters shared across both platforms. Apple uses
+ * these for App Analytics; they do not establish Google Play attribution.
  * Apple requires both pt (provider token) and ct (campaign token, max 30
  * chars); without a provider token the plain URL is returned.
  */
-export function appStoreUrl(campaignToken: string): string {
+export function appStoreUrl(target: 'ios' | 'android', campaignToken: string): string {
+  const storeUrl = target === 'android' ? GOOGLE_PLAY_URL : APP_STORE_URL;
   if (!APPLE_PROVIDER_TOKEN) {
-    return APP_STORE_URL;
+    return storeUrl;
   }
-  const params = new URLSearchParams({
-    pt: APPLE_PROVIDER_TOKEN,
-    ct: campaignToken,
-    mt: '8',
-  });
-  return `${APP_STORE_URL}?${params.toString()}`;
+  const url = new URL(storeUrl);
+  url.searchParams.set('pt', APPLE_PROVIDER_TOKEN);
+  url.searchParams.set('ct', campaignToken);
+  url.searchParams.set('mt', '8');
+  return url.toString();
 }

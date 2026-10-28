@@ -3,7 +3,7 @@ import { socialCampaign, socialEventParams } from '@/lib/social-campaign';
 import { useCampaignSearch } from '@/lib/useCampaignSearch';
 
 import { trackGoogleAnalyticsEvent } from './analytics/GoogleAnalytics';
-import { appStoreUrl, GOOGLE_PLAY_URL } from '@/lib/app-store';
+import { appStoreUrl } from '@/lib/app-store';
 import { useSyncExternalStore } from 'react';
 import { getCreatorReferral, getServerReferral, refreshCreatorReferral, subscribeToCreatorReferral } from '@/lib/creator-referrals-browser';
 
@@ -23,17 +23,13 @@ export default function SignupButton({
 }: SignupButtonProps) {
   const referral = useSyncExternalStore(subscribeToCreatorReferral, getCreatorReferral, getServerReferral);
   const campaign = socialCampaign(useCampaignSearch());
-  const href = target === 'android'
-    ? GOOGLE_PLAY_URL
-    : appStoreUrl(referral?.campaignToken ?? campaign?.token ?? placement);
+  const href = appStoreUrl(target, referral?.campaignToken ?? campaign?.token ?? placement);
 
   const trackClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.type === 'auxclick' && event.button !== 1) return;
     const active = refreshCreatorReferral();
     const social = socialCampaign(window.location.search);
-    const destination = target === 'android'
-      ? GOOGLE_PLAY_URL
-      : appStoreUrl(active?.campaignToken ?? social?.token ?? placement);
+    const destination = appStoreUrl(target, active?.campaignToken ?? social?.token ?? placement);
     event.currentTarget.href = destination;
     // transport_type beacon so the event survives navigating away to the App Store.
     trackGoogleAnalyticsEvent(target === 'android' ? 'cta_android_click' : 'cta_ios_click', {

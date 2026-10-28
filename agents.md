@@ -59,7 +59,7 @@ Located in `/components` directory:
 
 ### 3. App Store Download
 - Download buttons link to the public App Store and Google Play listings with click tracking
-- iOS links include Apple placement attribution; Android links use the public Google Play URL
+- Both store links carry the same campaign parameters when the Apple provider token is configured; Google Play retains its app ID query parameter
 - The site has no signup modal
 
 ### 4. SEO Optimization
@@ -94,7 +94,7 @@ the link via `lib/app-store.ts`:
   replaces it, while an invalid referral or another tagged campaign clears it.
   Untagged internal navigation preserves it. Blocked storage falls back to
   document memory. Keep names, contact details and performance spreadsheets
-  outside the repository. Google Play is publicly available. Android clicks use `store=google_play`; Apple campaign parameters are not appended to Google Play URLs.
+  outside the repository. Google Play is publicly available. Android clicks use `store=google_play`; shared Apple campaign parameters on Google Play URLs do not establish install attribution.
 - **Safari Smart App Banner**: removed because static metadata cannot reliably
   receive per-visitor campaign attribution. All visible store CTAs now use the
   instrumented download button. No automatic store redirects are performed.
