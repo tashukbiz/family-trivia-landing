@@ -3,14 +3,14 @@ import { socialCampaign, socialEventParams } from '@/lib/social-campaign';
 import { useCampaignSearch } from '@/lib/useCampaignSearch';
 
 import { trackGoogleAnalyticsEvent } from './analytics/GoogleAnalytics';
-import { appStoreUrl } from '@/lib/app-store';
+import { appStoreUrl, GOOGLE_PLAY_URL } from '@/lib/app-store';
 import { useSyncExternalStore } from 'react';
 import { getCreatorReferral, getServerReferral, refreshCreatorReferral, subscribeToCreatorReferral } from '@/lib/creator-referrals-browser';
 
 interface SignupButtonProps {
   children: React.ReactNode;
   className?: string;
-  target: 'ios';
+  target: 'ios' | 'android';
   /** Campaign token identifying where on the site the click came from. */
   placement: string;
 }
@@ -23,21 +23,25 @@ export default function SignupButton({
 }: SignupButtonProps) {
   const referral = useSyncExternalStore(subscribeToCreatorReferral, getCreatorReferral, getServerReferral);
   const campaign = socialCampaign(useCampaignSearch());
-  const href = appStoreUrl(referral?.campaignToken ?? campaign?.token ?? placement);
+  const href = target === 'android'
+    ? GOOGLE_PLAY_URL
+    : appStoreUrl(referral?.campaignToken ?? campaign?.token ?? placement);
 
   const trackClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.type === 'auxclick' && event.button !== 1) return;
     const active = refreshCreatorReferral();
     const social = socialCampaign(window.location.search);
-    const destination = appStoreUrl(active?.campaignToken ?? social?.token ?? placement);
+    const destination = target === 'android'
+      ? GOOGLE_PLAY_URL
+      : appStoreUrl(active?.campaignToken ?? social?.token ?? placement);
     event.currentTarget.href = destination;
     // transport_type beacon so the event survives navigating away to the App Store.
-    trackGoogleAnalyticsEvent('cta_ios_click', {
+    trackGoogleAnalyticsEvent(target === 'android' ? 'cta_android_click' : 'cta_ios_click', {
       event_category: 'cta',
       event_label: target,
       placement,
       link_url: destination,
-      store: 'app_store',
+      store: target === 'android' ? 'google_play' : 'app_store',
       ...(!active ? socialEventParams(social) : {}),
       ...(active ? {
         creator_id: active.creatorId,

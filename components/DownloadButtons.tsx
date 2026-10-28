@@ -5,6 +5,7 @@ interface DownloadButtonsProps {
   buttonClassName?: string;
   iosButtonClassName?: string;
   iosLabel?: string;
+  androidLabel?: string;
   labelClassName?: string;
   /** Campaign token identifying where on the site the click came from. */
   placement?: string;
@@ -15,6 +16,7 @@ export default function DownloadButtons({
   buttonClassName = '',
   iosButtonClassName = '',
   iosLabel = 'Download for iOS',
+  androidLabel = 'Get it on Google Play',
   labelClassName = 'truncate',
   placement = 'web-blog',
 }: DownloadButtonsProps) {
@@ -29,6 +31,9 @@ export default function DownloadButtons({
     <div className={containerClasses}>
       <SignupButton className={iosClasses} target='ios' placement={placement}>
         <span className={labelClassName}>{iosLabel}</span>
+      </SignupButton>
+      <SignupButton className={buttonClassName} target='android' placement={placement}>
+        <span className={labelClassName}>{androidLabel}</span>
       </SignupButton>
     </div>
   );

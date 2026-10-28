@@ -31,8 +31,8 @@ app/
 
 ### Components
 Located in `/components` directory:
-- `SignupButton.tsx` - Client component that links to the public iOS App Store listing and tracks the click
-- `DownloadButtons.tsx` - Shared iOS download CTA
+- `SignupButton.tsx` - Client component that links to the public App Store or Google Play listing and tracks the click
+- `DownloadButtons.tsx` - Shared iOS and Android download CTAs
 
 `SignupButton` is a client component (marked with `'use client'`) because it uses browser APIs and event handlers.
 
@@ -58,8 +58,8 @@ Located in `/components` directory:
 - Class-based dark mode (configured in root `<html>` tag)
 
 ### 3. App Store Download
-- Download buttons link to the public iOS listing with placement attribution
-- Android is in early testing and has no public install link on this site
+- Download buttons link to the public App Store and Google Play listings with click tracking
+- iOS links include Apple placement attribution; Android links use the public Google Play URL
 - The site has no signup modal
 
 ### 4. SEO Optimization
@@ -79,7 +79,7 @@ the link via `lib/app-store.ts`:
   `web-blog` (default). Downloads per token appear in App Store Connect →
   Analytics → Acquisition → Campaigns (needs ≥5 downloads and ~24h). Keep
   tokens ≤30 chars.
-- **Google Analytics**: each CTA click fires a single `cta_ios_click` event
+- **Google Analytics**: each CTA click fires a single `cta_ios_click` or `cta_android_click` event
   with `placement`, `link_url` and `store` params (beacon transport). Creator
   traffic also includes `creator_id`, `creator_campaign` and `creator_source`.
   `creator_referral_visit` counts once per creator per tab session, not unique
@@ -94,7 +94,7 @@ the link via `lib/app-store.ts`:
   replaces it, while an invalid referral or another tagged campaign clears it.
   Untagged internal navigation preserves it. Blocked storage falls back to
   document memory. Keep names, contact details and performance spreadsheets
-  outside the repository. Google Play remains hidden until verified.
+  outside the repository. Google Play is publicly available. Android clicks use `store=google_play`; Apple campaign parameters are not appended to Google Play URLs.
 - **Safari Smart App Banner**: removed because static metadata cannot reliably
   receive per-visitor campaign attribution. All visible store CTAs now use the
   instrumented download button. No automatic store redirects are performed.

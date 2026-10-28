@@ -12,7 +12,7 @@ const homepageFaqs = [
   {
     question: 'How many people can play?',
     answer:
-      'Add up to 10 individual players or teams. Everyone plays on one iPhone or iPad: pass it around, or have one person read the questions aloud.',
+      'Add up to 10 individual players or teams. Everyone plays on one iPhone, iPad or Android device: pass it around, or have one person read the questions aloud.',
   },
   {
     question: 'Which topics can we choose?',
@@ -32,7 +32,7 @@ const homepageFaqs = [
   {
     question: 'How does the subscription work?',
     answer:
-      'Family Trivia offers monthly and annual subscriptions. Prices and any eligible free trial are shown in the app. Subscriptions renew automatically unless cancelled at least 24 hours before the current period ends. Manage or cancel in your App Store account settings.',
+      'Family Trivia offers monthly and annual subscriptions. Prices and any eligible free trial are shown in the app. Subscriptions renew automatically unless cancelled at least 24 hours before the current period ends. Manage or cancel in your App Store or Google Play account settings.',
   },
   {
     question: 'What data does the app collect?',
@@ -60,13 +60,13 @@ const homepageStructuredData = {
       '@type': 'SoftwareApplication',
       name: 'Family Trivia',
       applicationCategory: 'GameApplication',
-      operatingSystem: 'iOS',
+      operatingSystem: 'iOS, Android',
       url: 'https://familytrivia.app',
       description:
-        'A family trivia game where each player chooses their own topic and difficulty, then everyone takes turns on one iPhone or iPad.',
+        'A family trivia game where each player chooses their own topic and difficulty, then everyone takes turns on one iPhone, iPad or Android device.',
       featureList: [
         'Up to 10 players or teams',
-        'Play together on one iPhone or iPad',
+        'Play together on one iPhone, iPad or Android device',
         'A topic and difficulty for each player',
       ],
     },
@@ -83,17 +83,15 @@ const homepageStructuredData = {
 
 function Download({
   placement,
-  compact = false,
 }: {
   placement: string;
-  compact?: boolean;
 }) {
   return (
     <DownloadButtons
       placement={placement}
-      iosLabel={compact ? 'Download' : 'Download on the App Store'}
+      iosLabel='Download on the App Store'
       containerClassName={styles.download}
-      buttonClassName={`${styles.button} ${compact ? styles.compactButton : ''}`}
+      buttonClassName={styles.button}
     />
   );
 }
@@ -120,11 +118,13 @@ export default function Home() {
           <a href='#faq'>FAQ</a>
           <Link href='/blog'>Blog</Link>
         </nav>
-        <Download placement='web-home-nav' compact />
+        <a href='#download' className={`${styles.button} ${styles.compactButton}`}>
+          Download
+        </a>
       </header>
 
       <main id='main'>
-        <section className={styles.hero} aria-labelledby='hero-heading'>
+        <section id='download' className={styles.hero} aria-labelledby='hero-heading'>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>
               <span aria-hidden='true'>✦</span> A little friendly competition
