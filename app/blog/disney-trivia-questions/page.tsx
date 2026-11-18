@@ -4,12 +4,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { buildBlogArticleMetadata } from '@/lib/seo';
-import { buildBlogPostingSchema, OG_IMAGE_URL } from '@/lib/structured-data';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
+
+const article = {
+  title: '28 Disney Trivia Questions for Kids and Families',
+  description: 'Pick a Disney trivia round by difficulty: 10 easy questions, 10 medium and 8 hard. Each question comes with its answer so one person can host.',
+};
 
 export const metadata: Metadata = buildBlogArticleMetadata({
-  title: 'Disney Trivia Questions for Kids & Families',
-  description:
-    'Enjoy Disney trivia questions for kids and families with easy, medium, and hard rounds, a family game guide, and a quick phone-friendly way to play together.',
+  ...article,
   path: '/blog/disney-trivia-questions',
   keywords: [
     'disney trivia questions',
@@ -19,7 +22,7 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'family trivia',
   ],
   publishedTime: '2025-02-10T00:00:00Z',
-  modifiedTime: '2025-02-10T00:00:00Z',
+  modifiedTime: '2026-11-18T00:00:00Z',
 });
 
 export default function DisneyTriviaQuestionsPage() {
@@ -53,7 +56,7 @@ export default function DisneyTriviaQuestionsPage() {
       a: 'No worries',
     },
     {
-      q: 'Who is Moana’s animal sidekick rooster?',
+      q: 'What is the name of Moana’s rooster?',
       a: 'Heihei',
     },
     {
@@ -104,8 +107,8 @@ export default function DisneyTriviaQuestionsPage() {
       a: 'Police officer',
     },
     {
-      q: 'What is the name of the magical candle in Encanto?',
-      a: 'The Miracle Candle (the Encanto candle)',
+      q: 'In Encanto, what gift lets Luisa lift donkeys?',
+      a: 'Super strength',
     },
   ] as const;
 
@@ -115,15 +118,15 @@ export default function DisneyTriviaQuestionsPage() {
       a: 'Dr. Facilier',
     },
     {
-      q: 'In The Little Mermaid, what is Prince Eric’s ship called?',
-      a: 'The Eric (Prince Eric’s ship)',
+      q: 'Which two eels serve Ursula in The Little Mermaid?',
+      a: 'Flotsam and Jetsam',
     },
     {
       q: 'What is the name of the restaurant in Ratatouille?',
       a: 'Gusteau’s',
     },
     {
-      q: 'In Hercules, what is the name of Meg’s full name?',
+      q: 'In Hercules, what is Meg’s full first name?',
       a: 'Megara',
     },
     {
@@ -178,8 +181,8 @@ export default function DisneyTriviaQuestionsPage() {
       buildBlogPostingSchema({
         metadata,
         type: 'BlogPosting',
-        headline: 'Disney Trivia Questions for Kids & Families',
-        description: 'Enjoy Disney trivia questions for kids and families with easy, medium, and hard rounds, a family game guide, and a quick phone-friendly way to play together.',
+        headline: article.title,
+        description: article.description,
         path: '/blog/disney-trivia-questions',
         keywords: 'disney trivia questions, disney trivia, disney trivia for kids, disney trivia game',
       }),
@@ -246,29 +249,22 @@ export default function DisneyTriviaQuestionsPage() {
             <article className='prose prose-lg dark:prose-invert max-w-none'>
               <header className='mb-12'>
                 <h1 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight'>
-                  Disney Trivia Questions for Kids & Families
+                  {article.title}
                 </h1>
                 <p className='text-gray-600 dark:text-gray-400 text-lg'>
-                  A complete Disney trivia collection with easy, medium, and
-                  hard rounds that make family game night feel magical.
+                  Start with 10 easy questions, try 10 medium ones, or challenge
+                  the Disney fans in your family to the eight hard questions.
                 </p>
               </header>
 
               <section className='mb-10'>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  Disney trivia is one of those rare family activities that
-                  works for almost everyone. Little kids recognize the
-                  characters, older kids remember the movie plots, and parents
-                  can jump in with the classics they grew up with. It’s quick to
-                  set up, no prep is required, and it’s a sweet way to connect
-                  during a busy weeknight.
-                </p>
-                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  This page is your hub for Disney trivia questions. Use the
-                  easy round for younger kids, the movie round for most family
-                  groups, and the harder round for parents or older kids who
-                  want a challenge. You can also jump to related Disney trivia
-                  articles below if you want more of a specific style.
+                  Choose one person to read the questions aloud and keep the answers
+                  out of sight. Give each player a turn, or let younger players
+                  team up with an adult. Planning a movie night? Try our{' '}
+                  <Link href='/blog/disney-movie-trivia' className='text-primary underline'>
+                    24 Disney movie trivia questions and answers
+                  </Link>.
                 </p>
               </section>
 
@@ -295,7 +291,7 @@ export default function DisneyTriviaQuestionsPage() {
 
               <section className='mb-12'>
                 <h2 className='text-3xl font-bold text-gray-900 dark:text-white mb-6'>
-                  Disney Movie Trivia (Medium)
+                  Medium Disney Trivia
                 </h2>
                 <div className='space-y-4'>
                   {movieQuestions.map((item, index) => (
@@ -350,7 +346,7 @@ export default function DisneyTriviaQuestionsPage() {
                   <li>Choose 10–15 questions for a short round.</li>
                   <li>Rotate turns so every player gets a chance.</li>
                   <li>Offer a hint after 5 seconds for younger kids.</li>
-                  <li>Celebrate good guesses instead of keeping strict score.</li>
+                  <li>For a tougher tie-breaker, try our{' '}<Link href='/blog/hard-trivia-questions-for-kids' className='text-primary underline'>hard trivia questions for kids</Link>.</li>
                 </ul>
               </section>
 

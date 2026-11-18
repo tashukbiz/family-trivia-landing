@@ -389,6 +389,8 @@ export default function FamilyTriviaOnePhonePage() {
                     </Link>{' '}
                     — 15 games and a hosting guide for mixed-age groups.
                   </li>
+                  <li><Link href='/blog/keep-kids-entertained-at-restaurants' className='text-primary underline'>Short games to play while waiting at a restaurant</Link></li>
+                  <li><Link href='/blog/from-idea-to-family-trivia-app' className='text-primary underline'>How Family Trivia became a one-phone game</Link></li>
                 </ul>
               </section>
 

@@ -672,6 +672,12 @@ export default function FamilyGameNightIdeasPage() {
 
                 <BlogCtaSection />
               </section>
+            <p className='mb-8 text-lg'>
+                For a holiday gathering, try our{' '}
+                <Link href='/blog/christmas-trivia-questions' className='text-primary underline'>50 Christmas trivia questions with answers</Link>.
+                If you only have a few minutes each day, explore{' '}
+                <Link href='/blog/daily-puzzle-games-for-parents-and-teens' className='text-primary underline'>daily puzzles for parents and teens</Link>.
+              </p>
             </article>
 
             {/* Back to Blog Home Link */}

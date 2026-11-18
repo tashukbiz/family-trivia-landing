@@ -206,6 +206,10 @@ export default function BlogPage() {
                 buttonClassName='flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white text-primary text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity'
               />
             </section>
+            <footer className='mt-8 flex gap-5 text-sm'>
+              <Link href='/privacy'>Privacy policy</Link>
+              <Link href='/terms'>Terms of service</Link>
+            </footer>
           </div>
         </div>
       </div>

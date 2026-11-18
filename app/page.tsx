@@ -60,6 +60,7 @@ const homepageStructuredData = {
       '@type': 'SoftwareApplication',
       name: 'Family Trivia',
       applicationCategory: 'GameApplication',
+      offers: { '@type': 'Offer', name: 'App download', price: 0 },
       operatingSystem: 'iOS, Android',
       url: 'https://familytrivia.app',
       description:
@@ -137,13 +138,13 @@ export default function Home() {
               <span>One family game.</span>
             </h1>
             <p className={styles.lead}>
-              Waiting for food or your next adventure? Make the most of a few
-              spare minutes. Everyone picks their own topic and difficulty, then
-              takes turns on one phone.
+              Family Trivia is a quiz app for up to 10 players or teams on one
+              phone. Each player picks their own topic and difficulty, then
+              passes the phone to the next player.
             </p>
             <Download placement='web-home-hero' />
             <p className={styles.platform}>
-              One device. Up to 10 players or teams.
+              Free to download. In-app subscriptions available.
             </p>
             <a className={styles.textLink} href='#features'>
               Take a peek at the game <span aria-hidden='true'>↘</span>

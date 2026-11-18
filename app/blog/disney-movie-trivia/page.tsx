@@ -4,12 +4,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { buildBlogArticleMetadata } from '@/lib/seo';
-import { buildBlogPostingSchema, OG_IMAGE_URL } from '@/lib/structured-data';
+import { buildBlogPostingSchema } from '@/lib/structured-data';
+
+const article = {
+  title: '24 Disney Movie Trivia Questions and Answers for Movie Night',
+  description: 'Host a Disney movie night with three rounds of eight questions: animated classics, modern Disney and Pixar films, and villains and sidekicks. Answers included.',
+};
 
 export const metadata: Metadata = buildBlogArticleMetadata({
-  title: 'Disney Movie Trivia: Classic & Modern Films for Families',
-  description:
-    'Disney movie trivia with classic favorites, modern Pixar hits, and villains & sidekicks questions, plus a quick family game format for kids and parents.',
+  ...article,
   path: '/blog/disney-movie-trivia',
   keywords: [
     'disney movie trivia',
@@ -18,7 +21,7 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'family trivia',
   ],
   publishedTime: '2025-02-10T00:00:00Z',
-  modifiedTime: '2025-02-10T00:00:00Z',
+  modifiedTime: '2026-11-18T00:00:00Z',
 });
 
 export default function DisneyMovieTriviaPage() {
@@ -40,8 +43,8 @@ export default function DisneyMovieTriviaPage() {
       a: 'Captain Hook',
     },
     {
-      q: 'In The Little Mermaid, what is Ariel’s human name after her wish?',
-      a: 'She keeps the name Ariel',
+      q: 'What does Ariel give Ursula in exchange for human legs?',
+      a: 'Her voice',
     },
     {
       q: 'What is the name of the teacup in Beauty and the Beast?',
@@ -52,8 +55,8 @@ export default function DisneyMovieTriviaPage() {
       a: 'Sarabi',
     },
     {
-      q: 'What animal does Pinocchio want to become a real version of?',
-      a: 'A real boy (human)',
+      q: 'What does the wooden puppet Pinocchio wish to become?',
+      a: 'A real boy',
     },
   ] as const;
 
@@ -102,7 +105,7 @@ export default function DisneyMovieTriviaPage() {
       a: 'Cri-Kee',
     },
     {
-      q: 'Who is Hercules’ sidekick trainer in Hercules?',
+      q: 'Who trains Hercules to become a hero?',
       a: 'Philoctetes (Phil)',
     },
     {
@@ -110,7 +113,7 @@ export default function DisneyMovieTriviaPage() {
       a: 'Charlotte La Bouff',
     },
     {
-      q: 'What is the name of the hyena trio in The Lion King?',
+      q: 'What are the names of the three hyenas in The Lion King?',
       a: 'Shenzi, Banzai, and Ed',
     },
     {
@@ -156,8 +159,8 @@ export default function DisneyMovieTriviaPage() {
       buildBlogPostingSchema({
         metadata,
         type: 'BlogPosting',
-        headline: 'Disney Movie Trivia: Classic & Modern Films',
-        description: 'Disney movie trivia with classic favorites, modern Pixar hits, and villains & sidekicks questions, plus a quick family game format for kids and parents.',
+        headline: article.title,
+        description: article.description,
         path: '/blog/disney-movie-trivia',
         keywords: 'disney movie trivia, disney trivia, disney trivia questions',
       }),
@@ -222,28 +225,25 @@ export default function DisneyMovieTriviaPage() {
             <article className='prose prose-lg dark:prose-invert max-w-none'>
               <header className='mb-12'>
                 <h1 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight'>
-                  Disney Movie Trivia: Classic & Modern Films
+                  {article.title}
                 </h1>
                 <p className='text-gray-600 dark:text-gray-400 text-lg'>
-                  A movie-focused Disney trivia round that mixes classics,
-                  modern favorites, and the villains and sidekicks kids love.
+                  Play three eight-question rounds: animated classics, modern Disney
+                  and Pixar, then villains and sidekicks. Each answer sits just
+                  below its question so one person can host.
                 </p>
               </header>
 
               <section className='mb-10'>
                 <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  If your family loves Disney movies, this trivia round is built
-                  for you. You’ll find a mix of classic films and modern Pixar
-                  favorites, plus a section dedicated to villains and sidekicks
-                  that kids remember instantly. For a bigger, all-in-one
-                  collection, visit our{' '}
+                  Short on time before the opening credits? Pick one round and give
+                  a point for each correct answer. For mixed difficulty levels, try our{' '}
                   <Link
                     href='/blog/disney-trivia-questions'
                     className='text-primary font-semibold hover:underline'
                   >
-                    Disney trivia questions hub
-                  </Link>{' '}
-                  for easy, medium, and hard rounds.
+                    Disney trivia rounds for kids and families
+                  </Link>.
                 </p>
               </section>
 
