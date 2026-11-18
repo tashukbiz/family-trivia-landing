@@ -7,9 +7,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = buildBlogArticleMetadata({
-  title: 'How to Run Family Trivia Night With Just One Phone | Family Trivia',
+  title: 'Family Trivia Games to Play on One Phone | Family Trivia',
   description:
-    'Run a whole family trivia night on a single phone — pass it around, each player picks their own topic and difficulty, and AI keeps questions fresh. No accounts, no downloads for everyone else.',
+    'Play family trivia games three ways on one phone: pass it around, let one person host, or play in teams. Start with a free sample round and answer key.',
   path: '/blog/family-trivia-one-phone',
   keywords: [
     'family trivia one phone',
@@ -22,7 +22,7 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'shared device trivia',
   ],
   publishedTime: '2026-06-25T00:00:00Z',
-  modifiedTime: '2026-06-25T00:00:00Z',
+  modifiedTime: '2026-11-18T00:00:00Z',
 });
 
 export default function FamilyTriviaOnePhonePage() {
@@ -110,9 +110,9 @@ export default function FamilyTriviaOnePhonePage() {
       buildBlogPostingSchema({
         metadata,
         type: 'Article',
-        headline: 'How to Run Family Trivia Night With Just One Phone',
+        headline: 'Family Trivia Games to Play on One Phone',
         description:
-          'Run a whole family trivia night on a single phone — pass it around, each player picks their own topic and difficulty, and AI keeps questions fresh. No accounts, no downloads for everyone else.',
+          'Play family trivia games three ways on one phone: pass it around, let one person host, or play in teams. Start with a free sample round and answer key.',
         path: '/blog/family-trivia-one-phone',
         keywords:
           'family trivia one phone, pass and play trivia, trivia game one device, family trivia night, trivia game no accounts, pass the phone trivia',
@@ -181,7 +181,7 @@ export default function FamilyTriviaOnePhonePage() {
             <article className='prose prose-lg dark:prose-invert max-w-none'>
               <header className='mb-12'>
                 <h1 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight'>
-                  How to Run Family Trivia Night With Just One Phone
+                  Family Trivia Games to Play on One Phone
                 </h1>
                 <p className='text-gray-600 dark:text-gray-400 text-lg'>
                   No group downloads, no accounts, no setup headaches — open one
@@ -190,24 +190,16 @@ export default function FamilyTriviaOnePhonePage() {
                 </p>
               </header>
 
-              {/* Introduction */}
               <section className='mb-10'>
-                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  The fastest way to kill a spontaneous game night is to make
-                  everyone download an app and create an account first. Half the
-                  table loses interest before the first question.
-                </p>
-                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  Family Trivia skips all of that. The whole game is designed to
-                  run on a single phone or tablet that you pass around the
-                  group. One person opens the app, everyone gets added as a
-                  player, and you start playing — no accounts, and no downloads
-                  for anyone except the host.
-                </p>
-                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
-                  Here is exactly how to set it up and run a full trivia night on
-                  one device.
-                </p>
+                <h2 className='mb-3 text-2xl font-bold'>Three family trivia games on one phone</h2>
+                <ul className='list-disc space-y-3 pl-6'>
+                  <li><strong>Pass and play.</strong> Each player sets their own topic and difficulty. Pass the phone after each answer.</li>
+                  <li><strong>Quiz host.</strong> One person holds the phone, reads the question and choices aloud, then taps the player’s answer. This works well for younger readers.</li>
+                  <li><strong>Team challenge.</strong> Pair a child and an adult. Add each pair as one team and alternate who gives the final answer.</li>
+                </ul>
+                <p className='mt-4'>Try the <Link className='underline' href='/blog/family-trivia-questions'>mixed-age family trivia questions</Link> first.
+                  Heading out? Take the <a className='underline' href='/printables/family-game-night.pdf'>10-question sheet and host key</a> or
+                  {' '}<a className='underline' href='#cta'>download Family Trivia</a> for rounds on your own topics.</p>
               </section>
 
               {/* Short Answer */}

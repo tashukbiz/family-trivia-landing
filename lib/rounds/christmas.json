@@ -1,0 +1,237 @@
+[
+  {
+    "title": "🌍 Christmas Traditions Around the World",
+    "questions": [
+      {
+        "q": "In which country did the tradition of decorating Christmas trees begin?",
+        "a": "Germany"
+      },
+      {
+        "q": "What do children in the Netherlands put out for Sinterklaas to fill with treats?",
+        "a": "Their shoes (often with a carrot or hay for his horse)"
+      },
+      {
+        "q": "In Mexico, what are the nine nights of candlelit processions before Christmas called?",
+        "a": "Las Posadas"
+      },
+      {
+        "q": "What fast food do many families in Japan eat on Christmas Eve?",
+        "a": "Fried chicken from KFC"
+      },
+      {
+        "q": "In Italy, which kind witch brings presents to children on the night before Epiphany?",
+        "a": "La Befana"
+      },
+      {
+        "q": "What plant do people traditionally kiss under at Christmas?",
+        "a": "Mistletoe"
+      },
+      {
+        "q": "What do people in the UK pull at the dinner table that goes \"bang\" and has a paper crown inside?",
+        "a": "A Christmas cracker"
+      },
+      {
+        "q": "What season is it in Australia at Christmas time?",
+        "a": "Summer",
+        "sheet": true
+      },
+      {
+        "q": "In Iceland, how many mischievous Yule Lads visit children in the days before Christmas?",
+        "a": "13"
+      },
+      {
+        "q": "Which red Christmas plant originally comes from Mexico?",
+        "a": "The poinsettia"
+      }
+    ]
+  },
+  {
+    "title": "🎬 Christmas Movies and Stories",
+    "questions": [
+      {
+        "q": "In the movie \"Elf,\" what is the name of Will Ferrell's character?",
+        "a": "Buddy"
+      },
+      {
+        "q": "What is the name of the Grinch's loyal dog?",
+        "a": "Max",
+        "sheet": true
+      },
+      {
+        "q": "In \"Home Alone,\" which city is Kevin's family flying to when they leave him behind?",
+        "a": "Paris"
+      },
+      {
+        "q": "In \"The Polar Express,\" what is the first gift of Christmas that the boy receives?",
+        "a": "A silver bell from Santa's sleigh"
+      },
+      {
+        "q": "In \"A Charlie Brown Christmas,\" what kind of Christmas tree does Charlie Brown choose?",
+        "a": "A small, droopy real tree that nobody else wants"
+      },
+      {
+        "q": "What brings Frosty the Snowman to life?",
+        "a": "A magic hat",
+        "sheet": true
+      },
+      {
+        "q": "In \"How the Grinch Stole Christmas!\", what is the name of the town where the Whos live?",
+        "a": "Whoville"
+      },
+      {
+        "q": "Who wrote \"A Christmas Carol\"?",
+        "a": "Charles Dickens"
+      },
+      {
+        "q": "How many ghosts visit Ebenezer Scrooge in \"A Christmas Carol\"?",
+        "a": "Four: Jacob Marley, then the Ghosts of Christmas Past, Present and Yet to Come"
+      },
+      {
+        "q": "In \"The Nutcracker\" ballet, what is the name of the girl who receives the nutcracker?",
+        "a": "Clara (called Marie in some versions)"
+      }
+    ]
+  },
+  {
+    "title": "🎅 Santa and His Reindeer",
+    "questions": [
+      {
+        "q": "Where does Santa Claus live?",
+        "a": "The North Pole",
+        "sheet": true
+      },
+      {
+        "q": "How many reindeer pull Santa's sleigh, counting Rudolph?",
+        "a": "Nine"
+      },
+      {
+        "q": "Which reindeer has a glowing red nose?",
+        "a": "Rudolph",
+        "sheet": true
+      },
+      {
+        "q": "What is the name of Santa's wife?",
+        "a": "Mrs. Claus",
+        "sheet": true
+      },
+      {
+        "q": "Which saint is Santa Claus based on?",
+        "a": "Saint Nicholas"
+      },
+      {
+        "q": "What snack do children in the United States traditionally leave out for Santa?",
+        "a": "Milk and cookies"
+      },
+      {
+        "q": "What treat do children in the UK often leave out for Santa?",
+        "a": "A mince pie (and a carrot for the reindeer)"
+      },
+      {
+        "q": "According to tradition, what does Santa leave for naughty children?",
+        "a": "A lump of coal"
+      },
+      {
+        "q": "Who helps Santa make toys in his workshop?",
+        "a": "Elves",
+        "sheet": true
+      },
+      {
+        "q": "Which famous poem, first published in 1823, gave Santa's reindeer their names?",
+        "a": "\"A Visit from St. Nicholas,\" also known as \"'Twas the Night Before Christmas\""
+      }
+    ]
+  },
+  {
+    "title": "🍪 Christmas Food and Treats",
+    "questions": [
+      {
+        "q": "What letter does a candy cane look like?",
+        "a": "The letter J",
+        "sheet": true
+      },
+      {
+        "q": "Which spice gives gingerbread its name?",
+        "a": "Ginger"
+      },
+      {
+        "q": "What creamy holiday drink is made from milk, eggs and sugar?",
+        "a": "Eggnog"
+      },
+      {
+        "q": "Which British Christmas dessert is sometimes set on fire before serving?",
+        "a": "Christmas pudding"
+      },
+      {
+        "q": "What tall Italian sweet bread full of dried fruit is popular at Christmas?",
+        "a": "Panettone"
+      },
+      {
+        "q": "What German Christmas bread is dusted with powdered sugar?",
+        "a": "Stollen"
+      },
+      {
+        "q": "What French Christmas cake is shaped like a log?",
+        "a": "Bûche de Noël (Yule log)"
+      },
+      {
+        "q": "Which bird is the most traditional Christmas dinner in the UK and the US?",
+        "a": "Turkey"
+      },
+      {
+        "q": "What small object is traditionally hidden in a Christmas pudding for good luck?",
+        "a": "A silver coin"
+      },
+      {
+        "q": "What do families build out of gingerbread and candy at Christmas?",
+        "a": "A gingerbread house",
+        "sheet": true
+      }
+    ]
+  },
+  {
+    "title": "❄️ Christmas History and Fun Facts",
+    "questions": [
+      {
+        "q": "The word \"Noel\" comes from a Latin word meaning what?",
+        "a": "Birth"
+      },
+      {
+        "q": "What does the \"X\" in \"Xmas\" stand for?",
+        "a": "The Greek letter chi, the first letter of \"Christ\" in Greek"
+      },
+      {
+        "q": "On what date do many Orthodox Christians, such as those in Russia, celebrate Christmas?",
+        "a": "January 7"
+      },
+      {
+        "q": "How many gifts are given in total in the song \"The Twelve Days of Christmas\"?",
+        "a": "364"
+      },
+      {
+        "q": "Which country sends a giant Christmas tree to London's Trafalgar Square every year?",
+        "a": "Norway"
+      },
+      {
+        "q": "Before electric lights, what did people use to light up Christmas trees?",
+        "a": "Candles"
+      },
+      {
+        "q": "In which New York City landmark is a famous giant Christmas tree lit every year?",
+        "a": "Rockefeller Center"
+      },
+      {
+        "q": "What is a baby reindeer called?",
+        "a": "A calf",
+        "sheet": true
+      },
+      {
+        "q": "Do female reindeer grow antlers?",
+        "a": "Yes. Reindeer are the only deer where both males and females grow antlers"
+      },
+      {
+        "q": "Which Bing Crosby song is the best-selling Christmas single of all time?",
+        "a": "\"White Christmas\""
+      }
+    ]
+  }
+]

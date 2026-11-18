@@ -1,0 +1,147 @@
+[
+  {
+    "title": "Reading the road",
+    "questions": [
+      {
+        "q": "How many sides does a standard red stop sign have?",
+        "a": "Eight. Count them around the edge.",
+        "sheet": true
+      },
+      {
+        "q": "What is the mathematical name for that eight-sided shape?",
+        "a": "An octagon. Its name starts with the same prefix as octopus.",
+        "sheet": true
+      },
+      {
+        "q": "Which direction is opposite east on a compass?",
+        "a": "West. East and west sit across from each other.",
+        "sheet": true
+      },
+      {
+        "q": "If the top of a map is north, which direction is the left edge?",
+        "a": "West. Turn the map to face the same way as your compass to check.",
+        "sheet": true
+      },
+      {
+        "q": "What do you call a road that goes underneath a mountain?",
+        "a": "A tunnel. The mountain stays above you.",
+        "sheet": true
+      },
+      {
+        "q": "What do you call the part of a bridge that crosses the gap between two supports?",
+        "a": "A span. A long bridge can have several spans.",
+        "sheet": true
+      },
+      {
+        "q": "How many minutes are in half an hour?",
+        "a": "Thirty. Half of 60 is 30.",
+        "sheet": true
+      },
+      {
+        "q": "A trip takes 90 minutes. If you leave at 2:15, when do you arrive in the same time zone?",
+        "a": "3:45. Add one hour, then another 30 minutes.",
+        "sheet": true
+      },
+      {
+        "q": "What is the book of maps in a glove compartment called?",
+        "a": "An atlas. It can hold road maps for a whole country.",
+        "sheet": true
+      },
+      {
+        "q": "On a map, 1 centimetre stands for 5 kilometres. How far apart are towns drawn 3 centimetres apart?",
+        "a": "15 kilometres. Multiply the map distance by five.",
+        "sheet": true
+      }
+    ]
+  },
+  {
+    "title": "Through the passenger window",
+    "questions": [
+      {
+        "q": "What is the name of a river that flows into a larger river?",
+        "a": "A tributary. Follow it downstream and it joins the larger river."
+      },
+      {
+        "q": "What do we call the point where two rivers meet?",
+        "a": "A confluence. Look for a Y shape on a map."
+      },
+      {
+        "q": "Which bright object lights the Moon?",
+        "a": "The Sun. Moonlight is reflected sunlight."
+      },
+      {
+        "q": "Why does the Moon sometimes look like a crescent?",
+        "a": "From Earth we see only part of its sunlit half. The amount we see changes as the Moon orbits Earth."
+      },
+      {
+        "q": "What is a group of sheep in a field called?",
+        "a": "A flock. Farmers also use the word for a group of birds."
+      },
+      {
+        "q": "What is the word for a mammal that eats plants?",
+        "a": "A herbivore. Sheep and cows are examples."
+      },
+      {
+        "q": "What has to hit raindrops for you to see a daytime rainbow?",
+        "a": "Sunlight. A shower with the Sun behind you is a good time to look."
+      },
+      {
+        "q": "Why do two passengers see a flash of lightning before they hear its thunder?",
+        "a": "Light travels faster than sound. Both come from the same lightning event."
+      },
+      {
+        "q": "What do we call land surrounded by water on all sides?",
+        "a": "An island. It can be in a lake, river or ocean."
+      },
+      {
+        "q": "What do we call land surrounded by water on three sides?",
+        "a": "A peninsula. One side connects it to the mainland."
+      }
+    ]
+  },
+  {
+    "title": "Places worth a detour",
+    "questions": [
+      {
+        "q": "Which city is home to the Eiffel Tower?",
+        "a": "Paris, in France."
+      },
+      {
+        "q": "Which river runs through Paris past the Eiffel Tower?",
+        "a": "The Seine. It flows through the city towards the English Channel."
+      },
+      {
+        "q": "Which country has a mainland shaped like a boot?",
+        "a": "Italy. Its toe points towards Sicily."
+      },
+      {
+        "q": "Which is the largest island in the Mediterranean Sea?",
+        "a": "Sicily. It sits just off the toe of Italy."
+      },
+      {
+        "q": "In which US state would you visit the Grand Canyon?",
+        "a": "Arizona. The national park is in the northern part of the state."
+      },
+      {
+        "q": "Which river flows through the Grand Canyon?",
+        "a": "The Colorado River. You can see it from some viewpoints on the rim."
+      },
+      {
+        "q": "Which Australian city has an opera house shaped like white sails?",
+        "a": "Sydney. The building stands beside Sydney Harbour."
+      },
+      {
+        "q": "Which city is the capital of Australia?",
+        "a": "Canberra. Sydney is the capital of the state of New South Wales."
+      },
+      {
+        "q": "On which continent would you visit the pyramids of Giza?",
+        "a": "Africa. The pyramids stand in Egypt."
+      },
+      {
+        "q": "Which sea would you reach by following the Nile River downstream to its delta?",
+        "a": "The Mediterranean Sea. The river reaches it on the northern coast of Egypt."
+      }
+    ]
+  }
+]

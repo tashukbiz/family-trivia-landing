@@ -21,7 +21,7 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'screen-free restaurant activities for kids',
   ],
   publishedTime: '2026-07-02T00:00:00Z',
-  modifiedTime: '2026-07-02T00:00:00Z',
+  modifiedTime: '2026-11-18T00:00:00Z',
 });
 
 export default function KeepKidsEntertainedAtRestaurantsPage() {
@@ -688,6 +688,7 @@ export default function KeepKidsEntertainedAtRestaurantsPage() {
 
                 <BlogCtaSection />
               </section>
+              <p className='my-6'>Back in the car? Let a passenger host our <Link className='underline' href='/blog/road-trip-trivia'>road trip trivia for kids and adults</Link>.</p>
             </article>
 
             {/* Back to Blog Home Link */}

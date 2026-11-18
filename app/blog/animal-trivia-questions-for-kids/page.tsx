@@ -1,3 +1,5 @@
+import { ReadAloudQuestions, TakeAlongRound } from '@/components/TakeAlongRound';
+import groups from '@/lib/rounds/animals.json';
 import DownloadButtons from '@/components/DownloadButtons';
 import BlogCtaSection from '@/components/BlogCtaSection';
 import type { Metadata } from 'next';
@@ -7,8 +9,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = buildBlogArticleMetadata({
-  title: '50 Animal Trivia Questions for Kids (With Answers) | Family Trivia',
-  description: 'Looking for animal trivia questions for kids? Here are 50 fun animal trivia questions and answers, from ocean to jungle. Play together in our Family Trivia app!',
+  title: '50 Animal Trivia Questions for Kids With Answers',
+  description: 'Try 50 animal trivia questions for kids, from pets to ocean giants. Play a 10-question starter round, reveal each answer or print a sheet for a day out.',
   path: '/blog/animal-trivia-questions-for-kids',
   keywords: [
     'animal trivia questions for kids',
@@ -20,227 +22,11 @@ export const metadata: Metadata = buildBlogArticleMetadata({
     'family games',
   ],
   publishedTime: '2026-06-18T00:00:00Z',
-  modifiedTime: '2026-06-18T00:00:00Z',
+  modifiedTime: '2026-11-18T00:00:00Z',
 });
 
 export default function AnimalTriviaQuestionsForKidsPage() {
-  const oceanQuestions = [
-    {
-      q: 'What is the largest animal on Earth?',
-      a: 'The blue whale — it can grow longer than three school buses.',
-    },
-    {
-      q: 'How many hearts does an octopus have?',
-      a: 'Three. Two pump blood to the gills and one pumps blood to the rest of the body.',
-    },
-    {
-      q: 'What kind of animal is a starfish?',
-      a: 'An echinoderm, not a fish — that is why scientists often call it a sea star.',
-    },
-    {
-      q: 'Which fish is the fastest swimmer in the ocean?',
-      a: 'The sailfish — it can swim faster than a car drives in a city.',
-    },
-    {
-      q: 'What do sharks have instead of bones?',
-      a: 'Cartilage — the same bendy material that is inside your ears and nose.',
-    },
-    {
-      q: 'How many arms does an octopus have?',
-      a: 'Eight. The name "octopus" comes from a word meaning eight.',
-    },
-    {
-      q: 'Which sea animal is known as the "clown of the sea" and lives in anemones?',
-      a: 'The clownfish — it hides safely among the stinging anemone tentacles.',
-    },
-    {
-      q: 'What is the largest type of fish in the ocean?',
-      a: 'The whale shark — it is a gentle giant that eats tiny plankton.',
-    },
-    {
-      q: 'Are dolphins fish or mammals?',
-      a: 'Mammals. They breathe air with lungs and feed their babies milk.',
-    },
-  ] as const;
-
-  const jungleQuestions = [
-    {
-      q: 'What is the largest land animal?',
-      a: 'The African elephant — it can weigh more than a small truck.',
-    },
-    {
-      q: 'What is the fastest land animal?',
-      a: 'The cheetah — it can sprint up to about 70 miles per hour.',
-    },
-    {
-      q: 'What is the tallest animal in the world?',
-      a: 'The giraffe — its long neck helps it reach leaves high in the trees.',
-    },
-    {
-      q: 'Which big cat is known as the "king of the jungle"?',
-      a: 'The lion, even though lions actually live on grassy savannas, not jungles.',
-    },
-    {
-      q: 'What do pandas mostly eat?',
-      a: 'Bamboo — they spend many hours each day munching on it.',
-    },
-    {
-      q: 'Which animal has black and white stripes and looks like a striped horse?',
-      a: 'The zebra. Every zebra has its own unique stripe pattern.',
-    },
-    {
-      q: 'What is the largest type of monkey-like animal, known for being a great ape?',
-      a: 'The gorilla — gorillas are apes, and they are gentle plant-eaters.',
-    },
-    {
-      q: 'Which animal has a long trunk it uses like a hand?',
-      a: 'The elephant. It uses its trunk to grab food, drink water, and even hug.',
-    },
-  ] as const;
-
-  const birdQuestions = [
-    {
-      q: 'Which bird can swim but cannot fly?',
-      a: 'The penguin — it uses its wings like flippers to swim underwater.',
-    },
-    {
-      q: 'What is the largest bird in the world?',
-      a: 'The ostrich — it is too heavy to fly but can run very fast.',
-    },
-    {
-      q: 'Which bird is known for copying human words?',
-      a: 'The parrot. Some parrots can learn dozens of words.',
-    },
-    {
-      q: 'What bird can fly backward?',
-      a: 'The hummingbird — it can also hover in one spot like a tiny helicopter.',
-    },
-    {
-      q: 'What color is a flamingo when it is born?',
-      a: 'Gray or white. Flamingos turn pink from the shrimp and algae they eat.',
-    },
-    {
-      q: 'Which bird is a symbol of wisdom and can turn its head almost all the way around?',
-      a: 'The owl — it can turn its head about three-quarters of the way around.',
-    },
-    {
-      q: 'What do you call a baby bird that has just hatched from its egg?',
-      a: 'A chick (or hatchling).',
-    },
-    {
-      q: 'Which large bird is the national bird of the United States?',
-      a: 'The bald eagle.',
-    },
-  ] as const;
-
-  const bugQuestions = [
-    {
-      q: 'How many legs does a spider have?',
-      a: 'Eight. Spiders are arachnids, not insects (insects have six legs).',
-    },
-    {
-      q: 'How many legs does an insect have?',
-      a: 'Six. That is one way to tell an insect apart from a spider.',
-    },
-    {
-      q: 'What do bees collect from flowers to make honey?',
-      a: 'Nectar — they turn it into honey back in the hive.',
-    },
-    {
-      q: 'What does a caterpillar turn into?',
-      a: 'A butterfly or a moth, after a change called metamorphosis.',
-    },
-    {
-      q: 'Which insect can lift many times its own body weight?',
-      a: 'The ant — ants are incredibly strong for their tiny size.',
-    },
-    {
-      q: 'What insect makes a glowing light in the dark on summer nights?',
-      a: 'The firefly (also called a lightning bug).',
-    },
-    {
-      q: 'How many spots does a common ladybug usually have?',
-      a: 'It varies, but the common seven-spot ladybug has seven black spots.',
-    },
-    {
-      q: 'What do you call a group of bees that live and work together?',
-      a: 'A colony (and the home they build is called a hive).',
-    },
-  ] as const;
-
-  const reptileQuestions = [
-    {
-      q: 'Which reptile carries its home on its back?',
-      a: 'The turtle (and the tortoise) — its shell is part of its body.',
-    },
-    {
-      q: 'What is the largest reptile in the world?',
-      a: 'The saltwater crocodile — it can grow longer than a car.',
-    },
-    {
-      q: 'How does a snake smell the air around it?',
-      a: 'With its tongue. It flicks its tongue out to pick up scents.',
-    },
-    {
-      q: 'Which lizard can change the color of its skin?',
-      a: 'The chameleon. It changes color to blend in and to show its mood.',
-    },
-    {
-      q: 'Are frogs reptiles or amphibians?',
-      a: 'Amphibians — they start life in water as tadpoles before growing legs.',
-    },
-    {
-      q: 'What is the only continent where you will not find any snakes living in the wild?',
-      a: 'Antarctica — it is far too cold for snakes.',
-    },
-    {
-      q: 'What do you call a baby frog?',
-      a: 'A tadpole. It has a tail and gills before it grows into a frog.',
-    },
-    {
-      q: 'Which reptile is famous for moving very, very slowly?',
-      a: 'The tortoise — but the slow-and-steady tortoise can live for over 100 years.',
-    },
-  ] as const;
-
-  const petQuestions = [
-    {
-      q: 'What is a baby kangaroo called?',
-      a: 'A joey. It rides in its mother\'s pouch until it is big enough to hop on its own.',
-    },
-    {
-      q: 'What is a baby dog called?',
-      a: 'A puppy.',
-    },
-    {
-      q: 'What is a baby cat called?',
-      a: 'A kitten.',
-    },
-    {
-      q: 'Which animal is known as "man\'s best friend"?',
-      a: 'The dog — dogs have lived alongside people for thousands of years.',
-    },
-    {
-      q: 'What is a baby horse called?',
-      a: 'A foal (a young male is a colt and a young female is a filly).',
-    },
-    {
-      q: 'How many legs does a cat have?',
-      a: 'Four.',
-    },
-    {
-      q: 'What is a baby cow called?',
-      a: 'A calf.',
-    },
-    {
-      q: 'What small furry pet is famous for running on a spinning wheel?',
-      a: 'The hamster.',
-    },
-    {
-      q: 'What is a baby rabbit called?',
-      a: 'A kit (or kitten). A group of baby rabbits is called a litter.',
-    },
-  ] as const;
+  const [oceanQuestions, jungleQuestions, birdQuestions, bugQuestions, reptileQuestions, petQuestions] = groups.map(group => group.questions);
 
   const triviaQuestions = [
     ...oceanQuestions,
@@ -280,8 +66,8 @@ export default function AnimalTriviaQuestionsForKidsPage() {
       buildBlogPostingSchema({
         metadata,
         type: 'Article',
-        headline: '50 Animal Trivia Questions for Kids (With Answers)',
-        description: 'Looking for animal trivia questions for kids? Here are 50 fun animal trivia questions and answers, from ocean to jungle. Play together in our Family Trivia app!',
+        headline: '50 Animal Trivia Questions for Kids With Answers',
+        description: 'Try 50 animal trivia questions for kids, from pets to ocean giants. Play a 10-question starter round, reveal each answer or print a sheet for a day out.',
         path: '/blog/animal-trivia-questions-for-kids',
         keywords: 'animal trivia questions for kids, animal trivia for kids, animal trivia questions and answers for kids, fun animal facts for kids',
       }),
@@ -349,46 +135,16 @@ export default function AnimalTriviaQuestionsForKidsPage() {
             <article className='prose prose-lg dark:prose-invert max-w-none'>
               <header className='mb-12'>
                 <h1 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight'>
-                  50 Animal Trivia Questions for Kids (With Answers)
+                  50 Animal Trivia Questions for Kids With Answers
                 </h1>
-                <p className='text-gray-600 dark:text-gray-400 text-lg'>
-                  Fun animal trivia questions and answers, sorted by ocean,
-                  jungle, birds, bugs, reptiles, and pets.
-                </p>
+                <p className='mt-3 text-lg'>Start with animals your youngest player knows. Then ask an older player to explain an answer, such as why a dolphin is a mammal.</p>
+                <a className='mt-3 inline-block underline' href='#easy-round'>Jump to 10 easy questions and the printable sheet</a>
               </header>
 
-              {/* Introduction */}
-              <section className='mb-10'>
-                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  Kids are naturally fascinated by animals, which makes{' '}
-                  <strong>animal trivia questions for kids</strong> one of the
-                  most exciting ways to learn. From the deepest oceans to the
-                  tallest treetops, the animal kingdom is full of surprising
-                  facts that make children gasp, giggle, and want to know more.
-                  We have gathered 50 of the best animal trivia questions and
-                  answers, sorted into easy-to-play categories the whole family
-                  will enjoy.
-                </p>
-                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4'>
-                  These questions work for curious preschoolers and know-it-all
-                  big kids alike. They make a great addition to your collection
-                  of{' '}
-                  <Link
-                    href='/blog/trivia-questions-for-kids'
-                    className='text-primary hover:underline'
-                  >
-                    trivia questions for kids
-                  </Link>
-                  , and they are perfect for game night, road trips, or warming
-                  up before a trip to the zoo or aquarium.
-                </p>
-                <p className='text-lg text-gray-800 dark:text-gray-200 leading-relaxed'>
-                  Good animal trivia questions for kids ask about familiar
-                  animals and surprising facts — like which animal is the
-                  largest (the blue whale), how many hearts an octopus has
-                  (three), and what a baby kangaroo is called (a joey). Ready to
-                  explore? Click "Show Answer" to reveal each fun fact!
-                </p>
+              <section id='easy-round' className='mb-10'>
+                <h2 className='mb-4 text-2xl font-bold'>10 easy animal questions to play now</h2>
+                <ReadAloudQuestions questions={groups.flatMap(group => group.questions).filter(item => 'sheet' in item && item.sheet)} />
+                <TakeAlongRound sheet='animals'>Take ten animal questions to a picnic or the zoo. Keep the host key on a separate sheet and let each player choose an animal topic for the next game.</TakeAlongRound>
               </section>
 
               {/* Why Animal Trivia Questions Are Great for Kids */}
@@ -1014,10 +770,8 @@ export default function AnimalTriviaQuestionsForKidsPage() {
                   >
                     sports trivia for kids
                   </Link>{' '}
-                  for another themed round, or download the Family Trivia app for
-                  unlimited animal questions personalized for every member of
-                  your family. Download it today and make every game night a
-                  learning adventure!
+                  for another themed round, or pick animals in the Family Trivia
+                  app and choose a difficulty for each player.
                 </p>
 
                 <BlogCtaSection />

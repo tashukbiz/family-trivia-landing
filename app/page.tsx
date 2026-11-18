@@ -275,7 +275,7 @@ export default function Home() {
               gather round.
             </h2>
             <p>
-              Looking for ideas? Explore our{' '}
+              Start with our{' '}<Link href='/blog/family-trivia-questions'>family trivia questions for kids and adults</Link>, or explore all our{' '}
               <Link href='/blog'>family trivia guides</Link>.
             </p>
           </div>
