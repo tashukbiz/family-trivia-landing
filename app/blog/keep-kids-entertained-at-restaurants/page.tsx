@@ -688,7 +688,7 @@ export default function KeepKidsEntertainedAtRestaurantsPage() {
 
                 <BlogCtaSection />
               </section>
-              <p className='my-6'>Back in the car? Let a passenger host our <Link className='underline' href='/blog/road-trip-trivia'>road trip trivia for kids and adults</Link>.</p>
+              <p className='my-6'>Eating at home tonight? Try these <Link className='underline' href='/blog/dinner-table-games'>dinner table games for families</Link>. Back in the car? Let a passenger host our <Link className='underline' href='/blog/road-trip-trivia'>road trip trivia for kids and adults</Link>.</p>
             </article>
 
             {/* Back to Blog Home Link */}
